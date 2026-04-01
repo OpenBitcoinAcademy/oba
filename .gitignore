@@ -1,5 +1,7 @@
 # Binaries
 /oba
+/translate-check
+/poc-halving
 *.exe
 *.apk
 
