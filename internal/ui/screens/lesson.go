@@ -18,14 +18,19 @@ import (
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
+// ExerciseWidget is any exercise that can lay itself out.
+type ExerciseWidget interface {
+	Layout(gtx layout.Context) layout.Dimensions
+}
+
 // Lesson displays a scrollable lesson with all its sections.
 type Lesson struct {
-	state       *app.State
-	list        widget.List
-	backBtn     widget.Clickable
-	quizzes     map[int]*components.Quiz
-	lastLesson  int // tracks which lesson we last rendered
-	initialized bool
+	state      *app.State
+	list       widget.List
+	backBtn    widget.Clickable
+	quizzes    map[int]*components.Quiz
+	exercises  map[int]ExerciseWidget
+	lastLesson int // tracks which lesson we last rendered
 }
 
 // NewLesson creates the lesson screen.
@@ -33,6 +38,7 @@ func NewLesson(state *app.State) *Lesson {
 	l := &Lesson{
 		state:      state,
 		quizzes:    make(map[int]*components.Quiz),
+		exercises:  make(map[int]ExerciseWidget),
 		lastLesson: -1,
 	}
 	l.list.Axis = layout.Vertical
@@ -42,6 +48,7 @@ func NewLesson(state *app.State) *Lesson {
 // reset clears all per-lesson widget state.
 func (l *Lesson) reset() {
 	l.quizzes = make(map[int]*components.Quiz)
+	l.exercises = make(map[int]ExerciseWidget)
 	l.list.Position = layout.Position{}
 	l.lastLesson = l.state.CurrentLesson
 }
@@ -133,6 +140,14 @@ func (l *Lesson) renderSection(gtx layout.Context, sec content.Section, idx int)
 		return q.Layout(gtx)
 
 	case *content.InteractiveSection:
+		ex, ok := l.exercises[idx]
+		if !ok {
+			ex = l.createExercise(s.ExerciseID)
+			l.exercises[idx] = ex
+		}
+		if ex != nil {
+			return ex.Layout(gtx)
+		}
 		return placeholderSection(gtx, th, "Exercise: "+s.ExerciseID)
 
 	case *content.FormulaSection:
@@ -140,6 +155,20 @@ func (l *Lesson) renderSection(gtx layout.Context, sec content.Section, idx int)
 
 	default:
 		return placeholderSection(gtx, th, "Unknown section")
+	}
+}
+
+func (l *Lesson) createExercise(id string) ExerciseWidget {
+	th := l.state.Theme
+	switch id {
+	case "ex01_hash":
+		return components.NewHashExplorer(th)
+	case "ex02_keys":
+		return components.NewKeyGenerator(th)
+	case "ex03_address":
+		return components.NewAddressBuilder(th)
+	default:
+		return nil
 	}
 }
 

@@ -1,0 +1,1 @@
+Recorre cada paso de la derivacion de direcciones Bitcoin. Comenzando desde un par de claves recien generado, avanza a traves de hashing SHA-256, hashing RIPEMD-160, adicion de byte de version, calculo de suma de verificacion y codificacion Base58Check. El resultado final es una direccion testnet valida.

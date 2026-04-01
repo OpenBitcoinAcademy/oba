@@ -18,9 +18,10 @@ import (
 
 // Home displays the lesson list with progress indicators.
 type Home struct {
-	state      *app.State
-	lessonBtns []widget.Clickable
-	list       widget.List
+	state       *app.State
+	lessonBtns  []widget.Clickable
+	settingsBtn widget.Clickable
+	list        widget.List
 }
 
 // NewHome creates the home screen.
@@ -37,11 +38,14 @@ func NewHome(state *app.State) *Home {
 func (h *Home) Layout(gtx layout.Context) layout.Dimensions {
 	th := h.state.Theme
 
-	// Handle lesson clicks.
+	// Handle clicks.
 	for i := range h.lessonBtns {
 		if h.lessonBtns[i].Clicked(gtx) {
 			h.state.NavigateToLesson(i)
 		}
+	}
+	if h.settingsBtn.Clicked(gtx) {
+		h.state.NavigateSettings()
 	}
 
 	return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
@@ -66,12 +70,24 @@ func (h *Home) Layout(gtx layout.Context) layout.Dimensions {
 					}),
 					layout.Rigid(layout.Spacer{Height: th.Space.Medium}.Layout),
 					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-						bar := &components.ProgressBar{
-							Completed: h.state.Progress.CompletedCount(),
-							Total:     len(h.state.Chapter.Lessons),
-							Theme:     th,
-						}
-						return bar.Layout(gtx)
+						return layout.Flex{Alignment: layout.Middle}.Layout(gtx,
+							layout.Flexed(1, func(gtx layout.Context) layout.Dimensions {
+								bar := &components.ProgressBar{
+									Completed: h.state.Progress.CompletedCount(),
+									Total:     len(h.state.Chapter.Lessons),
+									Theme:     th,
+								}
+								return bar.Layout(gtx)
+							}),
+							layout.Rigid(layout.Spacer{Width: th.Space.Medium}.Layout),
+							layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+								btn := material.Button(th.Material, &h.settingsBtn, i18n.T("nav.settings"))
+								btn.Background = th.Color.Surface
+								btn.Color = th.Color.TextMuted
+								btn.TextSize = th.Text.Caption
+								return btn.Layout(gtx)
+							}),
+						)
 					}),
 				)
 			})

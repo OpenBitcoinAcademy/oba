@@ -51,6 +51,7 @@ func main() {
 
 		home := screens.NewHome(state)
 		lesson := screens.NewLesson(state)
+		settings := screens.NewSettings(state)
 
 		var ops op.Ops
 		for {
@@ -69,6 +70,8 @@ func main() {
 				switch state.CurrentScreen {
 				case app.ScreenLesson:
 					lesson.Layout(gtx)
+				case app.ScreenSettings:
+					settings.Layout(gtx)
 				default:
 					home.Layout(gtx)
 				}

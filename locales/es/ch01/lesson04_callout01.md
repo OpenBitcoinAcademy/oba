@@ -1,0 +1,1 @@
+La suma de verificacion en una direccion detecta errores de escritura. Si escribes mal un solo caracter, la direccion es invalida y tu billetera se negara a enviar a ella. Esta es una caracteristica de seguridad deliberada. Sin sumas de verificacion, un error de escritura enviaria bitcoin a una direccion que nadie controla, perdidos para siempre.

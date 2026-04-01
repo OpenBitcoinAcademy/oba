@@ -1,0 +1,1 @@
+En muchos paises, las personas han visto sus ahorros desaparecer por la inflacion de la noche a la manana. Cuando un gobierno imprime demasiado dinero, los precios suben hasta que la moneda pierde su valor. Bitcoin nacio de este problema.

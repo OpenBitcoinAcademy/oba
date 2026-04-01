@@ -1,0 +1,37 @@
+[nav]
+home = "Inicio"
+settings = "Ajustes"
+next = "Siguiente"
+previous = "Anterior"
+progress = "{{completed}} de {{total}} completado"
+
+[quiz]
+check = "Comprobar"
+correct = "Correcto!"
+try_again = "Intenta de nuevo"
+remaining_one = "{{count}} pregunta restante"
+remaining_other = "{{count}} preguntas restantes"
+
+[exercise]
+generate = "Generar"
+next_step = "Siguiente paso"
+reset = "Reiniciar"
+safety_note = "Estas son claves criptograficas reales. En esta aplicacion, se generan solo para aprender y no se almacenan."
+
+[settings]
+language = "Idioma"
+theme = "Tema"
+theme_light = "Claro"
+theme_dark = "Oscuro"
+reset_progress = "Reiniciar progreso"
+reset_confirm = "Esta seguro? Esto no se puede deshacer."
+
+[chapters]
+ch01_title = "Que es Bitcoin?"
+ch01_description = "Claves, direcciones y hashing: los fundamentos."
+
+[lessons]
+ch01_lesson01_title = "Dinero y confianza"
+ch01_lesson02_title = "Hashing: huellas digitales"
+ch01_lesson03_title = "Claves: tu identidad Bitcoin"
+ch01_lesson04_title = "Direcciones: donde vive Bitcoin"

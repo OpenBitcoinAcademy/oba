@@ -1,0 +1,1 @@
+Nunca compartas tu clave privada. Nunca la escribas en un sitio web. Nunca la guardes en un servicio en la nube. La seguridad de cada bitcoin que posees depende de que este numero permanezca secreto. Si alguien mas conoce tu clave privada, puede tomar tus bitcoin, y no hay forma de revertir la transaccion.

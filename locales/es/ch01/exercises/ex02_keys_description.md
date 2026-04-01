@@ -1,0 +1,1 @@
+Presiona Generar para crear una clave privada aleatoria de Bitcoin. Observa la clave publica correspondiente derivada en tiempo real usando multiplicacion de curva eliptica. Ambas claves se muestran en hexadecimal con su tamano en bytes.
