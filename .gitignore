@@ -1,0 +1,23 @@
+# Binaries
+/oba
+*.exe
+*.apk
+
+# Test artifacts
+*.test
+coverage.out
+coverage.html
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+/tmp/

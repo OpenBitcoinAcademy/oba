@@ -1,0 +1,37 @@
+[nav]
+home = "Home"
+settings = "Settings"
+next = "Next"
+previous = "Previous"
+progress = "{{completed}} of {{total}} complete"
+
+[quiz]
+check = "Check Answer"
+correct = "Correct!"
+try_again = "Try again"
+remaining_one = "{{count}} question remaining"
+remaining_other = "{{count}} questions remaining"
+
+[exercise]
+generate = "Generate"
+next_step = "Next Step"
+reset = "Reset"
+safety_note = "These are real cryptographic keys. In this app, they are generated for learning only and are not stored."
+
+[settings]
+language = "Language"
+theme = "Theme"
+theme_light = "Light"
+theme_dark = "Dark"
+reset_progress = "Reset Progress"
+reset_confirm = "Are you sure? This cannot be undone."
+
+[chapters]
+ch01_title = "What is Bitcoin?"
+ch01_description = "Keys, addresses, and hashing: the building blocks."
+
+[lessons]
+ch01_lesson01_title = "Money and Trust"
+ch01_lesson02_title = "Hashing: Digital Fingerprints"
+ch01_lesson03_title = "Keys: Your Bitcoin Identity"
+ch01_lesson04_title = "Addresses: Where Bitcoin Lives"
