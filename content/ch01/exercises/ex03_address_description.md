@@ -1,0 +1,1 @@
+Walk through each step of Bitcoin address derivation. Starting from a freshly generated key pair, advance through SHA-256 hashing, RIPEMD-160 hashing, version byte addition, checksum calculation, and Base58Check encoding. The final result is a valid testnet address.

@@ -1,0 +1,1 @@
+In many countries, people have seen their savings wiped out by inflation overnight. When a government prints too much money, prices rise until the currency becomes worthless. Bitcoin was born from this problem.

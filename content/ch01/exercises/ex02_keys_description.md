@@ -1,0 +1,1 @@
+Press Generate to create a random Bitcoin private key. See the corresponding public key derived in real time using elliptic curve multiplication. Both keys are displayed in hexadecimal with their byte counts.

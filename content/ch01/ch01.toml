@@ -1,0 +1,120 @@
+[chapter]
+id = "ch01"
+title_key = "chapters.ch01_title"
+description_key = "chapters.ch01_description"
+
+# Lesson 1: Money and Trust
+[[lessons]]
+id = "ch01.lesson01"
+title_key = "lessons.ch01_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "centralized_vs_p2p"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 2: Hashing — Digital Fingerprints
+[[lessons]]
+id = "ch01.lesson02"
+title_key = "lessons.ch01_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "hash_flow"
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex01_hash"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 3: Keys — Your Bitcoin Identity
+[[lessons]]
+id = "ch01.lesson03"
+title_key = "lessons.ch01_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "key_derivation"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex02_keys"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 4: Addresses — Where Bitcoin Lives
+[[lessons]]
+id = "ch01.lesson04"
+title_key = "lessons.ch01_lesson04_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "address_pipeline"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex03_address"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0, 1, 2]

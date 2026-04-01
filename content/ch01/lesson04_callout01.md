@@ -1,0 +1,1 @@
+The checksum in an address catches typos. If you mistype a single character, the address is invalid and your wallet will refuse to send to it. This is a deliberate safety feature. Without checksums, a typo would send bitcoin to an address no one controls, lost forever.

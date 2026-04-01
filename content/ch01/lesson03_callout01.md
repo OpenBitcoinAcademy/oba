@@ -1,0 +1,1 @@
+Never share your private key. Never type it into a website. Never store it in a cloud service. The security of every bitcoin you own depends on this number staying secret. If someone else learns your private key, they can take your bitcoin, and there is no way to reverse the transaction.

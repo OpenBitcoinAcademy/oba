@@ -1,0 +1,1 @@
+Type anything and see its SHA-256 hash update in real time. Change a single character and watch the entire hash change. Toggle between hex, binary, and base64 output to see the same hash in different representations.
