@@ -4,39 +4,50 @@ import (
 	"image"
 
 	"gioui.org/layout"
-	"gioui.org/op/clip"
-	"gioui.org/op/paint"
 	"gioui.org/unit"
 
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
-// KeyDerivation draws Random Number -> [EC Multiply] -> Public Key.
+// KeyDerivation draws Private Key --(one-way)--> Public Key.
+// The middle shows the operation as a process step, with a "one-way"
+// label on the arrow to emphasize irreversibility.
 type KeyDerivation struct{}
 
 func (d *KeyDerivation) Layout(gtx layout.Context, th *theme.Theme) layout.Dimensions {
-	h := gtx.Dp(unit.Dp(80))
+	h := gtx.Dp(unit.Dp(110))
 	w := gtx.Constraints.Max.X
+	pad := pct(w, 4)
 
-	paint.FillShape(gtx.Ops, th.Color.Surface, clip.Rect{Max: image.Pt(w, h)}.Op())
+	// No background fill: inherits page background.
 
-	bw := gtx.Dp(unit.Dp(100))
-	bh := gtx.Dp(unit.Dp(36))
-	aw := gtx.Dp(unit.Dp(30))
+	// Responsive: two endpoint boxes (28%), one process box (26%).
+	endW := pct(w, 28)
+	procW := pct(w, 26)
+	bh := gtx.Dp(unit.Dp(38))
 
-	cx := (w - (3*bw + 2*aw)) / 2
-	if cx < 0 {
-		cx = 4
+	usable := w - 2*pad
+	gapTotal := usable - 2*endW - procW
+	gap := gapTotal / 2
+	if gap < 8 {
+		gap = 8
 	}
-	y := (h - bh) / 2
 
-	box(gtx, th, "Private Key", image.Pt(cx, y), bw, bh, th.Color.WarningBg)
-	arrow(gtx, th, image.Pt(cx+bw, y+bh/2), aw)
-	box(gtx, th, "EC Multiply", image.Pt(cx+bw+aw, y), bw, bh, th.Color.Primary)
-	arrow(gtx, th, image.Pt(cx+2*bw+aw, y+bh/2), aw)
-	box(gtx, th, "Public Key", image.Pt(cx+2*bw+2*aw, y), bw, bh, th.Color.TipBg)
+	y := h/2 - bh/2 + gtx.Dp(unit.Dp(4))
+	x1 := pad
+	x2 := x1 + endW + gap
+	x3 := x2 + procW + gap
 
-	caption(gtx, th, "one-way", image.Pt(cx+bw+aw/2, y-16))
+	box(gtx, th, "Private Key", image.Pt(x1, y), endW, bh, th.Color.WarningBg)
+	arrow(gtx, th, image.Pt(x1+endW, y+bh/2), image.Pt(x2, y+bh/2))
+	processBox(gtx, th, "Elliptic Curve", image.Pt(x2, y), procW, bh)
+	arrow(gtx, th, image.Pt(x2+procW, y+bh/2), image.Pt(x3, y+bh/2))
+	box(gtx, th, "Public Key", image.Pt(x3, y), endW, bh, th.Color.TipBg)
+
+	// "one-way" label centered above the arrows.
+	captionX := x1 + endW + (x3-x1-endW)/2 - pct(w, 6)
+	captionY := y - gtx.Dp(unit.Dp(16))
+	colorCaption(gtx, th, "one-way function", image.Pt(captionX, captionY), th.Color.TextMuted)
 
 	return layout.Dimensions{Size: image.Pt(w, h)}
 }

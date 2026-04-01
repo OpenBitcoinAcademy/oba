@@ -4,57 +4,75 @@ import (
 	"image"
 
 	"gioui.org/layout"
-	"gioui.org/op/clip"
-	"gioui.org/op/paint"
 	"gioui.org/unit"
 
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
-// AddressPipeline draws the full key-to-address derivation pipeline.
-// Private Key -> Public Key -> HASH160 -> Encode -> Address.
+// AddressPipeline draws the public-key-to-address derivation pipeline.
+// Starts from Public Key (not Private Key, since that's covered in
+// key_derivation). Shows both hash steps separately:
+//
+//	Public Key -> SHA-256 -> RIPEMD-160 -> Base58Check -> Address
+//
+// This matches the lesson text which explains each step.
 type AddressPipeline struct{}
 
 func (d *AddressPipeline) Layout(gtx layout.Context, th *theme.Theme) layout.Dimensions {
-	h := gtx.Dp(unit.Dp(80))
+	h := gtx.Dp(unit.Dp(190))
 	w := gtx.Constraints.Max.X
+	pad := pct(w, 3)
 
-	paint.FillShape(gtx.Ops, th.Color.Surface, clip.Rect{Max: image.Pt(w, h)}.Op())
+	// No background fill: inherits page background.
 
-	bw := gtx.Dp(unit.Dp(80))
+	// Two rows to avoid overflow on narrow screens.
+	// Row 1: Public Key -> SHA-256 -> RIPEMD-160
+	// Row 2: Version + Checksum -> Base58Check -> Address
+
+	bw := pct(w, 28)
+	procW := pct(w, 24)
 	bh := gtx.Dp(unit.Dp(32))
-	aw := gtx.Dp(unit.Dp(20))
+	rowH := h / 2
 
-	steps := 5
-	totalW := steps*bw + (steps-1)*aw
-	cx := (w - totalW) / 2
-	if cx < 0 {
-		cx = 4
+	usable := w - 2*pad
+
+	// Row 1.
+	gap1 := (usable - bw - procW - procW) / 2
+	if gap1 < 6 {
+		gap1 = 6
 	}
-	y := (h - bh) / 2
+	y1 := rowH/2 - bh/2
+	x1 := pad
+	x2 := x1 + bw + gap1
+	x3 := x2 + procW + gap1
 
-	labels := []string{"Priv Key", "Pub Key", "HASH160", "Encode", "Address"}
-	colors := []func() image.Uniform{} // unused, use direct colors
-	bgColors := []struct{ c interface{} }{}
-	_ = bgColors
+	colorCaption(gtx, th, "Hash the public key", image.Pt(pad, y1-gtx.Dp(unit.Dp(14))), th.Color.TextMuted)
+	box(gtx, th, "Public Key", image.Pt(x1, y1), bw, bh, th.Color.InfoBg)
+	arrow(gtx, th, image.Pt(x1+bw, y1+bh/2), image.Pt(x2, y1+bh/2))
+	processBox(gtx, th, "SHA-256", image.Pt(x2, y1), procW, bh)
+	arrow(gtx, th, image.Pt(x2+procW, y1+bh/2), image.Pt(x3, y1+bh/2))
+	processBox(gtx, th, "RIPEMD-160", image.Pt(x3, y1), procW, bh)
 
-	for i, label := range labels {
-		x := cx + i*(bw+aw)
-		bg := th.Color.InfoBg
-		switch i {
-		case 0:
-			bg = th.Color.WarningBg
-		case 2:
-			bg = th.Color.Primary
-		case 4:
-			bg = th.Color.TipBg
-		}
-		box(gtx, th, label, image.Pt(x, y), bw, bh, bg)
-		if i < len(labels)-1 {
-			arrow(gtx, th, image.Pt(x+bw, y+bh/2), aw)
-		}
+	// Connecting arrow between rows (vertical).
+	midX := x3 + procW/2
+	line(gtx, image.Pt(midX, y1+bh), image.Pt(midX, rowH+y1), 1.5, th.Color.TextMuted)
+
+	// Row 2.
+	gap2 := (usable - procW - procW - bw) / 2
+	if gap2 < 6 {
+		gap2 = 6
 	}
-	_ = colors
+	y2 := rowH + rowH/2 - bh/2
+	x4 := pad
+	x5 := x4 + procW + gap2
+	x6 := x5 + procW + gap2
+
+	colorCaption(gtx, th, "Encode the address", image.Pt(pad, y2-gtx.Dp(unit.Dp(14))), th.Color.TextMuted)
+	processBox(gtx, th, "Add Version", image.Pt(x4, y2), procW, bh)
+	arrow(gtx, th, image.Pt(x4+procW, y2+bh/2), image.Pt(x5, y2+bh/2))
+	processBox(gtx, th, "Base58Check", image.Pt(x5, y2), procW, bh)
+	arrow(gtx, th, image.Pt(x5+procW, y2+bh/2), image.Pt(x6, y2+bh/2))
+	box(gtx, th, "Address", image.Pt(x6, y2), bw, bh, th.Color.TipBg)
 
 	return layout.Dimensions{Size: image.Pt(w, h)}
 }

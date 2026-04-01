@@ -13,13 +13,16 @@ import (
 
 	"github.com/openbitcoinacademy/oba/internal/app"
 	"github.com/openbitcoinacademy/oba/internal/i18n"
+	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
-// Settings displays language selection and progress reset.
+// Settings displays language selection, theme toggle, and progress reset.
 type Settings struct {
 	state      *app.State
 	backBtn    widget.Clickable
 	localeBtns map[string]*widget.Clickable
+	lightBtn   widget.Clickable
+	darkBtn    widget.Clickable
 	resetBtn   widget.Clickable
 	confirmBtn widget.Clickable
 	cancelBtn  widget.Clickable
@@ -55,6 +58,14 @@ func (s *Settings) Layout(gtx layout.Context) layout.Dimensions {
 			s.state.CompleteLesson() // triggers save
 			s.state.Invalidate()
 		}
+	}
+
+	// Handle theme toggle.
+	if s.lightBtn.Clicked(gtx) {
+		s.state.SetThemeMode(theme.ModeLight)
+	}
+	if s.darkBtn.Clicked(gtx) {
+		s.state.SetThemeMode(theme.ModeDark)
 	}
 
 	// Handle reset flow.
@@ -120,6 +131,19 @@ func (s *Settings) Layout(gtx layout.Context) layout.Dimensions {
 					}),
 					layout.Rigid(layout.Spacer{Height: th.Space.XLarge}.Layout),
 
+					// Theme section.
+					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+						lbl := material.Label(th.Material, th.Text.H3, i18n.T("settings.theme"))
+						lbl.Color = th.Color.Text
+						lbl.Font.Weight = font.Bold
+						return lbl.Layout(gtx)
+					}),
+					layout.Rigid(layout.Spacer{Height: th.Space.Medium}.Layout),
+					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+						return s.renderThemeButtons(gtx)
+					}),
+					layout.Rigid(layout.Spacer{Height: th.Space.XLarge}.Layout),
+
 					// Reset section.
 					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
 						lbl := material.Label(th.Material, th.Text.H3, i18n.T("settings.reset_progress"))
@@ -169,6 +193,34 @@ func (s *Settings) renderLocaleButtons(gtx layout.Context) layout.Dimensions {
 	}
 
 	return layout.Flex{Axis: layout.Horizontal}.Layout(gtx, children...)
+}
+
+func (s *Settings) renderThemeButtons(gtx layout.Context) layout.Dimensions {
+	th := s.state.Theme
+	return layout.Flex{Axis: layout.Horizontal}.Layout(gtx,
+		layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+			b := material.Button(th.Material, &s.lightBtn, i18n.T("settings.theme_light"))
+			if th.Mode == theme.ModeLight {
+				b.Background = th.Color.Primary
+				b.Color = th.Color.OnPrimary
+			} else {
+				b.Background = th.Color.Surface
+				b.Color = th.Color.Text
+			}
+			return layout.Inset{Right: th.Space.Small}.Layout(gtx, b.Layout)
+		}),
+		layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+			b := material.Button(th.Material, &s.darkBtn, i18n.T("settings.theme_dark"))
+			if th.Mode == theme.ModeDark {
+				b.Background = th.Color.Primary
+				b.Color = th.Color.OnPrimary
+			} else {
+				b.Background = th.Color.Surface
+				b.Color = th.Color.Text
+			}
+			return b.Layout(gtx)
+		}),
+	)
 }
 
 func (s *Settings) renderConfirm(gtx layout.Context) layout.Dimensions {

@@ -5,9 +5,19 @@ package theme
 
 import (
 	"image/color"
+	"os"
+	"strings"
 
 	"gioui.org/unit"
 	"gioui.org/widget/material"
+)
+
+// Mode identifies the color scheme.
+type Mode int
+
+const (
+	ModeLight Mode = iota
+	ModeDark
 )
 
 // Colors defines the OBA color palette. High contrast for readability.
@@ -45,6 +55,26 @@ func LightPalette() Colors {
 		WarningBg:  rgb(0xFFF3E0),
 		TipBg:      rgb(0xE8F5E9),
 		Divider:    rgb(0xE0E0E0),
+	}
+}
+
+// DarkPalette returns a high-contrast dark theme.
+func DarkPalette() Colors {
+	return Colors{
+		Background: rgb(0x121212),
+		Surface:    rgb(0x1E1E1E),
+		Primary:    rgb(0xF7931A), // Bitcoin orange stays
+		OnPrimary:  rgb(0x000000),
+		Text:       rgb(0xE0E0E0),
+		TextMuted:  rgb(0x9E9E9E),
+		Accent:     rgb(0x64B5F6),
+		Error:      rgb(0xEF5350),
+		Success:    rgb(0x66BB6A),
+		Warning:    rgb(0xFFA726),
+		InfoBg:     rgb(0x1A237E),
+		WarningBg:  rgb(0x3E2723),
+		TipBg:      rgb(0x1B5E20),
+		Divider:    rgb(0x333333),
 	}
 }
 
@@ -98,14 +128,25 @@ type Theme struct {
 	Color    Colors
 	Space    Spacing
 	Text     TextSizes
+	Mode     Mode
 }
 
-// New creates a Theme with the light palette and default settings.
+// New creates a Theme using the detected system preference.
 func New() *Theme {
-	mat := material.NewTheme()
-	colors := LightPalette()
+	mode := DetectSystemMode()
+	return NewWithMode(mode)
+}
 
-	// Apply OBA colors to the material theme.
+// NewWithMode creates a Theme with the specified color mode.
+func NewWithMode(mode Mode) *Theme {
+	mat := material.NewTheme()
+	var colors Colors
+	if mode == ModeDark {
+		colors = DarkPalette()
+	} else {
+		colors = LightPalette()
+	}
+
 	mat.Palette.Bg = colors.Background
 	mat.Palette.Fg = colors.Text
 	mat.Palette.ContrastBg = colors.Primary
@@ -116,7 +157,52 @@ func New() *Theme {
 		Color:    colors,
 		Space:    DefaultSpacing(),
 		Text:     DefaultTextSizes(),
+		Mode:     mode,
 	}
+}
+
+// SetMode switches the theme between light and dark.
+func (t *Theme) SetMode(mode Mode) {
+	t.Mode = mode
+	if mode == ModeDark {
+		t.Color = DarkPalette()
+	} else {
+		t.Color = LightPalette()
+	}
+	t.Material.Palette.Bg = t.Color.Background
+	t.Material.Palette.Fg = t.Color.Text
+	t.Material.Palette.ContrastBg = t.Color.Primary
+	t.Material.Palette.ContrastFg = t.Color.OnPrimary
+}
+
+// DetectSystemMode checks environment for dark mode preference.
+// Checks OBA_THEME env var first, then common desktop indicators.
+func DetectSystemMode() Mode {
+	// Explicit override.
+	if v := os.Getenv("OBA_THEME"); v != "" {
+		if strings.EqualFold(v, "dark") {
+			return ModeDark
+		}
+		return ModeLight
+	}
+
+	// GTK theme hint (GNOME, XFCE, etc).
+	if v := os.Getenv("GTK_THEME"); strings.Contains(strings.ToLower(v), "dark") {
+		return ModeDark
+	}
+
+	// Qt/KDE hint.
+	if v := os.Getenv("QT_STYLE_OVERRIDE"); strings.Contains(strings.ToLower(v), "dark") {
+		return ModeDark
+	}
+
+	// Freedesktop color-scheme preference.
+	if v := os.Getenv("XDG_CURRENT_DESKTOP"); v != "" {
+		// Could query dbus org.freedesktop.appearance color-scheme,
+		// but that requires cgo or a dbus library. For now, env vars suffice.
+	}
+
+	return ModeLight
 }
 
 // MinTouchTarget is the minimum touch target size (48dp per Material guidelines).

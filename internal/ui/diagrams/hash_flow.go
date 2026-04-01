@@ -1,41 +1,55 @@
 package diagrams
 
 import (
+	"encoding/hex"
 	"image"
 
 	"gioui.org/layout"
-	"gioui.org/op/clip"
-	"gioui.org/op/paint"
 	"gioui.org/unit"
 
+	"github.com/openbitcoinacademy/oba/internal/bitcoin"
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
-// HashFlow draws "Hello" -> [SHA-256] -> hash output.
+// HashFlow draws Input -> [SHA-256] -> Hash with a real computed hash.
 type HashFlow struct{}
 
 func (d *HashFlow) Layout(gtx layout.Context, th *theme.Theme) layout.Dimensions {
-	h := gtx.Dp(unit.Dp(80))
+	h := gtx.Dp(unit.Dp(90))
 	w := gtx.Constraints.Max.X
+	pad := pct(w, 4)
 
-	paint.FillShape(gtx.Ops, th.Color.Surface, clip.Rect{Max: image.Pt(w, h)}.Op())
+	// No background fill: inherits page background.
 
-	bw := gtx.Dp(unit.Dp(90))
+	// Responsive: input 20%, process 22%, output 36% of width, rest is gaps.
+	inputW := pct(w, 20)
+	procW := pct(w, 22)
+	outputW := pct(w, 36)
 	bh := gtx.Dp(unit.Dp(36))
-	aw := gtx.Dp(unit.Dp(30))
-	hashW := gtx.Dp(unit.Dp(140))
 
-	cx := (w - (bw + aw + bw + aw + hashW)) / 2
-	if cx < 0 {
-		cx = 4
+	usable := w - 2*pad
+	gapTotal := usable - inputW - procW - outputW
+	gap := gapTotal / 2
+	if gap < 8 {
+		gap = 8
 	}
+
 	y := (h - bh) / 2
 
-	box(gtx, th, "\"Hello\"", image.Pt(cx, y), bw, bh, th.Color.InfoBg)
-	arrow(gtx, th, image.Pt(cx+bw, y+bh/2), aw)
-	box(gtx, th, "SHA-256", image.Pt(cx+bw+aw, y), bw, bh, th.Color.Primary)
-	arrow(gtx, th, image.Pt(cx+2*bw+aw, y+bh/2), aw)
-	box(gtx, th, "185f8db3...", image.Pt(cx+2*bw+2*aw, y), hashW, bh, th.Color.TipBg)
+	x1 := pad
+	x2 := x1 + inputW + gap
+	x3 := x2 + procW + gap
+
+	// Compute real hash for the example input.
+	input := "Hello"
+	hashBytes := bitcoin.SHA256([]byte(input))
+	hashHex := hex.EncodeToString(hashBytes[:8]) + "..."
+
+	box(gtx, th, "\""+input+"\"", image.Pt(x1, y), inputW, bh, th.Color.InfoBg)
+	arrow(gtx, th, image.Pt(x1+inputW, y+bh/2), image.Pt(x2, y+bh/2))
+	processBox(gtx, th, "SHA-256", image.Pt(x2, y), procW, bh)
+	arrow(gtx, th, image.Pt(x2+procW, y+bh/2), image.Pt(x3, y+bh/2))
+	box(gtx, th, hashHex, image.Pt(x3, y), outputW, bh, th.Color.TipBg)
 
 	return layout.Dimensions{Size: image.Pt(w, h)}
 }

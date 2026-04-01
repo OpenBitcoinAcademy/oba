@@ -2,51 +2,136 @@ package diagrams
 
 import (
 	"image"
+	"image/color"
 
 	"gioui.org/layout"
+	"gioui.org/op"
 	"gioui.org/op/clip"
 	"gioui.org/op/paint"
 	"gioui.org/unit"
+	"gioui.org/widget/material"
 
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
-// CentralizedVsP2P draws Alice -> Bank -> Bob vs Alice -> Network -> Bob.
+// CentralizedVsP2P compares centralized payment (Alice -> Bank -> Bob)
+// with peer-to-peer (Alice and Bob both connect to a shared network).
+// Row 2 shows a mesh topology, not a linear pipeline.
 type CentralizedVsP2P struct{}
 
 func (d *CentralizedVsP2P) Layout(gtx layout.Context, th *theme.Theme) layout.Dimensions {
-	h := gtx.Dp(unit.Dp(160))
+	totalH := gtx.Dp(unit.Dp(300))
 	w := gtx.Constraints.Max.X
+	pad := pct(w, 4)
 
-	paint.FillShape(gtx.Ops, th.Color.Surface, clip.Rect{Max: image.Pt(w, h)}.Op())
+	// No background fill: diagram sits on the page background naturally.
 
-	bw := gtx.Dp(unit.Dp(80))
-	bh := gtx.Dp(unit.Dp(32))
-	aw := gtx.Dp(unit.Dp(40))
-	rowH := h / 2
+	rowH := totalH / 2
 
-	cx := (w - (3*bw + 2*aw)) / 2
-	if cx < 0 {
-		cx = 4
-	}
+	// === Row 1: Centralized ===
+	d.layoutCentralized(gtx, th, w, pad, rowH)
 
-	// Row 1: Centralized.
-	y1 := (rowH - bh) / 2
-	caption(gtx, th, "Centralized", image.Pt(cx, y1-16))
-	box(gtx, th, "Alice", image.Pt(cx, y1), bw, bh, th.Color.InfoBg)
-	arrow(gtx, th, image.Pt(cx+bw, y1+bh/2), aw)
-	box(gtx, th, "Bank", image.Pt(cx+bw+aw, y1), bw, bh, th.Color.WarningBg)
-	arrow(gtx, th, image.Pt(cx+2*bw+aw, y1+bh/2), aw)
-	box(gtx, th, "Bob", image.Pt(cx+2*bw+2*aw, y1), bw, bh, th.Color.InfoBg)
+	// Divider.
+	paint.FillShape(gtx.Ops, th.Color.Divider,
+		clip.Rect{Min: image.Pt(pad, rowH), Max: image.Pt(w-pad, rowH+1)}.Op())
 
-	// Row 2: Peer-to-peer.
-	y2 := rowH + (rowH-bh)/2
-	caption(gtx, th, "Peer-to-Peer", image.Pt(cx, y2-16))
-	box(gtx, th, "Alice", image.Pt(cx, y2), bw, bh, th.Color.InfoBg)
-	arrow(gtx, th, image.Pt(cx+bw, y2+bh/2), aw)
-	box(gtx, th, "Network", image.Pt(cx+bw+aw, y2), bw, bh, th.Color.TipBg)
-	arrow(gtx, th, image.Pt(cx+2*bw+aw, y2+bh/2), aw)
-	box(gtx, th, "Bob", image.Pt(cx+2*bw+2*aw, y2), bw, bh, th.Color.InfoBg)
+	// === Row 2: P2P ===
+	d.layoutP2P(gtx, th, w, pad, rowH, totalH)
 
-	return layout.Dimensions{Size: image.Pt(w, h)}
+	return layout.Dimensions{Size: image.Pt(w, totalH)}
+}
+
+func (d *CentralizedVsP2P) layoutCentralized(gtx layout.Context, th *theme.Theme, w, pad, rowH int) {
+	bw := pct(w, 22)
+	bh := gtx.Dp(unit.Dp(34))
+	usable := w - 2*pad
+	gap := (usable - 3*bw) / 4
+
+	y := rowH/2 - bh/2 + gtx.Dp(unit.Dp(10))
+	x1 := pad + gap
+	x2 := x1 + bw + gap
+	x3 := x2 + bw + gap
+
+	colorCaption(gtx, th, "Centralized", image.Pt(pad, y-gtx.Dp(unit.Dp(20))), th.Color.Warning)
+
+	box(gtx, th, "Alice", image.Pt(x1, y), bw, bh, th.Color.InfoBg)
+	arrow(gtx, th, image.Pt(x1+bw, y+bh/2), image.Pt(x2, y+bh/2))
+	box(gtx, th, "Bank", image.Pt(x2, y), bw, bh, th.Color.WarningBg)
+	arrow(gtx, th, image.Pt(x2+bw, y+bh/2), image.Pt(x3, y+bh/2))
+	box(gtx, th, "Bob", image.Pt(x3, y), bw, bh, th.Color.InfoBg)
+}
+
+func (d *CentralizedVsP2P) layoutP2P(gtx layout.Context, th *theme.Theme, w, pad, rowH, totalH int) {
+	bw := pct(w, 22)
+	bh := gtx.Dp(unit.Dp(34))
+
+	// Center of the P2P row area.
+	centerY := rowH + rowH/2
+	centerX := w / 2
+	captionH := gtx.Dp(unit.Dp(20))
+
+	colorCaption(gtx, th, "Peer-to-Peer", image.Pt(pad, rowH+gtx.Dp(unit.Dp(8))), th.Color.Success)
+
+	// Alice on left, Bob on right, vertically centered in row.
+	aliceX := pad + pct(w, 3)
+	bobX := w - pad - pct(w, 3) - bw
+	boxY := centerY - bh/2 + captionH/2
+
+	box(gtx, th, "Alice", image.Pt(aliceX, boxY), bw, bh, th.Color.InfoBg)
+	box(gtx, th, "Bob", image.Pt(bobX, boxY), bw, bh, th.Color.InfoBg)
+
+	// Box midpoints for connection lines.
+	boxMidY := boxY + bh/2
+	aliceEdge := image.Pt(aliceX+bw, boxMidY)
+	bobEdge := image.Pt(bobX, boxMidY)
+
+	// Network nodes: 4 nodes in a diamond pattern centered between Alice and Bob.
+	nodeColor := th.Color.Success
+	nodeR := 6
+	hSpread := pct(w, 8)
+	vSpread := bh / 2
+
+	n1 := image.Pt(centerX, boxMidY-vSpread-4) // top
+	n2 := image.Pt(centerX-hSpread, boxMidY)   // left
+	n3 := image.Pt(centerX+hSpread, boxMidY)   // right
+	n4 := image.Pt(centerX, boxMidY+vSpread+4) // bottom
+
+	circle(gtx, n1, nodeR, nodeColor)
+	circle(gtx, n2, nodeR, nodeColor)
+	circle(gtx, n3, nodeR, nodeColor)
+	circle(gtx, n4, nodeR, nodeColor)
+
+	// Mesh lines between all nodes.
+	lc := withAlpha(nodeColor, 100)
+	lw := float32(1.5)
+	line(gtx, n1, n2, lw, lc)
+	line(gtx, n1, n3, lw, lc)
+	line(gtx, n2, n4, lw, lc)
+	line(gtx, n3, n4, lw, lc)
+	line(gtx, n2, n3, lw, lc)
+	line(gtx, n1, n4, lw, lc)
+
+	// Lines from Alice to left nodes, Bob to right nodes.
+	line(gtx, aliceEdge, n1, lw, lc)
+	line(gtx, aliceEdge, n2, lw, lc)
+	line(gtx, aliceEdge, n4, lw, lc)
+	line(gtx, bobEdge, n1, lw, lc)
+	line(gtx, bobEdge, n3, lw, lc)
+	line(gtx, bobEdge, n4, lw, lc)
+}
+
+func withAlpha(c color.NRGBA, a uint8) color.NRGBA {
+	c.A = a
+	return c
+}
+
+// drawRowLabel draws a colored label for a diagram row.
+func drawRowLabel(gtx layout.Context, th *theme.Theme, text string, pos image.Point, c color.NRGBA) {
+	m := op.Record(gtx.Ops)
+	lbl := material.Label(th.Material, th.Text.BodySmall, text)
+	lbl.Color = c
+	lbl.Layout(gtx)
+	call := m.Stop()
+	defer op.Offset(pos).Push(gtx.Ops).Pop()
+	call.Add(gtx.Ops)
 }

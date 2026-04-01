@@ -78,6 +78,12 @@ func (s *State) CompleteLesson() {
 	}
 }
 
+// SetThemeMode switches between light and dark mode.
+func (s *State) SetThemeMode(mode theme.Mode) {
+	s.Theme.SetMode(mode)
+	s.Invalidate()
+}
+
 // CompleteExercise marks an exercise as done and saves.
 func (s *State) CompleteExercise(exerciseID string) {
 	s.Progress.MarkExerciseComplete(exerciseID)
