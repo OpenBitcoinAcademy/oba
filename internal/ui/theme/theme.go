@@ -10,6 +10,7 @@ import (
 	"strings"
 
 	"gioui.org/font"
+	"gioui.org/font/gofont"
 	"gioui.org/font/opentype"
 	"gioui.org/text"
 	"gioui.org/unit"
@@ -170,14 +171,15 @@ func NewWithFonts(mode Mode, notoSans, jetBrainsMono []byte) *Theme {
 		}
 	}
 
-	var mat *material.Theme
+	// Start with Gio's built-in Go fonts (includes bold, italic variants),
+	// then prepend our custom fonts so they take priority.
+	collection := gofont.Collection()
 	if len(faces) > 0 {
-		shaper := text.NewShaper(text.WithCollection(faces))
-		mat = material.NewTheme()
-		mat.Shaper = shaper
-	} else {
-		mat = material.NewTheme()
+		collection = append(faces, collection...)
 	}
+
+	mat := material.NewTheme()
+	mat.Shaper = text.NewShaper(text.WithCollection(collection))
 
 	var colors Colors
 	if mode == ModeDark {

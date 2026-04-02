@@ -28,8 +28,8 @@
 2. Write code and tests
 3. Run `make test && make lint`
 4. Commit with conventional commit messages: `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `ci:`
-5. Open a PR, squash-merge to main
+5. Open a PR on [Codeberg](https://codeberg.org/OpenBitcoinAcademy/oba), squash-merge to main
 
 ## Reporting Issues
 
-Use GitHub Issues. Include: steps to reproduce, expected behavior, actual behavior, platform/OS.
+Use [Codeberg Issues](https://codeberg.org/OpenBitcoinAcademy/oba/issues). Include: steps to reproduce, expected behavior, actual behavior, platform/OS.

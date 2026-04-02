@@ -1,14 +1,18 @@
 # Open Bitcoin Academy
 
-Interactive Bitcoin education for everyone. Offline-first, single-binary, translatable from day one.
+Bitcoin education matters more than anything else in Bitcoin. This app teaches the protocol from zero, with no shortcuts.
 
-## What is this?
+## What
 
-An app that teaches Bitcoin from zero. You read short lessons, look at diagrams, answer quizzes, and run real cryptographic operations on your device. No internet required. No account required. Available in multiple languages.
+An offline-first app covering Bitcoin from "What is money?" through Taproot, Miniscript, FROST threshold signatures, Lightning, and the ecosystem. 19 chapters aligned 1:1 with [Mastering Bitcoin 3rd Edition](https://github.com/bitcoinbook/bitcoinbook). Short lessons, diagrams, quizzes, and real cryptographic operations running on your device. No internet required. No account required.
 
-19 chapters covering everything from "What is money?" to Taproot, Miniscript, FROST threshold signatures, Lightning Network, and the broader Bitcoin ecosystem.
+Built with [Go](https://go.dev) and [Gio](https://gioui.org). Available in English, Spanish, Portuguese, French, and Swahili.
 
-Built with [Go](https://go.dev) and [Gio](https://gioui.org). Targets Linux, Windows, and Android.
+This is the initial release. We build from here.
+
+## Source
+
+[Codeberg](https://codeberg.org/OpenBitcoinAcademy/oba) (primary) | [GitHub](https://github.com/OpenBitcoinAcademy/oba) (mirror)
 
 ## Build
 
@@ -22,9 +26,22 @@ go build -o oba ./cmd/oba && ./oba
 go test ./...
 ```
 
-## Languages
+## Roadmap
 
-English, Spanish, Portuguese (BR), French, Swahili.
+- Better UX with game-like interactivity
+- Audio lessons
+- Lexicon mode (look up what you need) alongside the structured course
+- More languages
+- Run on any device you own (Android, iOS, Windows, macOS, Linux)
+- Accessibility
+
+## Contributing
+
+Translations and code contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+**Translate**: copy `locales/en/`, translate the files, run `go run ./tools/translate-check`. You never touch Go code or TOML structure.
+
+**Code**: branch from `main`, write tests, use conventional commits. Open a PR on [Codeberg](https://codeberg.org/OpenBitcoinAcademy/oba).
 
 ## License
 
@@ -38,6 +55,10 @@ Lesson content is original writing informed by [Mastering Bitcoin: Programming t
 
 - [NotoSans](https://fonts.google.com/noto/specimen/Noto+Sans) by Google (SIL Open Font License)
 - [JetBrains Mono](https://www.jetbrains.com/lp/mono/) by JetBrains (SIL Open Font License)
+
+## Contact
+
+[npub1qfcefq43er545mwvg69093almdkqs4wmcxaxjg9ad0rzq834qqfq9rhflh](https://njump.me/npub1qfcefq43er545mwvg69093almdkqs4wmcxaxjg9ad0rzq834qqfq9rhflh) on Nostr
 
 ## Dependencies
 

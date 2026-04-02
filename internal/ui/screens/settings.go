@@ -170,11 +170,9 @@ func (s *Settings) renderLocaleButtons(gtx layout.Context) layout.Dimensions {
 	locales := i18n.Available()
 	sort.Strings(locales)
 
-	var children []layout.FlexChild
-	for _, loc := range locales {
-		loc := loc
+	localeBtn := func(loc string) layout.FlexChild {
 		btn := s.localeBtns[loc]
-		children = append(children, layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+		return layout.Rigid(func(gtx layout.Context) layout.Dimensions {
 			b := material.Button(th.Material, btn, localeDisplayName(loc))
 			if loc == current {
 				b.Background = th.Color.Primary
@@ -185,10 +183,27 @@ func (s *Settings) renderLocaleButtons(gtx layout.Context) layout.Dimensions {
 			}
 			return layout.Inset{Right: th.Space.Small, Bottom: th.Space.Small}.Layout(gtx,
 				b.Layout)
+		})
+	}
+
+	// Split into rows of 3 to fit narrow screens.
+	var rows []layout.FlexChild
+	for i := 0; i < len(locales); i += 3 {
+		end := i + 3
+		if end > len(locales) {
+			end = len(locales)
+		}
+		row := locales[i:end]
+		rows = append(rows, layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+			var items []layout.FlexChild
+			for _, loc := range row {
+				items = append(items, localeBtn(loc))
+			}
+			return layout.Flex{Axis: layout.Horizontal}.Layout(gtx, items...)
 		}))
 	}
 
-	return layout.Flex{Axis: layout.Horizontal}.Layout(gtx, children...)
+	return layout.Flex{Axis: layout.Vertical}.Layout(gtx, rows...)
 }
 
 func (s *Settings) renderThemeButtons(gtx layout.Context) layout.Dimensions {
