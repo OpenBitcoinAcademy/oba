@@ -1,0 +1,1 @@
+The base layer's conservatism is not a weakness. It is the property that makes everything else possible. Layers 2 and 3 can experiment freely because they know Layer 1 will not change under them. A stable foundation enables unstable experimentation above it.

@@ -1,0 +1,99 @@
+[chapter]
+id = "ch18"
+title_key = "chapters.ch18_title"
+description_key = "chapters.ch18_description"
+
+# Lesson 1: Payment Channels
+[[lessons]]
+id = "ch18.lesson01"
+title_key = "lessons.ch18_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "lightning_channel"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 2: Hash Time-Locked Contracts
+[[lessons]]
+id = "ch18.lesson02"
+title_key = "lessons.ch18_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex13_htlc_tracer"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 3: Routing and Privacy
+[[lessons]]
+id = "ch18.lesson03"
+title_key = "lessons.ch18_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0]
+
+# Lesson 4: Channel Lifecycle
+[[lessons]]
+id = "ch18.lesson04"
+title_key = "lessons.ch18_lesson04_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]

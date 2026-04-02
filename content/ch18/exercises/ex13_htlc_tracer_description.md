@@ -1,0 +1,1 @@
+Trace a 3-hop Lightning payment step by step. Alice pays Carol through Bob. Each step shows the HTLC offer, amount, and timelock. After Carol reveals the preimage, watch it propagate back through the route.

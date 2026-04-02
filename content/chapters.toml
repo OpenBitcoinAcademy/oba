@@ -53,3 +53,23 @@ toml_file = "ch13/ch13.toml"
 [[chapters]]
 id = "ch14"
 toml_file = "ch14/ch14.toml"
+
+[[chapters]]
+id = "ch15"
+toml_file = "ch15/ch15.toml"
+
+[[chapters]]
+id = "ch16"
+toml_file = "ch16/ch16.toml"
+
+[[chapters]]
+id = "ch17"
+toml_file = "ch17/ch17.toml"
+
+[[chapters]]
+id = "ch18"
+toml_file = "ch18/ch18.toml"
+
+[[chapters]]
+id = "ch19"
+toml_file = "ch19/ch19.toml"

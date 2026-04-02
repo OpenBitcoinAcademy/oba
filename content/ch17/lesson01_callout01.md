@@ -1,0 +1,1 @@
+The on-chain footprint difference is dramatic. A 3-of-5 OP_CHECKMULTISIG spend uses roughly 367 bytes of witness data. A FROST spend of the same threshold uses 64 bytes: one Schnorr signature, indistinguishable from a single-key spend. The savings grow as the threshold and participant count increase.

@@ -1,0 +1,1 @@
+Bitcoin no necesita computar. Necesita verificar que alguien computo correctamente. BitVM hace esta distincion operativa: toda la computacion ocurre fuera de la cadena, solo las pruebas de fraude tocan la blockchain. La capa base sigue siendo un motor de verificacion, no un motor de ejecucion. El ecosistema evoluciona mientras el protocolo se mantiene conservador.

@@ -1,0 +1,1 @@
+Ecash tokens are like digital banknotes. The serial number is blinded at issuance, so the bank (mint) that printed the note cannot track who spends it. David Chaum invented this concept in 1983. Fedimint and Cashu bring it to Bitcoin, providing cash-like privacy for digital payments.

@@ -1,0 +1,3 @@
+[exercise]
+id = "ex13_htlc_tracer"
+type = "htlc_tracer"

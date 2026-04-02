@@ -44,6 +44,12 @@ title_key = "lessons.ch09_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex11_fee_calc"
+
+  [[lessons.sections]]
   type = "callout"
   style = "info"
 

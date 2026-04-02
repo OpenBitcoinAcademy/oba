@@ -1,0 +1,1 @@
+Bitcoin Core soporta descriptores de salida desde la version 0.17 (2018) y descriptores Miniscript desde la version 24.0 (2022). Cuando ejecutas `listdescriptors` en un monedero moderno de Bitcoin Core, devuelve el conjunto completo de descriptores que usa el monedero. Puedes exportar estos descriptores e importarlos en otro monedero para recrear el mismo conjunto de direcciones.

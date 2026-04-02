@@ -1,0 +1,93 @@
+[chapter]
+id = "ch16"
+title_key = "chapters.ch16_title"
+description_key = "chapters.ch16_description"
+
+# Lesson 1: The Signing Problem
+[[lessons]]
+id = "ch16.lesson01"
+title_key = "lessons.ch16_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "psbt_lifecycle"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 2: The PSBT Lifecycle
+[[lessons]]
+id = "ch16.lesson02"
+title_key = "lessons.ch16_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 3: Fields and Structure
+[[lessons]]
+id = "ch16.lesson03"
+title_key = "lessons.ch16_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0]
+
+# Lesson 4: Hardware Wallet Workflow
+[[lessons]]
+id = "ch16.lesson04"
+title_key = "lessons.ch16_lesson04_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]

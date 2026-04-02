@@ -1,0 +1,1 @@
+The coordinator sees nonce commitments and signature shares but never secret key shares. Even a malicious coordinator cannot forge a signature: it would need to solve the discrete logarithm problem. The coordinator's role is message routing, nothing more. Any participant can serve as the coordinator, or the role can rotate between rounds.

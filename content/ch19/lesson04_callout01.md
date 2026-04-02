@@ -1,0 +1,1 @@
+Bitcoin does not need to compute. It needs to verify that someone computed correctly. BitVM makes this distinction operational: all computation happens off-chain, only fraud proofs touch the blockchain. The base layer remains a verification engine, not an execution engine. The ecosystem evolves while the protocol stays conservative.

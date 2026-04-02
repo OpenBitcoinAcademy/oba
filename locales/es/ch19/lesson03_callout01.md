@@ -1,0 +1,1 @@
+Los tokens de ecash son como billetes digitales. El numero de serie se ciega en la emision, de modo que el banco (casa de moneda) que imprimio el billete no puede rastrear quien lo gasta. David Chaum invento este concepto en 1983. Fedimint y Cashu lo traen a Bitcoin, proporcionando privacidad similar al efectivo para pagos digitales.

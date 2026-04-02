@@ -1,0 +1,1 @@
+Una atalaya es un servicio que monitorea la blockchain en nombre de un nodo Lightning. Si el nodo se desconecta y su contraparte transmite un compromiso revocado, la atalaya lo detecta y envia la transaccion de penalizacion. Las atalayas agregan una capa extra de seguridad para nodos que no pueden garantizar disponibilidad las 24 horas.

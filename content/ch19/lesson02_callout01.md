@@ -1,0 +1,1 @@
+RGB inherits Bitcoin's double-spend protection without putting any contract data on-chain. The blockchain does not grow, but the security guarantee is the same. A sealed UTXO cannot be spent twice, so an RGB token cannot be transferred twice. Bitcoin's consensus does the hard work. RGB handles the application logic.

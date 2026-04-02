@@ -1,0 +1,1 @@
+Una factura Lightning codifica H(R), el monto del pago, el ID del nodo receptor e indicaciones de enrutamiento. El remitente usa esta informacion para construir la ruta de pago. La factura no contiene R en si. Solo el receptor conoce R, y revelarlo es la prueba criptografica de que el pago fue recibido.

@@ -1,0 +1,1 @@
+Liana supports multiple timelocked recovery paths with increasing signer sets. A typical configuration: the owner's key spends immediately; after 6 months, a 2-of-3 with family members activates; after 12 months, a 3-of-5 including a lawyer and a notary activates. Each tier is a separate Miniscript branch compiled into the same descriptor.

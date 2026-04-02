@@ -192,6 +192,16 @@ func (l *Lesson) createExercise(id string) ExerciseWidget {
 		return components.NewBlockInspector(th, cfg)
 	case "mining_simulator", "ex08_mining_simulator":
 		return components.NewMiningSimulator(th, cfg)
+	case "hd_path_explorer", "ex09_hd_path":
+		return components.NewHDPathExplorer(th, cfg)
+	case "sig_verifier", "ex10_sig_verify":
+		return components.NewSigVerifier(th, cfg)
+	case "fee_calculator", "ex11_fee_calc":
+		return components.NewFeeCalculator(th, cfg)
+	case "mast_builder", "ex12_mast_builder":
+		return components.NewMASTBuilder(th, cfg)
+	case "htlc_tracer", "ex13_htlc_tracer":
+		return components.NewHTLCTracer(th, cfg)
 	default:
 		return nil
 	}

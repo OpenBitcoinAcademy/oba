@@ -1,0 +1,1 @@
+Build a 2-leaf MAST tree from two scripts. Edit each script, then build the tree to see leaf hashes and the computed Merkle root. The leaves are sorted before hashing, matching Taproot's TapBranch construction.

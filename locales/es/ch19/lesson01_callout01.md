@@ -1,0 +1,1 @@
+El conservadurismo de la capa base no es una debilidad. Es la propiedad que hace posible todo lo demas. Las Capas 2 y 3 pueden experimentar libremente porque saben que la Capa 1 no cambiara debajo de ellas. Una base estable permite experimentacion inestable por encima.

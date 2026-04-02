@@ -1,0 +1,1 @@
+La transaccion de financiamiento se transmite solo despues de que ambas partes hayan firmado la primera transaccion de compromiso. Esto asegura que ninguna parte pueda retener los fondos de la otra como rehen. Si algo sale mal antes de que se firme el primer compromiso, la transaccion de financiamiento nunca se transmite y ningun fondo esta en riesgo.

@@ -1,0 +1,93 @@
+[chapter]
+id = "ch15"
+title_key = "chapters.ch15_title"
+description_key = "chapters.ch15_description"
+
+# Lesson 1: The Problem with Raw Script
+[[lessons]]
+id = "ch15.lesson01"
+title_key = "lessons.ch15_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "miniscript_pipeline"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 2: Policy to Miniscript to Script
+[[lessons]]
+id = "ch15.lesson02"
+title_key = "lessons.ch15_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 3: Output Descriptors
+[[lessons]]
+id = "ch15.lesson03"
+title_key = "lessons.ch15_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0]
+
+# Lesson 4: Real-World: Timelocked Recovery
+[[lessons]]
+id = "ch15.lesson04"
+title_key = "lessons.ch15_lesson04_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]

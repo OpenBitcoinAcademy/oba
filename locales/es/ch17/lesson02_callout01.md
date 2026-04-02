@@ -1,0 +1,1 @@
+El coordinador ve compromisos de nonce y porciones de firma pero nunca porciones de clave secreta. Ni siquiera un coordinador malicioso puede falsificar una firma: necesitaria resolver el problema del logaritmo discreto. El rol del coordinador es enrutar mensajes, nada mas. Cualquier participante puede servir como coordinador, o el rol puede rotarse entre rondas.

@@ -1,0 +1,6 @@
+[exercise]
+id = "ex10_sig_verify"
+type = "sig_verifier"
+
+[exercise.config]
+default_message = "Hello, Bitcoin"

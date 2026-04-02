@@ -1,0 +1,1 @@
+The funding transaction is broadcast only after both parties have signed the first commitment transaction. Neither party can hold the other's funds hostage. If something goes wrong before the first commitment is signed, the funding transaction is never broadcast and no funds are at risk.

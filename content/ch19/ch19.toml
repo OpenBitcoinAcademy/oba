@@ -1,0 +1,90 @@
+[chapter]
+id = "ch19"
+title_key = "chapters.ch19_title"
+description_key = "chapters.ch19_description"
+
+# Lesson 1: Layers of Bitcoin
+[[lessons]]
+id = "ch19.lesson01"
+title_key = "lessons.ch19_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "layer_stack"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 2: Client-Side Validated Contracts (RGB)
+[[lessons]]
+id = "ch19.lesson02"
+title_key = "lessons.ch19_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 3: Ecash and Federated Custody
+[[lessons]]
+id = "ch19.lesson03"
+title_key = "lessons.ch19_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0]
+
+# Lesson 4: Emerging Protocols
+[[lessons]]
+id = "ch19.lesson04"
+title_key = "lessons.ch19_lesson04_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]

@@ -1,0 +1,1 @@
+La diferencia en huella en cadena es dramatica. Un gasto OP_CHECKMULTISIG 3-de-5 usa aproximadamente 367 bytes de datos de testigo. Un gasto FROST del mismo umbral usa 64 bytes: una firma Schnorr, indistinguible de un gasto con una sola clave. El ahorro crece a medida que el umbral y la cantidad de participantes aumentan.

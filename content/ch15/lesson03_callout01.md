@@ -1,0 +1,1 @@
+Bitcoin Core has supported output descriptors since version 0.17 (2018) and Miniscript descriptors since version 24.0 (2022). When you call `listdescriptors` on a modern Bitcoin Core wallet, it returns the full set of descriptors the wallet uses. You can export these descriptors and import them into another wallet to recreate the same set of addresses.

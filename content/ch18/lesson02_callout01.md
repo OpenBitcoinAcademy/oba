@@ -1,0 +1,1 @@
+A Lightning invoice encodes H(R), the payment amount, the recipient's node ID, and routing hints. The sender uses this information to construct the payment path. The invoice does not contain R itself. Only the recipient knows R, and revealing it is the cryptographic proof that the payment was received.

@@ -49,6 +49,16 @@ var Registry = map[string]DiagramWidget{
 	"taproot_key_path": &TaprootKeyPath{},
 	"taproot_mast":     &TaprootMAST{},
 	"security_layers":  &SecurityLayers{},
+	// Ch15 Miniscript.
+	"miniscript_pipeline": &MiniscriptPipeline{},
+	// Ch16 PSBTs.
+	"psbt_lifecycle": &PSBTLifecycle{},
+	// Ch17 Threshold Signatures.
+	"frost_signing": &FrostSigning{},
+	// Ch18 Lightning.
+	"lightning_channel": &LightningChannel{},
+	// Ch19 Ecosystem.
+	"layer_stack": &LayerStack{},
 }
 
 // Validate checks that a diagram ID exists in the registry.
