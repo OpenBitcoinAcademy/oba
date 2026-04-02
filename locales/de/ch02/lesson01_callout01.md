@@ -1,0 +1,1 @@
+Du kannst echte Bitcoin-Transactions mit Blockchain-Explorern wie mempool.space oder blockstream.info erkunden. Gib eine Transaction-ID, Address oder Blocknummer ein und sieh die tatsächlichen Daten, die das Netzwerk aufgezeichnet hat. Die App ist offline, aber die Blockchain ist öffentlich und für jeden mit Internetverbindung durchsuchbar.

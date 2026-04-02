@@ -1,0 +1,1 @@
+Gib einen beliebigen Text ein und sieh den SHA-256-Hash in Echtzeit aktualisiert. Ändere ein einzelnes Zeichen und beobachte, wie sich der gesamte Hash ändert. Wechsle zwischen Hex-, Binär- und Base64-Darstellung, um den gleichen Hash in verschiedenen Formaten zu sehen.

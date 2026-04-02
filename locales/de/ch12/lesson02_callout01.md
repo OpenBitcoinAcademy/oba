@@ -1,0 +1,1 @@
+Bitcoins Ausgabezeitplan wurde beim Start festgelegt und nie geändert. Jedes Halving senkt die Rate neuen Angebots. Im Gegensatz dazu haben Fiatwährungen keine feste Ausgabegrenze, und Zentralbanken können die Geldmenge jederzeit erhöhen. Das Halving macht Bitcoins Geldpolitik für jeden überprüfbar, der eine Node betreibt.

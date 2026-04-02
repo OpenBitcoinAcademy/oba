@@ -1,0 +1,1 @@
+Untersuche den Bitcoin-Genesis-Block-Header. Sieh alle sechs Felder: Version, Previous Block Hash, Merkle Root, Timestamp, Target Bits und Nonce. Der Block-Hash wird aus dem Header mit doppeltem SHA-256 berechnet.

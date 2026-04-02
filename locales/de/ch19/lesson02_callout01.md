@@ -1,0 +1,1 @@
+RGB erbt Bitcoins Double-Spend-Schutz, ohne Vertragsdaten on-chain zu legen. Die Blockchain wächst nicht, aber die Sicherheitsgarantie bleibt gleich. Ein versiegelter UTXO kann nicht zweimal ausgegeben werden, also kann ein RGB-Token nicht zweimal übertragen werden. Bitcoins Konsens erledigt die schwere Arbeit. RGB kümmert sich um die Anwendungslogik.

@@ -1,0 +1,1 @@
+Der Seed ist der einzelne Schwachpunkt. Wer deinen Seed in die Hände bekommt, kann jeden Private Key in deinem Wallet ableiten und alle deine Bitcoin ausgeben. Schütze den Seed mit derselben Sorgfalt, mit der du den Gesamtwert schützen würdest, den er kontrolliert. Bewahre ihn offline auf. Gib ihn nie auf einer Website ein. Speichere ihn nie in einem Cloud-Dienst.

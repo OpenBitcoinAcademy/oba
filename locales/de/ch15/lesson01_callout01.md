@@ -1,0 +1,1 @@
+Andrew Poelstra, Pieter Wuille und Sanket Kanjalkar entwickelten Miniscript ab 2019. Es entstand aus praktischer Frustration: Blockstream musste komplexe Ausgabepolicies für sein Custody-Produkt Liquid komponieren und stellte fest, dass handgeschriebenes Script bei wachsendem Umfang zu fehleranfällig zum Auditieren war. BIP 379 wurde 2023 formell vorgeschlagen.

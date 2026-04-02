@@ -1,0 +1,1 @@
+Die Fee ist kein Prozentsatz des gesendeten Betrags. Eine Transaction über 0,001 BTC und eine Transaction über 1.000 BTC können dieselbe Fee haben, wenn sie dasselbe Gewicht haben. Fees spiegeln die Kosten für Block-Speicherplatz wider, nicht den übertragenen Wert.

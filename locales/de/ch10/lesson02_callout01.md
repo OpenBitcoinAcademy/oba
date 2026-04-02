@@ -1,0 +1,1 @@
+Die `getheaders`-Nachricht ersetzte den älteren `getblocks`-Ansatz, der vor der Headers-First-Sync-Methode verwendet wurde. Headers-First-Sync lässt die Node die Proof-of-Work-Chain verifizieren, bevor sie vollständige Blocks herunterlädt. Das verhindert, dass ein Angreifer die Bandbreite der Node verschwendet, indem er Blocks einer schwächeren Chain sendet.

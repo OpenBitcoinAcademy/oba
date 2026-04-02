@@ -1,0 +1,1 @@
+Die Funding Transaction wird erst gesendet, nachdem beide Parteien die erste Commitment Transaction signiert haben. Keine Partei kann die Mittel der anderen als Geisel nehmen. Wenn vor dem Signieren der ersten Commitment Transaction etwas schiefgeht, wird die Funding Transaction nie gesendet und keine Mittel sind gefährdet.

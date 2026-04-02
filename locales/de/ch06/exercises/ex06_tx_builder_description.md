@@ -1,0 +1,1 @@
+Baue eine Bitcoin-Transaction von Grund auf, Schritt für Schritt. Erzeuge ein Key-Paar, wähle einen UTXO zum Ausgeben, lege einen Empfänger fest, berechne die Gebühr und sieh die fertige serialisierte Transaction mit ihrer ID.

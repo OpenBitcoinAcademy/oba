@@ -1,0 +1,1 @@
+Wenn du deine Keys kontrollierst, kontrollierst du deine Bitcoin. Wenn jemand anderes deine Keys hält (zum Beispiel eine Custodial-Börse), kontrolliert er deine Bitcoin. Du vertraust darauf, dass er ehrlich handelt und solvent bleibt. Der Satz "Not your keys, not your coins" fasst diesen Unterschied zusammen.

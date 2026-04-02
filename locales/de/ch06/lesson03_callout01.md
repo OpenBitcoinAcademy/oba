@@ -1,0 +1,1 @@
+Der Segwit-Marker/Flag-Trick ist rückwärtskompatibel. Legacy-Parser lesen den Marker (0x00) als "null Inputs", was ungültig ist, und lehnen die Daten ab. Segwit-fähige Parser erkennen die Null als Signal für das erweiterte Format und lesen Flag, Inputs, Outputs, Witness und Locktime weiter. Ein Byte unterscheidet die beiden Formate, ohne ältere Software zu brechen.

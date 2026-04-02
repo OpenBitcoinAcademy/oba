@@ -1,0 +1,1 @@
+Sich allein auf das Gedächtnis für eine Seed Phrase zu verlassen, ist gefährlich. Wenn du die Phrase vergisst und die Wallet-Datenbank verlierst, sind die Bitcoin für immer weg. Wenn du stirbst, ohne die Seed Phrase für Erben zugänglich zu machen, können sie die Mittel nicht erben. Schreibe sie auf. Bewahre sie physisch auf. Teste die Wiederherstellung.

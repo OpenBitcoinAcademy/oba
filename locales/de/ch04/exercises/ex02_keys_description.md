@@ -1,0 +1,1 @@
+Drücke "Generieren", um einen zufälligen Bitcoin Private Key zu erzeugen. Sieh den zugehörigen Public Key, in Echtzeit durch elliptische Kurvenmultiplikation abgeleitet. Beide Keys werden in Hexadezimal mit ihren Byte-Angaben angezeigt.

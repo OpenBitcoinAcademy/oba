@@ -1,0 +1,1 @@
+Bitcoin muss nicht berechnen. Es muss verifizieren, dass jemand korrekt berechnet hat. BitVM macht diese Unterscheidung operativ: Alle Berechnungen geschehen off-chain, nur Fraud Proofs berühren die Blockchain. Die Basisschicht bleibt eine Verifikationsmaschine, keine Ausführungsmaschine. Das Ökosystem entwickelt sich weiter, während das Protokoll konservativ bleibt.

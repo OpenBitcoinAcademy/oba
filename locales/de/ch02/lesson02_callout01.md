@@ -1,0 +1,1 @@
+Die Gebühr, die Alice zahlt, geht nicht an Bob. Sie geht an den Miner, der die Transaction in einen Block aufnimmt. Gebühren sind ein Anreiz für Miner, Transactions zu verarbeiten. Die Gebühr ist kein Prozentsatz des gesendeten Betrags. Sie hängt vom Gewicht der Transaction in virtuellen Bytes ab, unabhängig vom übertragenen Wert.

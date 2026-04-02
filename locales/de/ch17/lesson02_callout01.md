@@ -1,0 +1,1 @@
+Der Coordinator sieht Nonce-Commitments und Signature Shares, aber nie Secret Key Shares. Selbst ein bösartiger Coordinator kann keine Signature fälschen: Er müsste das Diskrete-Logarithmus-Problem lösen. Die Aufgabe des Coordinators ist das Weiterleiten von Nachrichten, nicht mehr. Jeder Teilnehmer kann als Coordinator fungieren, oder die Rolle kann zwischen Runden rotieren.

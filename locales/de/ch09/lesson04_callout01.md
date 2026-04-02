@@ -1,0 +1,1 @@
+Transaction Pinning ist ein reales Problem für Protokolle, die auf Bitcoin aufbauen, wie das Lightning Network. Anchor Outputs (definiert in den BOLT-Spezifikationen) und Package Relay (wird in Bitcoin Core ausgerollt) wirken zusammen gegen diesen Angriff. Das Design des Fee-Systems entwickelt sich weiter, wenn neue Anwendungsfälle entstehen.

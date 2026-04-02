@@ -1,0 +1,1 @@
+Jeder Transaction-Input wird unabhängig signiert. Eine Transaction mit drei Inputs erfordert drei separate Signatures, potenziell von drei verschiedenen Private Keys. Diese Unabhängigkeit ermöglicht kollaborative Transaction-Erstellung: Mehrere Parteien steuern Inputs bei, ohne Keys zu teilen.

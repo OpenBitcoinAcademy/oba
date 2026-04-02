@@ -1,0 +1,1 @@
+Probiere Mining aus, indem du eine Nonce findest, die einen Hash mit führenden Nullen erzeugt. Drücke Mine, um jede Nonce auszuprobieren. Sieh, wie viele Versuche nötig sind, um einen gültigen Hash unter dem Target zu finden.

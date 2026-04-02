@@ -1,0 +1,1 @@
+2013 änderte ein Datenbankwechsel in Bitcoin Core (von BerkeleyDB zu LevelDB) versehentlich eine Konsensregel bezüglich der maximalen Anzahl von Inputs in einem Block. Das Ergebnis war eine unbeabsichtigte Chain-Spaltung. Die Behebung erforderte einen koordinierten Rollback. Konsensfehler sind keine theoretischen Risiken. Sie sind aufgetreten und haben reale Störungen verursacht.

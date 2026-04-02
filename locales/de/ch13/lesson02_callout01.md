@@ -1,0 +1,1 @@
+Physische Angriffe auf mutmaßliche Bitcoin-Besitzer sind dokumentiert und nehmen zu. Gib nicht öffentlich bekannt, wie viel Bitcoin du besitzt. Verwende Passphrasen auf Seed Phrases, um Wallets mit glaubhafter Abstreitbarkeit zu erstellen. Bedenke, dass die Bedrohung für dein Bitcoin physisch sein kann, nicht digital.

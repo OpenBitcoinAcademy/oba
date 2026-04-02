@@ -1,0 +1,1 @@
+Das Bitcoin-Core-Repository hat seit 2009 Beiträge von über 900 Entwicklern erhalten. Das Projekt hat keinen CEO, keinen Hauptsitz und keine formelle Organisation. Entscheidungen werden durch technische Diskussion und groben Konsens unter den Mitwirkenden getroffen. Dieses dezentrale Entwicklungsmodell spiegelt das dezentrale Netzwerk wider, das es hervorbringt.

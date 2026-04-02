@@ -1,0 +1,1 @@
+Der Segwit-Witness-Rabatt wurde entworfen, um die Kosten für Signature-Daten im Verhältnis zu UTXO-erzeugenden Daten zu senken. Das Erzeugen von UTXOs hat langfristige Kosten (jede Full Node speichert sie), daher macht der Rabatt das Verifizieren von Signatures (temporäre Daten) günstiger als das Erzeugen von Outputs (persistente Daten).

@@ -1,0 +1,1 @@
+Der Konservatismus der Basisschicht ist keine Schwäche. Er ist die Eigenschaft, die alles andere ermöglicht. Layer 2 und 3 können frei experimentieren, weil sie wissen, dass Layer 1 sich nicht unter ihnen verändert. Ein stabiles Fundament ermöglicht instabiles Experimentieren darüber.

@@ -1,0 +1,1 @@
+Ecash-Tokens sind wie digitale Banknoten. Die Seriennummer wird bei der Ausgabe geblendet, sodass die Bank (Mint), die die Note gedruckt hat, nicht verfolgen kann, wer sie ausgibt. David Chaum erfand dieses Konzept 1983. Fedimint und Cashu bringen es zu Bitcoin und bieten bargeldähnliche Privatsphäre für digitale Zahlungen.

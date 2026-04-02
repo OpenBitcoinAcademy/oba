@@ -1,0 +1,1 @@
+Der Genesis Block (Block 0) ist in jeder Bitcoin-Node fest eingebaut. Er kann nicht geändert werden. Seine Coinbase-Transaction enthält den Text: "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks." Das ist zugleich Zeitstempel und Kommentar zum Finanzsystem, das Bitcoin adressieren sollte.

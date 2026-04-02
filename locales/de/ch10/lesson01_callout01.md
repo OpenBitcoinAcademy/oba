@@ -1,0 +1,1 @@
+Eine Full Node auf bescheidener Hardware zu betreiben ist möglich. Eine Pruned Node braucht etwa 10 GB Speicherplatz. Ein Raspberry Pi mit einer microSD-Karte kann die gesamte Blockchain validieren. Die Möglichkeit, eine Node zu Hause auf günstiger Hardware zu betreiben, ist eine Eigenschaft, die Bitcoin-Entwickler sorgfältig schützen.

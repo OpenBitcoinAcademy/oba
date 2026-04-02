@@ -1,0 +1,1 @@
+Der Konsens von Bitcoin ist emergent, nicht gesteuert. Kein Anführer koordiniert das Netzwerk. Tausende Nodes wenden unabhängig dieselben Regeln auf dieselben Daten an und kommen zum selben Ergebnis. Diese emergente Übereinstimmung macht Bitcoin dezentral: Das Entfernen einer einzelnen Node, eines Miners oder eines Entwicklers ändert nichts am Ergebnis.

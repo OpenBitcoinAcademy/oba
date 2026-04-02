@@ -6,7 +6,7 @@ Bitcoin education matters more than anything else in Bitcoin. This app teaches t
 
 An offline-first app covering Bitcoin from "What is money?" through Taproot, Miniscript, FROST threshold signatures, Lightning, and the ecosystem. 19 chapters aligned 1:1 with [Mastering Bitcoin 3rd Edition](https://github.com/bitcoinbook/bitcoinbook). Short lessons, diagrams, quizzes, and real cryptographic operations running on your device. No internet required. No account required.
 
-Built with [Go](https://go.dev) and [Gio](https://gioui.org). Available in English, Spanish, Portuguese, French, and Swahili.
+Built with [Go](https://go.dev) and [Gio](https://gioui.org). Available in English, German, Spanish, Portuguese, French, and Swahili.
 
 This is the initial release. We build from here.
 

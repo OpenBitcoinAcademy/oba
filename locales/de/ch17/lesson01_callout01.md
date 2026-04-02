@@ -1,0 +1,1 @@
+Der Unterschied im On-Chain-Footprint ist dramatisch. Ein 3-of-5-OP_CHECKMULTISIG-Spend verbraucht ungefähr 367 Bytes Witness-Daten. Ein FROST-Spend mit demselben Threshold verbraucht 64 Bytes: eine Schnorr-Signature, nicht von einem Single-Key-Spend zu unterscheiden. Die Einsparung wächst mit steigendem Threshold und steigender Teilnehmerzahl.

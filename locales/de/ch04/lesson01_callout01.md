@@ -1,0 +1,1 @@
+SHA-256 erzeugt 256 Bit Output. Das sind $2^{256}$ mögliche Werte, eine Zahl so groß, dass sie die geschätzte Anzahl der Atome im beobachtbaren Universum übersteigt. Zwei verschiedene Inputs zu finden, die den gleichen Hash erzeugen, ist für alle praktischen Zwecke unmöglich.

@@ -1,0 +1,1 @@
+RBF und CPFP lösen dasselbe Problem (feststeckende Transactions) von verschiedenen Seiten. RBF lässt den Absender es beheben. CPFP lässt den Empfänger es beheben. Beide erhöhen die effektive Fee-Rate, um die Transaction für Miner attraktiv zu machen.

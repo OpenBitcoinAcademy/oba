@@ -1,0 +1,1 @@
+Vor Compact Blocks nutzten manche Mining Pools proprietäre Relay-Netzwerke, um Blocks schneller zu senden. Diese privaten Netzwerke zentralisierten die Block-Verbreitung. BIP 152 machte das öffentliche Bitcoin-Netzwerk schnell genug, sodass proprietäre Relay-Netzwerke weniger nötig wurden. Ein offenes, effizientes Protokoll hilft, Mining wettbewerbsfähig zu halten.

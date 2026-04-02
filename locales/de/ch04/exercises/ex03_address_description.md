@@ -1,0 +1,1 @@
+Geh Schritt für Schritt durch die Bitcoin-Address-Ableitung. Ausgehend von einem frisch erzeugten Key-Paar durchlaufe SHA-256-Hashing, RIPEMD-160-Hashing, Versionsbyte-Hinzufügen, Prüfsummenberechnung und Base58Check-Kodierung. Das Endergebnis ist eine gültige Testnet-Address.

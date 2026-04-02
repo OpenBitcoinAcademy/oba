@@ -1,0 +1,1 @@
+Gib die Anzahl der Inputs und Outputs ein, um das Transaction-Gewicht und die Fees zu schätzen. Jeder Input fügt 68 vB hinzu, jeder Output 31 vB, plus 10 vB Overhead. Sieh die Fee bei 1, 5 und 20 sat/vB.

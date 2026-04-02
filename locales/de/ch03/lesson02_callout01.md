@@ -1,0 +1,1 @@
+"Don't trust, verify" ist kein Slogan. Es ist ein Designprinzip. Jede Regel im Bitcoin-Protokoll kann durch Software auf deiner eigenen Hardware geprüft werden. Eine Full Node ist das Werkzeug, das dies ermöglicht. Ohne sie vertraust du dem Computer eines anderen, dir die Wahrheit über dein Geld zu sagen.

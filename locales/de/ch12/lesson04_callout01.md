@@ -1,0 +1,1 @@
+Keine Menge an Hash-Leistung erlaubt es einem Angreifer, Bitcoin aus dem Nichts zu erzeugen, fremde Coins auszugeben oder die Regeln ohne Konsens zu ändern. Ein 51%-Angreifer kann seine eigenen kürzlichen Transactions rückgängig machen, aber die Kosten der Attacke übersteigen oft den möglichen Gewinn. Die ökonomischen Anreize begünstigen ehrliches Mining.

@@ -1,0 +1,1 @@
+Segwit führte einen zweiten Merkle Tree für Witness-Daten ein. Die Witness Merkle Root wird in einem Coinbase-Output festgelegt, nicht im Block-Header. Das bewahrt die Abwärtskompatibilität: Legacy-Nodes sehen dasselbe Block-Header-Format. Segwit-Nodes verifizieren sowohl den Transaction Merkle Tree als auch den Witness Merkle Tree.

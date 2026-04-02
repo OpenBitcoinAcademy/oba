@@ -1,0 +1,1 @@
+Die Daten, die deine Node speichert, sind verbindlich, nicht weil eine Autorität sie so bestimmt hat, sondern weil deine Node sie unabhängig verifiziert hat. Ein `getblock`-Ergebnis von deiner Node trägt das Gewicht jeder Konsensregel, die deine Software bei der Verifizierung durchgesetzt hat.

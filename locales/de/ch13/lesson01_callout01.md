@@ -1,0 +1,1 @@
+Bitcoin verwendet ein Push-Zahlungsmodell. Du autorisierst eine bestimmte Zahlung, indem du eine bestimmte Transaction signierst. Niemand kann Mittel aus deinem Wallet abziehen, ohne deine Signature. Vergleiche das mit einer Kreditkarte: Wer deine Kartennummer kennt, kann dein Konto belasten. Das Push-Modell beseitigt eine ganze Kategorie von Betrug.

@@ -1,0 +1,1 @@
+Eine Lightning Invoice kodiert H(R), den Zahlungsbetrag, die Node-ID des Empfängers und Routing-Hinweise. Der Absender nutzt diese Informationen, um den Zahlungspfad zu konstruieren. Die Invoice enthält R selbst nicht. Nur der Empfänger kennt R, und dessen Offenlegung ist der kryptographische Beweis, dass die Zahlung empfangen wurde.

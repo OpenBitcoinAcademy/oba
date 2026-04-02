@@ -275,6 +275,8 @@ func localeDisplayName(code string) string {
 		return "Kiswahili"
 	case "fr":
 		return "Français"
+	case "de":
+		return "Deutsch"
 	default:
 		return code
 	}

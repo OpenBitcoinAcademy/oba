@@ -1,0 +1,1 @@
+Nonce-Wiederverwendung ist katastrophal. Wenn zwei Signatures dieselbe Nonce und denselben Private Key teilen, kann der Private Key algebraisch extrahiert werden. Deterministische Nonce-Erzeugung (RFC 6979, BIP340) verhindert das, indem die Nonce aus dem Private Key und der Nachricht berechnet wird. Es gibt keine Zufälligkeit, die versagen kann.

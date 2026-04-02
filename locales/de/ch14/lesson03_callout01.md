@@ -1,0 +1,1 @@
+Der Merkle Proof wächst logarithmisch mit der Anzahl der Leaves. Ein Baum mit 1.024 Scripts benötigt nur 10 Geschwister-Hashes (10 * 32 = 320 Bytes) im Proof. Die Kosten für das Hinzufügen selten genutzter Rückfallbedingungen sind minimal: sie erhöhen den Proof um eine Hash-Ebene, ohne die Key Path Spend-Kosten zu beeinflussen.

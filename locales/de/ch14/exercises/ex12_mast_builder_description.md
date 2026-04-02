@@ -1,0 +1,1 @@
+Baue einen 2-Leaf MAST Tree aus zwei Scripts. Bearbeite jedes Script und baue dann den Baum, um Leaf Hashes und den berechneten Merkle Root zu sehen. Die Leaves werden vor dem Hashing sortiert, passend zur TapBranch-Konstruktion von Taproot.

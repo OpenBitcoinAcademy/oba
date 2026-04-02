@@ -1,0 +1,1 @@
+Schnorrs Linearitätseigenschaft macht Signature-Aggregation möglich. Wenn Unterzeichner A die Signature sA erzeugt und Unterzeichner B die Signature sB, ist das Aggregat sA + sB eine gültige Signature für den kombinierten Public Key A + B. ECDSA hat diese Eigenschaft nicht, weshalb Multisig bis Taproot separate Signatures erforderte.

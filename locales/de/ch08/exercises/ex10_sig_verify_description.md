@@ -1,0 +1,1 @@
+Erzeuge eine Signature und verifiziere sie gegen einen Public Key. Ein zufälliges Key-Paar signiert eine feste Nachricht. Du siehst den Public Key, die DER-kodierte Signature und kannst überprüfen, ob die Signature passt.

@@ -1,0 +1,1 @@
+In vielen Ländern haben Menschen erlebt, wie ihre Ersparnisse über Nacht durch Inflation vernichtet wurden. Wenn eine Regierung zu viel Geld druckt, steigen die Preise, bis die Währung wertlos wird. Bitcoin ist aus diesem Problem heraus entstanden.

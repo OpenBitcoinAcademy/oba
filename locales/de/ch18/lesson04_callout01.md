@@ -1,0 +1,1 @@
+Ein Watchtower ist ein Dienst, der die Blockchain im Auftrag eines Lightning Node überwacht. Wenn der Node offline geht und seine Gegenpartei eine widerrufene Commitment Transaction sendet, erkennt der Watchtower dies und reicht die Penalty Transaction ein. Watchtowers bieten eine zusätzliche Sicherheitsebene für Nodes, die keine 24/7-Verfügbarkeit garantieren können.

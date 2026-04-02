@@ -1,0 +1,1 @@
+Die Prüfsumme in einer Address fängt Tippfehler ab. Wenn du ein einzelnes Zeichen falsch eingibst, ist die Address ungültig und dein Wallet weigert sich, dorthin zu senden. Das ist ein bewusstes Sicherheitsmerkmal. Ohne Prüfsummen würde ein Tippfehler Bitcoin an eine Address senden, die niemand kontrolliert, für immer verloren.

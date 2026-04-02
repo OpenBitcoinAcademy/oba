@@ -1,0 +1,1 @@
+Baue einen BIP44/84-Ableitungspfad, indem du jede Ebene auswählst. Tippe auf jede Komponente, um durch Purpose, Coin Type, Account, Change und Index-Werte zu wechseln. Der vollständige Pfad wird laufend aktualisiert.

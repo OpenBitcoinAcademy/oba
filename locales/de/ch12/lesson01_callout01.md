@@ -1,0 +1,1 @@
+Proof of Work wandelt Strom in Sicherheit um. Ein Angreifer muss mindestens so viel Energie aufwenden wie die ehrlichen Miner, um die Chain umzuschreiben. Diese physischen Kosten machen Bitcoins Ledger manipulationsresistent, anders als Systeme, deren Sicherheit auf Vertrauen oder Reputation allein beruht.

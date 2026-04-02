@@ -1,0 +1,1 @@
+Verfolge eine 3-Hop-Lightning-Zahlung Schritt für Schritt. Alice bezahlt Carol über Bob. Jeder Schritt zeigt das HTLC-Angebot, den Betrag und den Timelock. Nachdem Carol das Preimage offenlegt, beobachte, wie es sich entlang der Route zurück ausbreitet.

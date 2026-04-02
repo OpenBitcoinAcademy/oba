@@ -1,0 +1,1 @@
+Teile niemals deinen Private Key. Gib ihn nie auf einer Webseite ein. Speichere ihn nie in einem Cloud-Dienst. Die Sicherheit jedes Bitcoins, den du besitzt, hängt davon ab, dass diese Zahl geheim bleibt. Wenn jemand anderes deinen Private Key erfährt, kann er deine Bitcoin nehmen, und die Transaction lässt sich nicht rückgängig machen.

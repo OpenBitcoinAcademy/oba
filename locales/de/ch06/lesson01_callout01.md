@@ -1,0 +1,1 @@
+Die erste Bitcoin-Transaction zwischen zwei Personen fand am 12. Januar 2009 statt. Satoshi Nakamoto sendete 10 BTC an Hal Finney. Diese Transaction hatte einen Input (aus einer Coinbase Reward) und zwei Outputs (10 BTC an Finney, den Rest zurück an Satoshi). Dieselbe Struktur, die jede Bitcoin-Transaction bis heute verwendet.

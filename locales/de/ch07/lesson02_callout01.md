@@ -1,0 +1,1 @@
+P2SH verlagerte die Kosten komplexer Scripts vom Sender auf den Empfänger. Vor P2SH musste der Output des Senders das vollständige Script enthalten, was komplexe Bedingungen für den Sender teuer machte. Mit P2SH enthält der Output nur einen 20-Byte-Hash. Der Empfänger enthüllt das vollständige Script beim Ausgeben und zahlt die Kosten zu diesem Zeitpunkt.
