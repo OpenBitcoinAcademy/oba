@@ -10,6 +10,7 @@ import (
 	"gioui.org/unit"
 	"gioui.org/widget/material"
 
+	obamath "github.com/openbitcoinacademy/oba/internal/math"
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
@@ -139,6 +140,7 @@ type span struct {
 	bold   bool
 	italic bool
 	code   bool
+	math   bool // $..$ inline LaTeX
 }
 
 // renderParagraph renders a paragraph with inline bold, italic, and code.
@@ -155,6 +157,12 @@ func (m *Markdown) renderParagraph(gtx layout.Context, text string) layout.Dimen
 	for _, sp := range spans {
 		sp := sp
 		children = append(children, layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+			if sp.math {
+				renderer := obamath.NewRenderer(m.Theme.Material, m.Theme.Text.Body)
+				renderer.Color = m.Theme.Color.Text
+				gtx.Constraints.Min = image.Point{}
+				return renderer.Layout(gtx, sp.text)
+			}
 			lbl := material.Label(m.Theme.Material, m.Theme.Text.Body, sp.text)
 			lbl.Color = m.Theme.Color.Text
 			if sp.bold {
@@ -193,6 +201,17 @@ func parseInlineSpans(text string) []span {
 	}
 
 	for i < len(text) {
+		// Inline math: $...$
+		if text[i] == '$' {
+			flush(false, false, false)
+			end := strings.Index(text[i+1:], "$")
+			if end >= 0 {
+				spans = append(spans, span{text: text[i+1 : i+1+end], math: true})
+				i = i + 1 + end + 1
+				continue
+			}
+		}
+
 		// Code spans: `...`
 		if text[i] == '`' {
 			flush(false, false, false)

@@ -3,8 +3,8 @@ package main
 
 import (
 	"image"
+	"io/fs"
 	"log"
-	"os"
 
 	gio_app "gioui.org/app"
 	"gioui.org/op"
@@ -12,6 +12,7 @@ import (
 	"gioui.org/op/paint"
 	"gioui.org/unit"
 
+	oba "github.com/openbitcoinacademy/oba"
 	"github.com/openbitcoinacademy/oba/internal/app"
 	"github.com/openbitcoinacademy/oba/internal/content"
 	"github.com/openbitcoinacademy/oba/internal/i18n"
@@ -20,13 +21,22 @@ import (
 )
 
 func main() {
-	localeFS := os.DirFS("locales")
+	// Embedded filesystems. Sub() strips the directory prefix so paths
+	// match what the loaders expect (e.g., "en/ui.toml" not "locales/en/ui.toml").
+	localeFS, err := fs.Sub(oba.LocaleFS, "locales")
+	if err != nil {
+		log.Fatalf("locale fs: %v", err)
+	}
+	contentFS, err := fs.Sub(oba.ContentFS, "content")
+	if err != nil {
+		log.Fatalf("content fs: %v", err)
+	}
+
 	if err := i18n.Init(localeFS); err != nil {
 		log.Fatalf("init i18n: %v", err)
 	}
 
-	contentFS := os.DirFS("content")
-	resolver := content.NewResolver(contentFS, nil, "en")
+	resolver := content.NewResolver(contentFS, localeFS, "en")
 	ch, err := content.LoadChapterFromFS(contentFS, "ch01/ch01.toml", resolver)
 	if err != nil {
 		log.Fatalf("load chapter: %v", err)
@@ -40,13 +50,14 @@ func main() {
 	progress := content.LoadProgress(progressPath)
 
 	state := app.NewState(ch, progress, progressPath)
+	state.ContentFS = contentFS
+	state.LocaleFS = localeFS
 
 	go func() {
 		w := &gio_app.Window{}
 		w.Option(gio_app.Title("Open Bitcoin Academy"))
 		w.Option(gio_app.Size(unit.Dp(420), unit.Dp(740)))
 
-		// Wire invalidation so navigation triggers redraws.
 		state.Invalidate = w.Invalidate
 
 		home := screens.NewHome(state)
@@ -60,7 +71,7 @@ func main() {
 				if e.Err != nil {
 					log.Fatal(e.Err)
 				}
-				os.Exit(0)
+				return
 			case gio_app.FrameEvent:
 				gtx := gio_app.NewContext(&ops, e)
 

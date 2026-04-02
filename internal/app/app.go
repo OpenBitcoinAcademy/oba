@@ -2,9 +2,11 @@
 package app
 
 import (
+	"io/fs"
 	"log"
 
 	"github.com/openbitcoinacademy/oba/internal/content"
+	"github.com/openbitcoinacademy/oba/internal/i18n"
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
@@ -30,6 +32,10 @@ type State struct {
 	CurrentLesson int  // index into Chapter.Lessons
 	LessonDirty   bool // true when lesson index changed, screens should reset
 
+	// Embedded filesystems for content reload on locale switch.
+	ContentFS fs.FS
+	LocaleFS  fs.FS
+
 	ProgressPath string // file path for saving progress
 	Invalidate   InvalidateFunc
 }
@@ -42,7 +48,7 @@ func NewState(ch *content.Chapter, progress *content.Progress, progressPath stri
 		Progress:      progress,
 		CurrentScreen: ScreenHome,
 		ProgressPath:  progressPath,
-		Invalidate:    func() {}, // no-op until wired
+		Invalidate:    func() {},
 	}
 }
 
@@ -65,6 +71,27 @@ func (s *State) NavigateHome() {
 // NavigateSettings opens the settings screen.
 func (s *State) NavigateSettings() {
 	s.CurrentScreen = ScreenSettings
+	s.Invalidate()
+}
+
+// SetLocale switches the UI language and reloads lesson content.
+func (s *State) SetLocale(locale string) {
+	i18n.SetLocale(locale)
+	s.Progress.Locale = locale
+
+	// Reload chapter content with the new locale's resolver.
+	if s.ContentFS != nil {
+		resolver := content.NewResolver(s.ContentFS, s.LocaleFS, locale)
+		ch, err := content.LoadChapterFromFS(s.ContentFS, "ch01/ch01.toml", resolver)
+		if err != nil {
+			log.Printf("reload content for locale %s: %v (keeping current)", locale, err)
+		} else {
+			s.Chapter = ch
+			s.LessonDirty = true
+		}
+	}
+
+	s.saveProgress()
 	s.Invalidate()
 }
 

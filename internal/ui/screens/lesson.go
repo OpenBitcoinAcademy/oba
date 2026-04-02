@@ -13,6 +13,7 @@ import (
 	"github.com/openbitcoinacademy/oba/internal/app"
 	"github.com/openbitcoinacademy/oba/internal/content"
 	"github.com/openbitcoinacademy/oba/internal/i18n"
+	obamath "github.com/openbitcoinacademy/oba/internal/math"
 	"github.com/openbitcoinacademy/oba/internal/ui/components"
 	"github.com/openbitcoinacademy/oba/internal/ui/diagrams"
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
@@ -151,7 +152,13 @@ func (l *Lesson) renderSection(gtx layout.Context, sec content.Section, idx int)
 		return placeholderSection(gtx, th, "Exercise: "+s.ExerciseID)
 
 	case *content.FormulaSection:
-		return placeholderSection(gtx, th, "Formula: "+s.Formula)
+		renderer := obamath.NewRenderer(th.Material, th.Text.Body)
+		renderer.Color = th.Color.Text
+		return layout.Inset{Top: unit.Dp(8), Bottom: unit.Dp(8)}.Layout(gtx,
+			func(gtx layout.Context) layout.Dimensions {
+				gtx.Constraints.Min = image.Point{}
+				return renderer.Layout(gtx, s.Formula)
+			})
 
 	default:
 		return placeholderSection(gtx, th, "Unknown section")

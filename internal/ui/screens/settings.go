@@ -53,10 +53,7 @@ func (s *Settings) Layout(gtx layout.Context) layout.Dimensions {
 	// Handle locale clicks.
 	for loc, btn := range s.localeBtns {
 		if btn.Clicked(gtx) {
-			i18n.SetLocale(loc)
-			s.state.Progress.Locale = loc
-			s.state.CompleteLesson() // triggers save
-			s.state.Invalidate()
+			s.state.SetLocale(loc)
 		}
 	}
 
