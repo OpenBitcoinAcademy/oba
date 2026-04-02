@@ -15,6 +15,10 @@ title_key = "lessons.ch10_lesson01_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "network_topology"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]

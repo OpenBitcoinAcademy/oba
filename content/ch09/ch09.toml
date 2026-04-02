@@ -15,6 +15,10 @@ title_key = "lessons.ch09_lesson01_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "fee_weight"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]

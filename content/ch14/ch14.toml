@@ -1,64 +1,12 @@
 [chapter]
-id = "ch12"
-title_key = "chapters.ch12_title"
-description_key = "chapters.ch12_description"
+id = "ch14"
+title_key = "chapters.ch14_title"
+description_key = "chapters.ch14_description"
 
-# Lesson 1: Proof of Work
+# Lesson 1: Tweaked Public Keys
 [[lessons]]
-id = "ch12.lesson01"
-title_key = "lessons.ch12_lesson01_title"
-
-  [[lessons.sections]]
-  type = "text"
-
-  [[lessons.sections]]
-  type = "text"
-
-  [[lessons.sections]]
-  type = "diagram"
-  diagram_id = "mining_process"
-
-  [[lessons.sections]]
-  type = "text"
-
-  [[lessons.sections]]
-  type = "callout"
-  style = "info"
-
-  [[lessons.sections]]
-  type = "interactive"
-  exercise_id = "ex08_mining_simulator"
-
-  [[lessons.sections]]
-  type = "quiz"
-  correct = [1]
-
-# Lesson 2: Block Rewards and the Halving
-[[lessons]]
-id = "ch12.lesson02"
-title_key = "lessons.ch12_lesson02_title"
-
-  [[lessons.sections]]
-  type = "text"
-
-  [[lessons.sections]]
-  type = "text"
-
-  [[lessons.sections]]
-  type = "text"
-
-  [[lessons.sections]]
-  type = "callout"
-  style = "info"
-
-  [[lessons.sections]]
-  type = "quiz"
-  correct = [0]
-
-# Lesson 3: Consensus and Chain Selection
-[[lessons]]
-id = "ch12.lesson03"
-title_key = "lessons.ch12_lesson03_title"
+id = "ch14.lesson01"
+title_key = "lessons.ch14_lesson01_title"
 
   [[lessons.sections]]
   type = "text"
@@ -77,10 +25,59 @@ title_key = "lessons.ch12_lesson03_title"
   type = "quiz"
   correct = [2]
 
-# Lesson 4: Attacks and Governance
+# Lesson 2: Key Path Spending
 [[lessons]]
-id = "ch12.lesson04"
-title_key = "lessons.ch12_lesson04_title"
+id = "ch14.lesson02"
+title_key = "lessons.ch14_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "taproot_key_path"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 3: Script Path and MAST
+[[lessons]]
+id = "ch14.lesson03"
+title_key = "lessons.ch14_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "taproot_mast"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0]
+
+# Lesson 4: Tapscript
+[[lessons]]
+id = "ch14.lesson04"
+title_key = "lessons.ch14_lesson04_title"
 
   [[lessons.sections]]
   type = "text"
@@ -93,7 +90,7 @@ title_key = "lessons.ch12_lesson04_title"
 
   [[lessons.sections]]
   type = "callout"
-  style = "warning"
+  style = "info"
 
   [[lessons.sections]]
   type = "quiz"

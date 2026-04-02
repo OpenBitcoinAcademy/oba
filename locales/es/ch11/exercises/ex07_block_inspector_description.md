@@ -1,0 +1,1 @@
+Examina el encabezado del bloque genesis de Bitcoin. Observa los seis campos: version, hash del bloque anterior, raiz Merkle, marca de tiempo, bits de objetivo y nonce. El hash del bloque se calcula a partir del encabezado usando doble SHA-256.

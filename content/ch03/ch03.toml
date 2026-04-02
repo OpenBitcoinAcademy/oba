@@ -15,6 +15,10 @@ title_key = "lessons.ch03_lesson01_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "node_architecture"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]

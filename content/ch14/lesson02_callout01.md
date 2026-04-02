@@ -1,0 +1,1 @@
+Key path spending is the common case optimization. A well-designed Taproot output places the most likely spending scenario in the key path (a single signature) and reserves the script path for fallbacks. When all parties cooperate, the transaction is small, cheap, and private. The script tree exists as insurance but never appears on-chain unless needed.

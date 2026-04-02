@@ -41,6 +41,10 @@ title_key = "lessons.ch11_lesson02_title"
   style = "info"
 
   [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex07_block_inspector"
+
+  [[lessons.sections]]
   type = "quiz"
   correct = [1]
 
@@ -51,6 +55,10 @@ title_key = "lessons.ch11_lesson03_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "merkle_tree"
 
   [[lessons.sections]]
   type = "text"

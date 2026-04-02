@@ -188,6 +188,10 @@ func (l *Lesson) createExercise(id string) ExerciseWidget {
 		return components.NewTxInspector(th, cfg)
 	case "tx_builder", "ex06_tx_builder":
 		return components.NewTxBuilder(th, cfg)
+	case "block_inspector", "ex07_block_inspector":
+		return components.NewBlockInspector(th, cfg)
+	case "mining_simulator", "ex08_mining_simulator":
+		return components.NewMiningSimulator(th, cfg)
 	default:
 		return nil
 	}

@@ -15,6 +15,10 @@ title_key = "lessons.ch13_lesson01_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "security_layers"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]

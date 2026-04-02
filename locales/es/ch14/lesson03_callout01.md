@@ -1,0 +1,1 @@
+La prueba de Merkle crece logaritmicamente con el numero de hojas. Un arbol con 1,024 scripts requiere solo 10 hashes hermanos (10 * 32 = 320 bytes) en la prueba. El costo de agregar condiciones de respaldo poco usadas es minimo: aumentan la prueba en un nivel de hash sin afectar el costo del gasto por ruta de clave en absoluto.

@@ -1,0 +1,7 @@
+[exercise]
+id = "ex08_mining_simulator"
+type = "mining_simulator"
+
+[exercise.config]
+initial_difficulty = 1
+max_difficulty = 3

@@ -1,0 +1,1 @@
+The Merkle proof grows logarithmically with the number of leaves. A tree with 1,024 scripts requires only 10 sibling hashes (10 * 32 = 320 bytes) in the proof. The cost of adding rarely-used fallback conditions is minimal: they increase the proof by one hash level without affecting the key path spend cost at all.
