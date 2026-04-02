@@ -5,9 +5,13 @@ package theme
 
 import (
 	"image/color"
+	"log"
 	"os"
 	"strings"
 
+	"gioui.org/font"
+	"gioui.org/font/opentype"
+	"gioui.org/text"
 	"gioui.org/unit"
 	"gioui.org/widget/material"
 )
@@ -131,15 +135,50 @@ type Theme struct {
 	Mode     Mode
 }
 
-// New creates a Theme using the detected system preference.
+// New creates a Theme using the detected system preference and default fonts.
 func New() *Theme {
 	mode := DetectSystemMode()
-	return NewWithMode(mode)
+	return NewWithFonts(mode, nil, nil)
 }
 
-// NewWithMode creates a Theme with the specified color mode.
-func NewWithMode(mode Mode) *Theme {
-	mat := material.NewTheme()
+// NewWithFonts creates a Theme with custom font data.
+// If notoSans or jetBrainsMono are nil, Gio's built-in fonts are used.
+func NewWithFonts(mode Mode, notoSans, jetBrainsMono []byte) *Theme {
+	var faces []font.FontFace
+
+	if len(notoSans) > 0 {
+		face, err := opentype.Parse(notoSans)
+		if err != nil {
+			log.Printf("parse NotoSans: %v (using default)", err)
+		} else {
+			faces = append(faces, font.FontFace{
+				Font: font.Font{Typeface: "NotoSans"},
+				Face: face,
+			})
+		}
+	}
+
+	if len(jetBrainsMono) > 0 {
+		face, err := opentype.Parse(jetBrainsMono)
+		if err != nil {
+			log.Printf("parse JetBrainsMono: %v (using default)", err)
+		} else {
+			faces = append(faces, font.FontFace{
+				Font: font.Font{Typeface: "monospace"},
+				Face: face,
+			})
+		}
+	}
+
+	var mat *material.Theme
+	if len(faces) > 0 {
+		shaper := text.NewShaper(text.WithCollection(faces))
+		mat = material.NewTheme()
+		mat.Shaper = shaper
+	} else {
+		mat = material.NewTheme()
+	}
+
 	var colors Colors
 	if mode == ModeDark {
 		colors = DarkPalette()

@@ -41,10 +41,15 @@ type State struct {
 	Invalidate   InvalidateFunc
 }
 
-// NewState creates the initial application state.
+// NewState creates the initial application state with default fonts.
 func NewState(ch *content.Chapter, progress *content.Progress, progressPath string) *State {
+	return NewStateWithFonts(ch, progress, progressPath, nil, nil)
+}
+
+// NewStateWithFonts creates the initial state with custom font data.
+func NewStateWithFonts(ch *content.Chapter, progress *content.Progress, progressPath string, notoSans, jetBrainsMono []byte) *State {
 	return &State{
-		Theme:         theme.New(),
+		Theme:         theme.NewWithFonts(theme.DetectSystemMode(), notoSans, jetBrainsMono),
 		Chapter:       ch,
 		Progress:      progress,
 		CurrentScreen: ScreenHome,

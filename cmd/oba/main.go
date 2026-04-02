@@ -54,7 +54,7 @@ func main() {
 	}
 	progress := content.LoadProgress(progressPath)
 
-	state := app.NewState(ch, progress, progressPath)
+	state := app.NewStateWithFonts(ch, progress, progressPath, oba.FontNotoSans, oba.FontJetBrainsMono)
 	state.ContentFS = contentFS
 	state.LocaleFS = localeFS
 	state.Exercises = exercises

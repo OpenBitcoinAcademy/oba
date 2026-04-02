@@ -1,6 +1,5 @@
-// Package oba provides embedded content and locale filesystems.
-// This file lives at the module root so go:embed can access
-// the content/ and locales/ directories.
+// Package oba provides embedded filesystems for content, locales, and assets.
+// This file lives at the module root so go:embed can access top-level directories.
 package oba
 
 import "embed"
@@ -14,3 +13,13 @@ var ContentFS embed.FS
 //
 //go:embed all:locales
 var LocaleFS embed.FS
+
+// FontNotoSans holds the NotoSans-Regular.ttf font (Latin coverage).
+//
+//go:embed assets/fonts/NotoSans-Regular.ttf
+var FontNotoSans []byte
+
+// FontJetBrainsMono holds the JetBrainsMono-Regular.ttf font (code/hex).
+//
+//go:embed assets/fonts/JetBrainsMono-Regular.ttf
+var FontJetBrainsMono []byte
