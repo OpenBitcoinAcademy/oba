@@ -1,0 +1,16 @@
+[exercise]
+id = "ex03_address"
+type = "address_builder"
+
+[exercise.config]
+network = "testnet"
+show_bech32_alternative = true
+steps = [
+    "generate_keypair",
+    "sha256_pubkey",
+    "ripemd160",
+    "add_version_byte",
+    "double_sha256_checksum",
+    "take_checksum_bytes",
+    "base58check_encode",
+]

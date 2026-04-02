@@ -1,0 +1,9 @@
+[exercise]
+id = "ex01_hash"
+type = "hash_explorer"
+
+[exercise.config]
+algorithm = "sha256"
+preloaded_examples = ["bitcoin", "Bitcoin", "bitcoin!"]
+output_formats = ["hex", "binary", "base64"]
+debounce_ms = 100

@@ -24,9 +24,10 @@ type InvalidateFunc func()
 
 // State holds the application-wide state shared across screens.
 type State struct {
-	Theme    *theme.Theme
-	Chapter  *content.Chapter
-	Progress *content.Progress
+	Theme     *theme.Theme
+	Chapter   *content.Chapter
+	Exercises map[string]*content.ExerciseConfig // exercise ID -> config
+	Progress  *content.Progress
 
 	CurrentScreen Screen
 	CurrentLesson int  // index into Chapter.Lessons

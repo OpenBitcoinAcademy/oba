@@ -12,6 +12,7 @@ import (
 	"gioui.org/widget/material"
 
 	"github.com/openbitcoinacademy/oba/internal/bitcoin"
+	"github.com/openbitcoinacademy/oba/internal/content"
 	"github.com/openbitcoinacademy/oba/internal/i18n"
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
@@ -26,8 +27,8 @@ type KeyGenerator struct {
 	pubKey      string
 }
 
-// NewKeyGenerator creates a key generator widget.
-func NewKeyGenerator(th *theme.Theme) *KeyGenerator {
+// NewKeyGenerator creates a key generator from an exercise config.
+func NewKeyGenerator(th *theme.Theme, cfg *content.ExerciseConfig) *KeyGenerator {
 	return &KeyGenerator{Theme: th}
 }
 

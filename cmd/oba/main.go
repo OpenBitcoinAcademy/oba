@@ -42,6 +42,11 @@ func main() {
 		log.Fatalf("load chapter: %v", err)
 	}
 
+	exercises, err := content.LoadChapterExercises(contentFS, "ch01")
+	if err != nil {
+		log.Printf("load exercises: %v (continuing without)", err)
+	}
+
 	progressPath, err := platform.ProgressPath()
 	if err != nil {
 		log.Printf("progress path: %v (using in-memory)", err)
@@ -52,6 +57,7 @@ func main() {
 	state := app.NewState(ch, progress, progressPath)
 	state.ContentFS = contentFS
 	state.LocaleFS = localeFS
+	state.Exercises = exercises
 
 	go func() {
 		w := &gio_app.Window{}

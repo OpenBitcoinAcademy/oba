@@ -15,6 +15,7 @@ import (
 	"gioui.org/widget/material"
 
 	"github.com/openbitcoinacademy/oba/internal/bitcoin"
+	"github.com/openbitcoinacademy/oba/internal/content"
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
@@ -27,16 +28,24 @@ type HashExplorer struct {
 	format    int
 	formatBtn widget.Clickable
 
-	// Preloaded example buttons.
-	exampleBtns [3]widget.Clickable
-	examples    [3]string
+	// Preloaded example buttons (variable length from config).
+	exampleBtns []widget.Clickable
+	examples    []string
 }
 
-// NewHashExplorer creates a hash explorer widget.
-func NewHashExplorer(th *theme.Theme) *HashExplorer {
+// NewHashExplorer creates a hash explorer from an exercise config.
+// Falls back to defaults if config is nil.
+func NewHashExplorer(th *theme.Theme, cfg *content.ExerciseConfig) *HashExplorer {
+	examples := []string{"bitcoin", "Bitcoin", "bitcoin!"}
+	if cfg != nil {
+		if ex := cfg.ConfigStrings("preloaded_examples"); len(ex) > 0 {
+			examples = ex
+		}
+	}
 	h := &HashExplorer{
-		Theme:    th,
-		examples: [3]string{"bitcoin", "Bitcoin", "bitcoin!"},
+		Theme:       th,
+		examples:    examples,
+		exampleBtns: make([]widget.Clickable, len(examples)),
 	}
 	h.editor.SingleLine = true
 	h.editor.Submit = false
@@ -109,21 +118,19 @@ func (h *HashExplorer) Layout(gtx layout.Context) layout.Dimensions {
 			}),
 			layout.Rigid(layout.Spacer{Height: th.Space.Medium}.Layout),
 
-			// Example buttons.
+			// Example buttons (dynamic count from config).
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-				return layout.Flex{Spacing: layout.SpaceStart}.Layout(gtx,
-					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-						lbl := material.Label(th.Material, th.Text.Caption, "Try:")
-						lbl.Color = th.Color.TextMuted
-						return lbl.Layout(gtx)
-					}),
-					layout.Rigid(layout.Spacer{Width: th.Space.Small}.Layout),
-					layout.Rigid(h.exampleButton(0)),
-					layout.Rigid(layout.Spacer{Width: th.Space.Small}.Layout),
-					layout.Rigid(h.exampleButton(1)),
-					layout.Rigid(layout.Spacer{Width: th.Space.Small}.Layout),
-					layout.Rigid(h.exampleButton(2)),
-				)
+				var children []layout.FlexChild
+				children = append(children, layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+					lbl := material.Label(th.Material, th.Text.Caption, "Try:")
+					lbl.Color = th.Color.TextMuted
+					return lbl.Layout(gtx)
+				}))
+				for i := range h.examples {
+					children = append(children, layout.Rigid(layout.Spacer{Width: th.Space.Small}.Layout))
+					children = append(children, layout.Rigid(h.exampleButton(i)))
+				}
+				return layout.Flex{Spacing: layout.SpaceStart}.Layout(gtx, children...)
 			}),
 			layout.Rigid(layout.Spacer{Height: th.Space.Medium}.Layout),
 

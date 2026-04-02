@@ -13,6 +13,7 @@ import (
 	"gioui.org/widget/material"
 
 	"github.com/openbitcoinacademy/oba/internal/bitcoin"
+	"github.com/openbitcoinacademy/oba/internal/content"
 	"github.com/openbitcoinacademy/oba/internal/i18n"
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
@@ -32,8 +33,8 @@ type addressStep struct {
 	output string
 }
 
-// NewAddressBuilder creates an address builder widget.
-func NewAddressBuilder(th *theme.Theme) *AddressBuilder {
+// NewAddressBuilder creates an address builder from an exercise config.
+func NewAddressBuilder(th *theme.Theme, cfg *content.ExerciseConfig) *AddressBuilder {
 	return &AddressBuilder{Theme: th}
 }
 

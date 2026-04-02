@@ -1,0 +1,7 @@
+[exercise]
+id = "ex02_keys"
+type = "key_generator"
+
+[exercise.config]
+show_binary_option = true
+show_byte_count = true

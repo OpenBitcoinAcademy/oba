@@ -167,13 +167,21 @@ func (l *Lesson) renderSection(gtx layout.Context, sec content.Section, idx int)
 
 func (l *Lesson) createExercise(id string) ExerciseWidget {
 	th := l.state.Theme
-	switch id {
-	case "ex01_hash":
-		return components.NewHashExplorer(th)
-	case "ex02_keys":
-		return components.NewKeyGenerator(th)
-	case "ex03_address":
-		return components.NewAddressBuilder(th)
+	cfg := l.state.Exercises[id] // nil if not loaded, widgets handle nil
+
+	// Dispatch by exercise type from config, fall back to ID matching.
+	exType := id
+	if cfg != nil {
+		exType = cfg.Type
+	}
+
+	switch exType {
+	case "hash_explorer", "ex01_hash":
+		return components.NewHashExplorer(th, cfg)
+	case "key_generator", "ex02_keys":
+		return components.NewKeyGenerator(th, cfg)
+	case "address_builder", "ex03_address":
+		return components.NewAddressBuilder(th, cfg)
 	default:
 		return nil
 	}
