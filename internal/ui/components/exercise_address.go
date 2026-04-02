@@ -56,7 +56,7 @@ func (a *AddressBuilder) Layout(gtx layout.Context) layout.Dimensions {
 		return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 			// Title.
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-				lbl := material.Label(th.Material, th.Text.H3, "Address Builder")
+				lbl := material.Label(th.Material, th.Text.H3, i18n.T("exercise_ui.address_title"))
 				lbl.Color = th.Color.Text
 				lbl.Font.Weight = font.Bold
 				return lbl.Layout(gtx)
@@ -66,7 +66,7 @@ func (a *AddressBuilder) Layout(gtx layout.Context) layout.Dimensions {
 			// Steps display.
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
 				if a.step == 0 {
-					lbl := material.Label(th.Material, th.Text.Body, "Press Next Step to generate a key pair and walk through address derivation.")
+					lbl := material.Label(th.Material, th.Text.Body, i18n.T("exercise_ui.address_prompt"))
 					lbl.Color = th.Color.TextMuted
 					return lbl.Layout(gtx)
 				}
@@ -94,7 +94,10 @@ func (a *AddressBuilder) Layout(gtx layout.Context) layout.Dimensions {
 						if a.step > 0 && a.step < 7 {
 							return layout.Inset{Left: th.Space.Small}.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
 								lbl := material.Label(th.Material, th.Text.Caption,
-									fmt.Sprintf("Step %d of 7", a.step))
+									i18n.TFmt("exercise_ui.address_step", map[string]string{
+										"current": fmt.Sprintf("%d", a.step),
+										"total":   "7",
+									}))
 								lbl.Color = th.Color.TextMuted
 								return lbl.Layout(gtx)
 							})
@@ -136,7 +139,7 @@ func (a *AddressBuilder) advance() {
 		a.computeRemaining(pub)
 
 	case 2, 3, 4, 5, 6, 7:
-		// Steps were pre-computed in step 1. Just reveal them.
+		// Steps were pre-computed in step 1. Reveal them progressively.
 	}
 }
 

@@ -3,6 +3,7 @@ package components
 
 import (
 	"image"
+	"log"
 	"strings"
 
 	"gioui.org/font"
@@ -94,6 +95,9 @@ func parseBlocks(content string) []block {
 			blocks = append(blocks, block{kind: "h2", content: strings.TrimPrefix(trimmed, "## ")})
 			continue
 		}
+
+		// Warn on unsupported markdown syntax (Section 6).
+		warnUnsupported(trimmed)
 
 		current = append(current, trimmed)
 	}
@@ -251,4 +255,27 @@ func parseInlineSpans(text string) []span {
 	flush(false, false, false)
 
 	return spans
+}
+
+// warnUnsupported logs a warning for markdown syntax outside the supported subset.
+func warnUnsupported(line string) {
+	switch {
+	case strings.HasPrefix(line, "!["):
+		log.Printf("markdown: unsupported image syntax: %s", truncate(line))
+	case strings.HasPrefix(line, "<"):
+		log.Printf("markdown: unsupported HTML: %s", truncate(line))
+	case strings.HasPrefix(line, "- ["):
+		log.Printf("markdown: unsupported task list: %s", truncate(line))
+	case strings.Contains(line, "](") && strings.Contains(line, "["):
+		log.Printf("markdown: unsupported link: %s", truncate(line))
+	case strings.HasPrefix(line, "|") && strings.HasSuffix(strings.TrimSpace(line), "|"):
+		log.Printf("markdown: unsupported table: %s", truncate(line))
+	}
+}
+
+func truncate(s string) string {
+	if len(s) > 60 {
+		return s[:60] + "..."
+	}
+	return s
 }

@@ -8,6 +8,7 @@ import (
 	"gioui.org/unit"
 
 	"github.com/openbitcoinacademy/oba/internal/bitcoin"
+	"github.com/openbitcoinacademy/oba/internal/i18n"
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
@@ -47,7 +48,7 @@ func (d *HashFlow) Layout(gtx layout.Context, th *theme.Theme) layout.Dimensions
 
 	box(gtx, th, "\""+input+"\"", image.Pt(x1, y), inputW, bh, th.Color.InfoBg)
 	arrow(gtx, th, image.Pt(x1+inputW, y+bh/2), image.Pt(x2, y+bh/2))
-	processBox(gtx, th, "SHA-256", image.Pt(x2, y), procW, bh)
+	processBox(gtx, th, i18n.T("diagram.sha256"), image.Pt(x2, y), procW, bh)
 	arrow(gtx, th, image.Pt(x2+procW, y+bh/2), image.Pt(x3, y+bh/2))
 	box(gtx, th, hashHex, image.Pt(x3, y), outputW, bh, th.Color.TipBg)
 

@@ -182,3 +182,40 @@ func LoadChapterFromFS(fsys fs.FS, path string, resolver *Resolver) (*Chapter, e
 	}
 	return LoadChapter(data, path, resolver)
 }
+
+// rawChapterIndex mirrors the chapters.toml structure.
+type rawChapterIndex struct {
+	Chapters []struct {
+		ID       string `toml:"id"`
+		TOMLFile string `toml:"toml_file"`
+	} `toml:"chapters"`
+}
+
+// LoadAllChapters parses chapters.toml and loads all referenced chapters.
+// Fails fast if any chapter cannot be loaded.
+func LoadAllChapters(fsys fs.FS, indexPath string, resolver *Resolver) ([]*Chapter, error) {
+	data, err := fs.ReadFile(fsys, indexPath)
+	if err != nil {
+		return nil, fmt.Errorf("read %s: %w", indexPath, err)
+	}
+
+	var index rawChapterIndex
+	if err := toml.Unmarshal(data, &index); err != nil {
+		return nil, fmt.Errorf("parse %s: %w", indexPath, err)
+	}
+
+	if len(index.Chapters) == 0 {
+		return nil, fmt.Errorf("%s: no chapters defined", indexPath)
+	}
+
+	var chapters []*Chapter
+	for _, entry := range index.Chapters {
+		ch, err := LoadChapterFromFS(fsys, entry.TOMLFile, resolver)
+		if err != nil {
+			return nil, fmt.Errorf("chapter %s: %w", entry.ID, err)
+		}
+		chapters = append(chapters, ch)
+	}
+
+	return chapters, nil
+}

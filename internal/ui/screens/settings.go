@@ -232,14 +232,14 @@ func (s *Settings) renderConfirm(gtx layout.Context) layout.Dimensions {
 		layout.Rigid(func(gtx layout.Context) layout.Dimensions {
 			return layout.Flex{}.Layout(gtx,
 				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-					btn := material.Button(th.Material, &s.confirmBtn, "Yes, reset")
+					btn := material.Button(th.Material, &s.confirmBtn, i18n.T("confirm.yes_reset"))
 					btn.Background = th.Color.Error
 					btn.Color = th.Color.OnPrimary
 					return btn.Layout(gtx)
 				}),
 				layout.Rigid(layout.Spacer{Width: th.Space.Medium}.Layout),
 				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-					btn := material.Button(th.Material, &s.cancelBtn, "Cancel")
+					btn := material.Button(th.Material, &s.cancelBtn, i18n.T("confirm.cancel"))
 					btn.Background = th.Color.Surface
 					btn.Color = th.Color.Text
 					return btn.Layout(gtx)

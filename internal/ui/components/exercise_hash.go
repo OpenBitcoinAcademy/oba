@@ -16,6 +16,7 @@ import (
 
 	"github.com/openbitcoinacademy/oba/internal/bitcoin"
 	"github.com/openbitcoinacademy/oba/internal/content"
+	"github.com/openbitcoinacademy/oba/internal/i18n"
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
@@ -79,7 +80,7 @@ func (h *HashExplorer) Layout(gtx layout.Context) layout.Dimensions {
 		return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 			// Title.
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-				lbl := material.Label(th.Material, th.Text.H3, "Hash Explorer")
+				lbl := material.Label(th.Material, th.Text.H3, i18n.T("exercise_ui.hash_title"))
 				lbl.Color = th.Color.Text
 				lbl.Font.Weight = font.Bold
 				return lbl.Layout(gtx)
@@ -88,7 +89,7 @@ func (h *HashExplorer) Layout(gtx layout.Context) layout.Dimensions {
 
 			// Input field.
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-				lbl := material.Label(th.Material, th.Text.Caption, "Type anything:")
+				lbl := material.Label(th.Material, th.Text.Caption, i18n.T("exercise_ui.hash_input_label"))
 				lbl.Color = th.Color.TextMuted
 				return lbl.Layout(gtx)
 			}),
@@ -122,7 +123,7 @@ func (h *HashExplorer) Layout(gtx layout.Context) layout.Dimensions {
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
 				var children []layout.FlexChild
 				children = append(children, layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-					lbl := material.Label(th.Material, th.Text.Caption, "Try:")
+					lbl := material.Label(th.Material, th.Text.Caption, i18n.T("exercise_ui.hash_try"))
 					lbl.Color = th.Color.TextMuted
 					return lbl.Layout(gtx)
 				}))
@@ -136,7 +137,7 @@ func (h *HashExplorer) Layout(gtx layout.Context) layout.Dimensions {
 
 			// Output label.
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-				lbl := material.Label(th.Material, th.Text.Caption, "SHA-256:")
+				lbl := material.Label(th.Material, th.Text.Caption, i18n.T("exercise_ui.hash_sha256"))
 				lbl.Color = th.Color.TextMuted
 				return lbl.Layout(gtx)
 			}),
@@ -176,7 +177,7 @@ func (h *HashExplorer) Layout(gtx layout.Context) layout.Dimensions {
 						return btn.Layout(gtx)
 					}),
 					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-						text := fmt.Sprintf("Input: %d bytes  Hash: 256 bits", len(input))
+						text := i18n.TFmt("exercise_ui.hash_stats", map[string]string{"bytes": fmt.Sprintf("%d", len(input))})
 						lbl := material.Label(th.Material, th.Text.Caption, text)
 						lbl.Color = th.Color.TextMuted
 						return lbl.Layout(gtx)
@@ -211,11 +212,11 @@ func (h *HashExplorer) formatHash(hash []byte) string {
 func (h *HashExplorer) formatName() string {
 	switch h.format {
 	case 1:
-		return "Binary"
+		return i18n.T("exercise_ui.hash_binary")
 	case 2:
-		return "Base64"
+		return i18n.T("exercise_ui.hash_base64")
 	default:
-		return "Hex"
+		return i18n.T("exercise_ui.hash_hex")
 	}
 }
 

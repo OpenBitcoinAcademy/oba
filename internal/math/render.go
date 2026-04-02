@@ -109,7 +109,7 @@ func (r *Renderer) drawBox(gtx layout.Context, box *Box, offset image.Point, fon
 		}
 
 	default:
-		// Row, Group: just draw children.
+		// Row, Group: draw children sequentially.
 		for _, child := range box.Children {
 			r.drawBox(gtx, child, pos, fontSize)
 		}

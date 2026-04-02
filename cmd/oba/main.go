@@ -5,6 +5,7 @@ import (
 	"image"
 	"io/fs"
 	"log"
+	"os"
 
 	gio_app "gioui.org/app"
 	"gioui.org/op"
@@ -17,12 +18,15 @@ import (
 	"github.com/openbitcoinacademy/oba/internal/content"
 	"github.com/openbitcoinacademy/oba/internal/i18n"
 	"github.com/openbitcoinacademy/oba/internal/platform"
+	"github.com/openbitcoinacademy/oba/internal/ui/diagrams"
 	"github.com/openbitcoinacademy/oba/internal/ui/screens"
 )
 
 func main() {
-	// Embedded filesystems. Sub() strips the directory prefix so paths
-	// match what the loaders expect (e.g., "en/ui.toml" not "locales/en/ui.toml").
+	// Wire diagram validation so unknown IDs fail at startup.
+	content.ValidateDiagramID = diagrams.Validate
+
+	// Embedded filesystems.
 	localeFS, err := fs.Sub(oba.LocaleFS, "locales")
 	if err != nil {
 		log.Fatalf("locale fs: %v", err)
@@ -36,15 +40,27 @@ func main() {
 		log.Fatalf("init i18n: %v", err)
 	}
 
-	resolver := content.NewResolver(contentFS, localeFS, "en")
-	ch, err := content.LoadChapterFromFS(contentFS, "ch01/ch01.toml", resolver)
+	locale := detectLocale()
+	i18n.SetLocale(locale)
+
+	// Load all chapters from chapters.toml.
+	resolver := content.NewResolver(contentFS, localeFS, locale)
+	chapters, err := content.LoadAllChapters(contentFS, "chapters.toml", resolver)
 	if err != nil {
-		log.Fatalf("load chapter: %v", err)
+		log.Fatalf("load chapters: %v", err)
 	}
 
-	exercises, err := content.LoadChapterExercises(contentFS, "ch01")
-	if err != nil {
-		log.Printf("load exercises: %v (continuing without)", err)
+	// Load exercises for all chapters.
+	allExercises := make(map[string]*content.ExerciseConfig)
+	for _, ch := range chapters {
+		exs, err := content.LoadChapterExercises(contentFS, ch.ID)
+		if err != nil {
+			log.Printf("load exercises for %s: %v (continuing without)", ch.ID, err)
+			continue
+		}
+		for k, v := range exs {
+			allExercises[k] = v
+		}
 	}
 
 	progressPath, err := platform.ProgressPath()
@@ -54,10 +70,10 @@ func main() {
 	}
 	progress := content.LoadProgress(progressPath)
 
-	state := app.NewStateWithFonts(ch, progress, progressPath, oba.FontNotoSans, oba.FontJetBrainsMono)
+	state := app.NewStateWithFonts(chapters, progress, progressPath, oba.FontNotoSans, oba.FontJetBrainsMono)
 	state.ContentFS = contentFS
 	state.LocaleFS = localeFS
-	state.Exercises = exercises
+	state.Exercises = allExercises
 
 	go func() {
 		w := &gio_app.Window{}
@@ -67,6 +83,7 @@ func main() {
 		state.Invalidate = w.Invalidate
 
 		home := screens.NewHome(state)
+		chapter := screens.NewChapter(state)
 		lesson := screens.NewLesson(state)
 		settings := screens.NewSettings(state)
 
@@ -85,6 +102,8 @@ func main() {
 					clip.Rect{Max: image.Pt(gtx.Constraints.Max.X, gtx.Constraints.Max.Y)}.Op())
 
 				switch state.CurrentScreen {
+				case app.ScreenChapter:
+					chapter.Layout(gtx)
 				case app.ScreenLesson:
 					lesson.Layout(gtx)
 				case app.ScreenSettings:
@@ -98,4 +117,36 @@ func main() {
 		}
 	}()
 	gio_app.Main()
+}
+
+// detectLocale checks system environment for a supported locale.
+func detectLocale() string {
+	available := i18n.Available()
+	isAvailable := func(code string) bool {
+		for _, a := range available {
+			if a == code {
+				return true
+			}
+		}
+		return false
+	}
+
+	for _, env := range []string{"LC_ALL", "LC_MESSAGES", "LANG"} {
+		val := os.Getenv(env)
+		if val == "" || val == "C" || val == "POSIX" {
+			continue
+		}
+		code := val
+		for i, c := range code {
+			if c == '_' || c == '.' || c == '@' {
+				code = code[:i]
+				break
+			}
+		}
+		if isAvailable(code) {
+			return code
+		}
+	}
+
+	return "en"
 }

@@ -51,7 +51,7 @@ func (k *KeyGenerator) Layout(gtx layout.Context) layout.Dimensions {
 		return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 			// Title.
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-				lbl := material.Label(th.Material, th.Text.H3, "Key Generator")
+				lbl := material.Label(th.Material, th.Text.H3, i18n.T("exercise_ui.keys_title"))
 				lbl.Color = th.Color.Text
 				lbl.Font.Weight = font.Bold
 				return lbl.Layout(gtx)
@@ -70,14 +70,14 @@ func (k *KeyGenerator) Layout(gtx layout.Context) layout.Dimensions {
 			// Results.
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
 				if !k.generated {
-					lbl := material.Label(th.Material, th.Text.Body, "Press Generate to create a random key pair.")
+					lbl := material.Label(th.Material, th.Text.Body, i18n.T("exercise_ui.keys_prompt"))
 					lbl.Color = th.Color.TextMuted
 					return lbl.Layout(gtx)
 				}
 				return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
-					layout.Rigid(k.keyDisplay("Private Key (32 bytes):", k.privKey, th.Color.WarningBg)),
+					layout.Rigid(k.keyDisplay(i18n.T("exercise_ui.keys_private"), k.privKey, th.Color.WarningBg)),
 					layout.Rigid(layout.Spacer{Height: th.Space.Medium}.Layout),
-					layout.Rigid(k.keyDisplay("Public Key (33 bytes, compressed):", k.pubKey, th.Color.TipBg)),
+					layout.Rigid(k.keyDisplay(i18n.T("exercise_ui.keys_public"), k.pubKey, th.Color.TipBg)),
 					layout.Rigid(layout.Spacer{Height: th.Space.Medium}.Layout),
 					// Safety note.
 					layout.Rigid(func(gtx layout.Context) layout.Dimensions {

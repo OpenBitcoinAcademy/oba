@@ -16,10 +16,10 @@ import (
 	"github.com/openbitcoinacademy/oba/internal/ui/components"
 )
 
-// Home displays the lesson list with progress indicators.
+// Home displays the chapter selector with progress for each chapter.
 type Home struct {
 	state       *app.State
-	lessonBtns  []widget.Clickable
+	chapterBtns []widget.Clickable
 	settingsBtn widget.Clickable
 	list        widget.List
 }
@@ -27,8 +27,8 @@ type Home struct {
 // NewHome creates the home screen.
 func NewHome(state *app.State) *Home {
 	h := &Home{
-		state:      state,
-		lessonBtns: make([]widget.Clickable, len(state.Chapter.Lessons)),
+		state:       state,
+		chapterBtns: make([]widget.Clickable, len(state.Chapters)),
 	}
 	h.list.Axis = layout.Vertical
 	return h
@@ -39,9 +39,9 @@ func (h *Home) Layout(gtx layout.Context) layout.Dimensions {
 	th := h.state.Theme
 
 	// Handle clicks.
-	for i := range h.lessonBtns {
-		if h.lessonBtns[i].Clicked(gtx) {
-			h.state.NavigateToLesson(i)
+	for i := range h.chapterBtns {
+		if h.chapterBtns[i].Clicked(gtx) {
+			h.state.NavigateToChapter(i)
 		}
 	}
 	if h.settingsBtn.Clicked(gtx) {
@@ -57,96 +57,75 @@ func (h *Home) Layout(gtx layout.Context) layout.Dimensions {
 			}.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
 				return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-						lbl := material.Label(th.Material, th.Text.H1, i18n.T(h.state.Chapter.TitleKey))
+						lbl := material.Label(th.Material, th.Text.H1, i18n.T("nav.app_title"))
 						lbl.Color = th.Color.Text
 						lbl.Font.Weight = font.Bold
 						return lbl.Layout(gtx)
 					}),
-					layout.Rigid(layout.Spacer{Height: th.Space.XSmall}.Layout),
-					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-						lbl := material.Label(th.Material, th.Text.Body, i18n.T(h.state.Chapter.DescKey))
-						lbl.Color = th.Color.TextMuted
-						return lbl.Layout(gtx)
-					}),
 					layout.Rigid(layout.Spacer{Height: th.Space.Medium}.Layout),
+					// Settings button.
 					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-						return layout.Flex{Alignment: layout.Middle}.Layout(gtx,
-							layout.Flexed(1, func(gtx layout.Context) layout.Dimensions {
-								bar := &components.ProgressBar{
-									Completed: h.state.Progress.CompletedCount(),
-									Total:     len(h.state.Chapter.Lessons),
-									Theme:     th,
-								}
-								return bar.Layout(gtx)
-							}),
-							layout.Rigid(layout.Spacer{Width: th.Space.Medium}.Layout),
-							layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-								btn := material.Button(th.Material, &h.settingsBtn, i18n.T("nav.settings"))
-								btn.Background = th.Color.Surface
-								btn.Color = th.Color.TextMuted
-								btn.TextSize = th.Text.Caption
-								return btn.Layout(gtx)
-							}),
-						)
+						btn := material.Button(th.Material, &h.settingsBtn, i18n.T("nav.settings"))
+						btn.Background = th.Color.Surface
+						btn.Color = th.Color.TextMuted
+						btn.TextSize = th.Text.Caption
+						return btn.Layout(gtx)
 					}),
 				)
 			})
 		}),
-		// Lesson list.
+		// Chapter list.
 		layout.Flexed(1, func(gtx layout.Context) layout.Dimensions {
-			return material.List(th.Material, &h.list).Layout(gtx, len(h.state.Chapter.Lessons),
+			return material.List(th.Material, &h.list).Layout(gtx, len(h.state.Chapters),
 				func(gtx layout.Context, i int) layout.Dimensions {
-					return h.lessonCard(gtx, i)
+					return h.chapterCard(gtx, i)
 				},
 			)
 		}),
 	)
 }
 
-func (h *Home) lessonCard(gtx layout.Context, idx int) layout.Dimensions {
+func (h *Home) chapterCard(gtx layout.Context, idx int) layout.Dimensions {
 	th := h.state.Theme
-	lesson := h.state.Chapter.Lessons[idx]
-	complete := h.state.Progress.IsLessonComplete(lesson.ID)
+	ch := h.state.Chapters[idx]
+	completed := h.state.Progress.CompletedCountForChapter(ch)
+	total := len(ch.Lessons)
 
 	return layout.Inset{
 		Left: th.Space.Medium, Right: th.Space.Medium,
 		Bottom: th.Space.Small,
 	}.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
-		return material.Clickable(gtx, &h.lessonBtns[idx], func(gtx layout.Context) layout.Dimensions {
-			// Card background.
+		return material.Clickable(gtx, &h.chapterBtns[idx], func(gtx layout.Context) layout.Dimensions {
 			paint.FillShape(gtx.Ops, th.Color.Surface, clip.Rect{Max: gtx.Constraints.Max}.Op())
 
 			return layout.Inset{
 				Top: th.Space.Medium, Bottom: th.Space.Medium,
 				Left: th.Space.Medium, Right: th.Space.Medium,
 			}.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
-				return layout.Flex{Alignment: layout.Middle}.Layout(gtx,
-					// Completion dot.
+				return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
+					// Title.
 					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-						return components.CompletionDot(gtx, complete, th.Color)
+						lbl := material.Label(th.Material, th.Text.H3, i18n.T(ch.TitleKey))
+						lbl.Color = th.Color.Text
+						lbl.Font.Weight = font.Bold
+						return lbl.Layout(gtx)
 					}),
-					layout.Rigid(layout.Spacer{Width: th.Space.Medium}.Layout),
-					// Lesson info.
-					layout.Flexed(1, func(gtx layout.Context) layout.Dimensions {
-						return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
-							layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-								lbl := material.Label(th.Material, th.Text.H3, i18n.T(lesson.TitleKey))
-								lbl.Color = th.Color.Text
-								return lbl.Layout(gtx)
-							}),
-							layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-								secs := len(lesson.Sections)
-								lbl := material.Label(th.Material, th.Text.Caption, itoa(secs)+" sections")
-								lbl.Color = th.Color.TextMuted
-								return lbl.Layout(gtx)
-							}),
-						)
-					}),
-					// Chevron.
+					layout.Rigid(layout.Spacer{Height: th.Space.XSmall}.Layout),
+					// Description.
 					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-						lbl := material.Label(th.Material, th.Text.H3, ">")
+						lbl := material.Label(th.Material, th.Text.Body, i18n.T(ch.DescKey))
 						lbl.Color = th.Color.TextMuted
 						return lbl.Layout(gtx)
+					}),
+					layout.Rigid(layout.Spacer{Height: th.Space.Small}.Layout),
+					// Progress.
+					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+						bar := &components.ProgressBar{
+							Completed: completed,
+							Total:     total,
+							Theme:     th,
+						}
+						return bar.Layout(gtx)
 					}),
 				)
 			})
@@ -166,5 +145,4 @@ func itoa(n int) string {
 	return string(d)
 }
 
-// Enforce minimum touch target size.
-var _ = image.Point{}
+var _ = image.Point{} // keep import

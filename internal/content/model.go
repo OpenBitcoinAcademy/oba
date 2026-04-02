@@ -70,9 +70,17 @@ type DiagramSection struct {
 
 func (s *DiagramSection) SectionType() string { return "diagram" }
 
+// ValidateDiagramID is called during Validate to check that a diagram ID
+// exists in the registry. Set this before loading content. If nil, only
+// checks that the ID is non-empty.
+var ValidateDiagramID func(id string) error
+
 func (s *DiagramSection) Validate() error {
 	if s.DiagramID == "" {
 		return fmt.Errorf("diagram section missing diagram_id")
+	}
+	if ValidateDiagramID != nil {
+		return ValidateDiagramID(s.DiagramID)
 	}
 	return nil
 }

@@ -6,6 +6,7 @@ import (
 	"gioui.org/layout"
 	"gioui.org/unit"
 
+	"github.com/openbitcoinacademy/oba/internal/i18n"
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
@@ -38,16 +39,15 @@ func (d *KeyDerivation) Layout(gtx layout.Context, th *theme.Theme) layout.Dimen
 	x2 := x1 + endW + gap
 	x3 := x2 + procW + gap
 
-	box(gtx, th, "Private Key", image.Pt(x1, y), endW, bh, th.Color.WarningBg)
+	box(gtx, th, i18n.T("diagram.private_key"), image.Pt(x1, y), endW, bh, th.Color.WarningBg)
 	arrow(gtx, th, image.Pt(x1+endW, y+bh/2), image.Pt(x2, y+bh/2))
-	processBox(gtx, th, "Elliptic Curve", image.Pt(x2, y), procW, bh)
+	processBox(gtx, th, i18n.T("diagram.elliptic_curve"), image.Pt(x2, y), procW, bh)
 	arrow(gtx, th, image.Pt(x2+procW, y+bh/2), image.Pt(x3, y+bh/2))
-	box(gtx, th, "Public Key", image.Pt(x3, y), endW, bh, th.Color.TipBg)
+	box(gtx, th, i18n.T("diagram.public_key"), image.Pt(x3, y), endW, bh, th.Color.TipBg)
 
-	// "one-way" label centered above the arrows.
 	captionX := x1 + endW + (x3-x1-endW)/2 - pct(w, 6)
 	captionY := y - gtx.Dp(unit.Dp(16))
-	colorCaption(gtx, th, "one-way function", image.Pt(captionX, captionY), th.Color.TextMuted)
+	colorCaption(gtx, th, i18n.T("diagram.one_way"), image.Pt(captionX, captionY), th.Color.TextMuted)
 
 	return layout.Dimensions{Size: image.Pt(w, h)}
 }

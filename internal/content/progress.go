@@ -52,9 +52,21 @@ func (p *Progress) IsExerciseComplete(exerciseID string) bool {
 	return ok
 }
 
-// CompletedCount returns how many lessons have been completed.
+// CompletedCount returns how many lessons have been completed globally.
 func (p *Progress) CompletedCount() int {
 	return len(p.Completed)
+}
+
+// CompletedCountForChapter returns how many lessons in a specific chapter
+// have been completed.
+func (p *Progress) CompletedCountForChapter(ch *Chapter) int {
+	count := 0
+	for _, lesson := range ch.Lessons {
+		if p.IsLessonComplete(lesson.ID) {
+			count++
+		}
+	}
+	return count
 }
 
 // Reset clears all progress data.

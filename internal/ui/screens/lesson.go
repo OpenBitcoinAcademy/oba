@@ -66,7 +66,7 @@ func (l *Lesson) Layout(gtx layout.Context) layout.Dimensions {
 	lesson := l.state.Chapter.Lessons[l.state.CurrentLesson]
 
 	if l.backBtn.Clicked(gtx) {
-		l.state.NavigateHome()
+		l.state.NavigateChapterList()
 	}
 
 	return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
