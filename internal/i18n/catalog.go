@@ -3,6 +3,7 @@ package i18n
 import (
 	"fmt"
 	"io/fs"
+	"log"
 	"strings"
 
 	"github.com/BurntSushi/toml"
@@ -30,6 +31,8 @@ func loadCatalog(fsys fs.FS, path string) (catalog, error) {
 }
 
 // flatten recursively walks a nested map and produces dot-separated keys.
+// Non-string, non-map values are logged as warnings (fail-fast at startup
+// would be better, but changing the signature is deferred).
 func flatten(cat catalog, prefix string, m map[string]any) {
 	for k, v := range m {
 		key := k
@@ -41,6 +44,8 @@ func flatten(cat catalog, prefix string, m map[string]any) {
 			cat[key] = val
 		case map[string]any:
 			flatten(cat, key, val)
+		default:
+			log.Printf("i18n: unexpected value type for key %q: %T", key, v)
 		}
 	}
 }

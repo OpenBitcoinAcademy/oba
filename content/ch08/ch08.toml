@@ -22,8 +22,6 @@ title_key = "lessons.ch08_lesson01_title"
   type = "text"
 
   [[lessons.sections]]
-
-  [[lessons.sections]]
   type = "interactive"
   exercise_id = "ex10_sig_verify"
 

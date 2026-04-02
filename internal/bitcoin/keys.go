@@ -84,7 +84,7 @@ func (pub *PublicKey) SerializeUncompressed() []byte {
 	return pub.key.SerializeUncompressed()
 }
 
-// HASH160 returns RIPEMD160(SHA256(compressed pubkey)).
+// Hash160 returns RIPEMD160(SHA256(compressed pubkey)).
 // This is the public key hash used in address derivation.
 func (pub *PublicKey) Hash160() [20]byte {
 	return HASH160(pub.SerializeCompressed())

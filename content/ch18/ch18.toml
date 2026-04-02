@@ -44,8 +44,6 @@ title_key = "lessons.ch18_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
-
-  [[lessons.sections]]
   type = "interactive"
   exercise_id = "ex13_htlc_tracer"
 

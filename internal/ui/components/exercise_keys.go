@@ -75,9 +75,9 @@ func (k *KeyGenerator) Layout(gtx layout.Context) layout.Dimensions {
 					return lbl.Layout(gtx)
 				}
 				return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
-					layout.Rigid(k.keyDisplay(i18n.T("exercise_ui.keys_private"), k.privKey, th.Color.WarningBg)),
+					layout.Rigid(k.keyDisplay(i18n.T("exercise_ui.keys_private"), k.privKey)),
 					layout.Rigid(layout.Spacer{Height: th.Space.Medium}.Layout),
-					layout.Rigid(k.keyDisplay(i18n.T("exercise_ui.keys_public"), k.pubKey, th.Color.TipBg)),
+					layout.Rigid(k.keyDisplay(i18n.T("exercise_ui.keys_public"), k.pubKey)),
 					layout.Rigid(layout.Spacer{Height: th.Space.Medium}.Layout),
 					// Safety note.
 					layout.Rigid(func(gtx layout.Context) layout.Dimensions {
@@ -91,7 +91,7 @@ func (k *KeyGenerator) Layout(gtx layout.Context) layout.Dimensions {
 	})
 }
 
-func (k *KeyGenerator) keyDisplay(label, value string, _ interface{}) layout.Widget {
+func (k *KeyGenerator) keyDisplay(label, value string) layout.Widget {
 	return func(gtx layout.Context) layout.Dimensions {
 		return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 			layout.Rigid(func(gtx layout.Context) layout.Dimensions {

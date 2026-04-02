@@ -3,6 +3,7 @@ package content
 import (
 	"fmt"
 	"io/fs"
+	"strings"
 
 	"github.com/BurntSushi/toml"
 )
@@ -109,7 +110,7 @@ func LoadChapterExercises(fsys fs.FS, chapterID string) (map[string]*ExerciseCon
 }
 
 func hasTomlExt(name string) bool {
-	return len(name) > 5 && name[len(name)-5:] == ".toml"
+	return strings.HasSuffix(name, ".toml")
 }
 
 // ConfigStrings returns a string slice config value, or nil if missing.

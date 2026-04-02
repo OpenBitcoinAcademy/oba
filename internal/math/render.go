@@ -122,6 +122,7 @@ func (r *Renderer) drawText(gtx layout.Context, s string, pos image.Point, fontS
 		return
 	}
 	macro := op.Record(gtx.Ops)
+	gtx.Constraints.Min = image.Point{}
 	lbl := material.Label(r.Theme, unit.Sp(fontSize), s)
 	lbl.Color = r.Color
 	lbl.Font.Style = font.Italic
@@ -138,6 +139,7 @@ func (r *Renderer) drawTextUpright(gtx layout.Context, s string, pos image.Point
 		return
 	}
 	macro := op.Record(gtx.Ops)
+	gtx.Constraints.Min = image.Point{}
 	lbl := material.Label(r.Theme, unit.Sp(fontSize), s)
 	lbl.Color = r.Color
 	lbl.Font.Style = font.Regular

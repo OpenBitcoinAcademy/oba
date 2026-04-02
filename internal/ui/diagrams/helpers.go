@@ -11,7 +11,6 @@ import (
 	"gioui.org/op"
 	"gioui.org/op/clip"
 	"gioui.org/op/paint"
-	"gioui.org/unit"
 	"gioui.org/widget/material"
 
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
@@ -148,4 +147,3 @@ func pct(total, percent int) int {
 }
 
 // Ensure imports are used.
-var _ = unit.Dp(0)

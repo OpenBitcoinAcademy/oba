@@ -4,7 +4,6 @@ import (
 	"encoding/base64"
 	"encoding/hex"
 	"fmt"
-	"image"
 
 	"gioui.org/font"
 	"gioui.org/layout"
@@ -232,4 +231,3 @@ func toBinary(data []byte) string {
 }
 
 // Ensure image is used.
-var _ = image.Point{}

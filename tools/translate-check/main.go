@@ -11,7 +11,6 @@ package main
 import (
 	"crypto/sha256"
 	"fmt"
-	"io/fs"
 	"os"
 	"path/filepath"
 	"strings"
@@ -149,10 +148,6 @@ func main() {
 	}
 }
 
-type sectionDesc struct {
-	Type string `toml:"type"`
-}
-
 func resolvePaths(lessonID string, sections []struct {
 	Type string `toml:"type"`
 }) []string {
@@ -209,4 +204,3 @@ func fileHash(path string) string {
 }
 
 // Ensure fs import is used.
-var _ = fs.FS(nil)

@@ -67,7 +67,7 @@ func (h *BlockHeader) Serialize() []byte {
 	return data
 }
 
-// DifficultyBits returns the target in compact "bits" notation decoded
+// DifficultyDescription returns the target in compact "bits" notation decoded
 // to a human-readable description.
 func (h *BlockHeader) DifficultyDescription() string {
 	exp := h.Bits >> 24

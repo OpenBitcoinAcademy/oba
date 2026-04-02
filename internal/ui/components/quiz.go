@@ -18,20 +18,22 @@ import (
 
 // Quiz renders a multiple-choice question with radio buttons or checkboxes.
 type Quiz struct {
-	Section  *content.QuizSection
-	Theme    *theme.Theme
-	selected []bool
-	checked  bool
-	correct  bool
-	checkBtn widget.Clickable
+	Section    *content.QuizSection
+	Theme      *theme.Theme
+	selected   []bool
+	checked    bool
+	correct    bool
+	checkBtn   widget.Clickable
+	optionBtns []widget.Clickable
 }
 
 // NewQuiz creates a quiz widget for the given section.
 func NewQuiz(section *content.QuizSection, th *theme.Theme) *Quiz {
 	return &Quiz{
-		Section:  section,
-		Theme:    th,
-		selected: make([]bool, len(section.Options)),
+		Section:    section,
+		Theme:      th,
+		selected:   make([]bool, len(section.Options)),
+		optionBtns: make([]widget.Clickable, len(section.Options)),
 	}
 }
 
@@ -41,6 +43,13 @@ func (q *Quiz) Layout(gtx layout.Context) layout.Dimensions {
 	if q.checkBtn.Clicked(gtx) && !q.checked {
 		q.checked = true
 		q.correct = q.isCorrect()
+	}
+
+	// Handle option clicks.
+	for i := range q.optionBtns {
+		if q.optionBtns[i].Clicked(gtx) {
+			q.SelectOption(i)
+		}
 	}
 
 	var children []layout.FlexChild
@@ -96,27 +105,29 @@ func (q *Quiz) renderOption(gtx layout.Context, idx int, multi bool) layout.Dime
 	}
 
 	return layout.Inset{Bottom: unit.Dp(6)}.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
-		return layout.Flex{Alignment: layout.Middle}.Layout(gtx,
-			// Indicator (circle or square).
-			layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-				size := gtx.Dp(unit.Dp(20))
-				ellipse := clip.Ellipse{Max: image.Pt(size, size)}
-				defer ellipse.Push(gtx.Ops).Pop()
-				c := q.Theme.Color.Divider
-				if q.selected[idx] {
-					c = q.Theme.Color.Primary
-				}
-				paint.FillShape(gtx.Ops, c, ellipse.Op(gtx.Ops))
-				return layout.Dimensions{Size: image.Pt(size, size)}
-			}),
-			layout.Rigid(layout.Spacer{Width: q.Theme.Space.Small}.Layout),
-			// Option text.
-			layout.Flexed(1, func(gtx layout.Context) layout.Dimensions {
-				lbl := material.Label(q.Theme.Material, q.Theme.Text.Body, q.Section.Options[idx])
-				lbl.Color = optColor
-				return lbl.Layout(gtx)
-			}),
-		)
+		return material.Clickable(gtx, &q.optionBtns[idx], func(gtx layout.Context) layout.Dimensions {
+			return layout.Flex{Alignment: layout.Middle}.Layout(gtx,
+				// Indicator (circle or square).
+				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+					size := gtx.Dp(unit.Dp(20))
+					ellipse := clip.Ellipse{Max: image.Pt(size, size)}
+					defer ellipse.Push(gtx.Ops).Pop()
+					c := q.Theme.Color.Divider
+					if q.selected[idx] {
+						c = q.Theme.Color.Primary
+					}
+					paint.FillShape(gtx.Ops, c, ellipse.Op(gtx.Ops))
+					return layout.Dimensions{Size: image.Pt(size, size)}
+				}),
+				layout.Rigid(layout.Spacer{Width: q.Theme.Space.Small}.Layout),
+				// Option text.
+				layout.Flexed(1, func(gtx layout.Context) layout.Dimensions {
+					lbl := material.Label(q.Theme.Material, q.Theme.Text.Body, q.Section.Options[idx])
+					lbl.Color = optColor
+					return lbl.Layout(gtx)
+				}),
+			)
+		})
 	})
 }
 
@@ -169,7 +180,7 @@ func (q *Quiz) SelectOption(idx int) {
 	q.selected[idx] = !q.selected[idx]
 }
 
-// SetChecked returns the result feedback color.
+// ResultColor returns the result feedback color.
 func (q *Quiz) ResultColor() color.NRGBA {
 	if q.correct {
 		return q.Theme.Color.Success

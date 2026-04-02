@@ -1,7 +1,7 @@
 package screens
 
 import (
-	"image"
+	"strconv"
 
 	"gioui.org/font"
 	"gioui.org/layout"
@@ -154,7 +154,7 @@ func (c *Chapter) lessonCard(gtx layout.Context, idx int) layout.Dimensions {
 							layout.Rigid(func(gtx layout.Context) layout.Dimensions {
 								secs := len(lesson.Sections)
 								text := i18n.TPlural("lessons.sections", secs, map[string]string{
-									"count": itoa(secs),
+									"count": strconv.Itoa(secs),
 								})
 								lbl := material.Label(th.Material, th.Text.Caption, text)
 								lbl.Color = th.Color.TextMuted
@@ -172,5 +172,3 @@ func (c *Chapter) lessonCard(gtx layout.Context, idx int) layout.Dimensions {
 		})
 	})
 }
-
-var _ = image.Point{} // keep import

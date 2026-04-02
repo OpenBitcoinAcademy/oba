@@ -71,9 +71,8 @@ func (s *Settings) Layout(gtx layout.Context) layout.Dimensions {
 	}
 	if s.confirmBtn.Clicked(gtx) {
 		s.state.Progress.Reset()
-		s.state.CompleteLesson() // triggers save
+		s.state.SaveProgress()
 		s.confirming = false
-		s.state.Invalidate()
 	}
 	if s.cancelBtn.Clicked(gtx) {
 		s.confirming = false

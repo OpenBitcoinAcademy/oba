@@ -62,7 +62,7 @@ func (sd *ScriptDebugger) generateScript() {
 func (sd *ScriptDebugger) Layout(gtx layout.Context) layout.Dimensions {
 	th := sd.Theme
 
-	if sd.stepBtn.Clicked(gtx) && !sd.done {
+	if sd.stepBtn.Clicked(gtx) && !sd.done && sd.engine != nil {
 		step, err := sd.engine.Step()
 		if err != nil {
 			sd.done = true

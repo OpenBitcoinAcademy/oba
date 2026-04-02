@@ -2,7 +2,6 @@ package bitcoin
 
 import (
 	"bytes"
-	"crypto/sha256"
 	"errors"
 	"fmt"
 )
@@ -11,15 +10,12 @@ import (
 // Enough for P2PKH verification, which is the foundation for
 // understanding how Bitcoin transactions work.
 const (
-	OP_0             byte = 0x00
-	OP_PUSHDATA1     byte = 0x4c
-	OP_1             byte = 0x51
-	OP_DUP           byte = 0x76
-	OP_EQUAL         byte = 0x87
-	OP_EQUALVERIFY   byte = 0x88
-	OP_HASH160       byte = 0xa9
-	OP_CHECKSIG      byte = 0xac
-	OP_CODESEPARATOR byte = 0xab
+	OP_0           byte = 0x00
+	OP_DUP         byte = 0x76
+	OP_EQUAL       byte = 0x87
+	OP_EQUALVERIFY byte = 0x88
+	OP_HASH160     byte = 0xa9
+	OP_CHECKSIG    byte = 0xac
 )
 
 // OpcodeName returns a human-readable name for an opcode.
@@ -109,11 +105,6 @@ type Engine struct {
 	stack  Stack
 	steps  []ScriptStep
 	pos    int
-
-	// For OP_CHECKSIG: the message being signed (txhash).
-	// In a real implementation this would be the sighash.
-	// For educational purposes we accept any valid signature format.
-	SigHash []byte
 }
 
 // NewEngine creates a script engine for the given script bytes.
@@ -308,4 +299,3 @@ func CombineScripts(scriptSig, scriptPubKey []byte) []byte {
 }
 
 // Ensure sha256 import is used.
-var _ = sha256.Sum256

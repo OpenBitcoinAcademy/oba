@@ -1,12 +1,14 @@
 package components
 
 import (
+	"image"
+	"strconv"
+
 	"gioui.org/layout"
 	"gioui.org/op/clip"
 	"gioui.org/op/paint"
 	"gioui.org/unit"
 	"gioui.org/widget/material"
-	"image"
 
 	"github.com/openbitcoinacademy/oba/internal/i18n"
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
@@ -47,8 +49,8 @@ func (p *ProgressBar) Layout(gtx layout.Context) layout.Dimensions {
 		// Label.
 		layout.Rigid(func(gtx layout.Context) layout.Dimensions {
 			text := i18n.TFmt("nav.progress", map[string]string{
-				"completed": itoa(p.Completed),
-				"total":     itoa(p.Total),
+				"completed": strconv.Itoa(p.Completed),
+				"total":     strconv.Itoa(p.Total),
 			})
 			lbl := material.Label(p.Theme.Material, p.Theme.Text.Caption, text)
 			lbl.Color = p.Theme.Color.TextMuted
@@ -72,15 +74,3 @@ func CompletionDot(gtx layout.Context, complete bool, c Colors) layout.Dimension
 
 // Colors is a re-export for use by callers without importing theme.
 type Colors = theme.Colors
-
-func itoa(n int) string {
-	if n == 0 {
-		return "0"
-	}
-	var digits []byte
-	for n > 0 {
-		digits = append([]byte{byte('0' + n%10)}, digits...)
-		n /= 10
-	}
-	return string(digits)
-}

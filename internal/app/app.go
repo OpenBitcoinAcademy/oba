@@ -24,6 +24,8 @@ const (
 type InvalidateFunc func()
 
 // State holds the application-wide state shared across screens.
+// All mutations happen from Gio's single-threaded frame loop goroutine.
+// Do not access State from other goroutines without synchronization.
 type State struct {
 	Theme     *theme.Theme
 	Chapters  []*content.Chapter                 // all loaded chapters
@@ -147,6 +149,12 @@ func (s *State) SetThemeMode(mode theme.Mode) {
 func (s *State) CompleteExercise(exerciseID string) {
 	s.Progress.MarkExerciseComplete(exerciseID)
 	s.saveProgress()
+}
+
+// SaveProgress persists progress to disk without marking any lesson complete.
+func (s *State) SaveProgress() {
+	s.saveProgress()
+	s.Invalidate()
 }
 
 func (s *State) saveProgress() {

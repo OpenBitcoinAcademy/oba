@@ -2,8 +2,6 @@
 package screens
 
 import (
-	"image"
-
 	"gioui.org/font"
 	"gioui.org/layout"
 	"gioui.org/op/clip"
@@ -132,17 +130,3 @@ func (h *Home) chapterCard(gtx layout.Context, idx int) layout.Dimensions {
 		})
 	})
 }
-
-func itoa(n int) string {
-	if n == 0 {
-		return "0"
-	}
-	var d []byte
-	for n > 0 {
-		d = append([]byte{byte('0' + n%10)}, d...)
-		n /= 10
-	}
-	return string(d)
-}
-
-var _ = image.Point{} // keep import

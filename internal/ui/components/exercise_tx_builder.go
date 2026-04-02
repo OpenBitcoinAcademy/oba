@@ -136,7 +136,10 @@ func (tb *TxBuilder) computeAll() {
 	})
 
 	// Step 2: Generate recipient.
-	recipientKey, _ := bitcoin.GenerateKey()
+	recipientKey, err := bitcoin.GenerateKey()
+	if err != nil {
+		return
+	}
 	recipientAddr := bitcoin.P2PKH(recipientKey.PublicKey(), false)
 	tb.steps = append(tb.steps, txBuildStep{
 		label:  "2. " + i18n.T("exercise_ui.tx_builder_recipient"),
