@@ -1,0 +1,1 @@
+Mratibu anaona ahadi za nonce na hisa za saini lakini si hisa za funguo za siri kamwe. Hata mratibu mbaya hawezi kughushi saini: ingehitaji kutatua tatizo la discrete logarithm. Jukumu la mratibu ni usambazaji wa ujumbe, hakuna zaidi. Mshiriki yeyote anaweza kutumika kama mratibu, au jukumu linaweza kupishana kati ya raundi.

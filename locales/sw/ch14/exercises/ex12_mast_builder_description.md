@@ -1,0 +1,1 @@
+Jenga mti wa MAST wenye majani 2 kutoka hati mbili. Hariri kila hati, kisha jenga mti kuona hash za majani na mzizi wa Merkle uliokokotolewa. Majani yanapangwa kabla ya kuhesabu hash, sawa na uundaji wa TapBranch wa Taproot.

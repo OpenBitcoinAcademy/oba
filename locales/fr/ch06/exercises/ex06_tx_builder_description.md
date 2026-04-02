@@ -1,0 +1,1 @@
+Construisez une transaction Bitcoin a partir de zero, etape par etape. Generez une paire de cles, selectionnez un UTXO a depenser, definissez un destinataire, calculez les frais et voyez la transaction serialisee finale avec son identifiant.

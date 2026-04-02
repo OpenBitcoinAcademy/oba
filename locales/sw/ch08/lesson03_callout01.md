@@ -1,0 +1,1 @@
+Sifa ya umstari wa Schnorr inafanya ujumlishaji wa saini uwezekane. Ikiwa msainiaji A anazalisha saini sA na msainiaji B anazalisha sB, jumla sA + sB ni saini halali kwa funguo ya umma iliyounganishwa A + B. ECDSA haina sifa hii, ndiyo sababu saini nyingi zilihitaji saini tofauti hadi Taproot.

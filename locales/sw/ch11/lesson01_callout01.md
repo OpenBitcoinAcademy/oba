@@ -1,0 +1,1 @@
+Ugumu wa Bitcoin unasasishwa kila vizuizi 2,016 (takriban wiki mbili) kudumisha wastani wa kizuizi kimoja kila dakika 10. Wachimbaji wakiongeza nguvu zaidi ya kompyuta na vizuizi vikija haraka, ugumu unaongezeka. Wachimbaji wakiondoka, ugumu unapungua. Utaratibu huu wa kujisasisha unashikilia uzalishaji wa vizuizi kuwa imara bila kujali nguvu kiasi gani ya uchimbaji ipo.

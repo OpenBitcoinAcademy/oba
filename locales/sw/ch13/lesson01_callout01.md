@@ -1,0 +1,1 @@
+Bitcoin inatumia mfano wa malipo ya kusukuma. Unaidhinisha malipo maalum kwa kusaini muamala maalum. Hakuna mtu anayeweza kuchukua fedha kutoka pochi yako bila saini yako. Linganisha hili na kadi ya mkopo, ambapo kushiriki nambari yako ya kadi kunamruhusu mtu yeyote kulipisha akaunti yako. Mfano wa kusukuma unaondoa kategoria nzima ya ulaghai.

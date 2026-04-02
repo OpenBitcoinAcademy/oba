@@ -1,0 +1,1 @@
+RGB inarithi ulinzi wa Bitcoin dhidi ya kutumia mara mbili bila kuweka data yoyote ya mkataba kwenye mnyororo. Blockchain haikui, lakini dhamana ya usalama ni ileile. UTXO iliyofungwa haiwezi kutumika mara mbili, hivyo tokeni ya RGB haiwezi kuhamishwa mara mbili. Makubaliano ya Bitcoin yanafanya kazi ngumu. RGB inashughulikia mantiki ya programu.

@@ -1,0 +1,1 @@
+Kizuizi cha kwanza (kizuizi 0) kimewekwa kwa nguvu ndani ya kila nodi ya Bitcoin. Hakiwezi kubadilishwa. Muamala wake wa coinbase una maandishi: "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks." Hii inatumika kama muda na kauli kuhusu mfumo wa kifedha ambao Bitcoin iliundwa kushughulikia.

@@ -1,0 +1,1 @@
+Percorra cada etapa da derivacao de endereco Bitcoin. Comecando com um par de chaves recem-gerado, avance pelo hashing SHA-256, hashing RIPEMD-160, adicao do byte de versao, calculo do checksum e codificacao Base58Check. O resultado final e um endereco testnet valido.

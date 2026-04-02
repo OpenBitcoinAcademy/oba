@@ -1,0 +1,1 @@
+Pressione Gerar para criar uma chave privada Bitcoin aleatoria. Veja a chave publica correspondente derivada em tempo real usando multiplicacao de curva eliptica. Ambas as chaves sao exibidas em hexadecimal com suas contagens de bytes.

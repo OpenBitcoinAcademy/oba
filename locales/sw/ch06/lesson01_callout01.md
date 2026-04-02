@@ -1,0 +1,1 @@
+Muamala wa kwanza wa Bitcoin kati ya watu wawili ulitokea Januari 12, 2009. Satoshi Nakamoto alituma BTC 10 kwa Hal Finney. Muamala huo ulikuwa na ingizo moja (kutoka tuzo ya coinbase) na matokeo mawili (BTC 10 kwa Finney, iliyobaki inarudi kwa Satoshi). Muundo uleule ambao kila muamala wa Bitcoin unatumia leo.

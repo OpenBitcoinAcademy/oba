@@ -1,0 +1,1 @@
+Punguzo la ushahidi wa SegWit liliundwa kupunguza gharama ya data ya saini kulingana na data inayounda UTXO. Kuunda UTXO kuna gharama ya muda mrefu (kila nodi kamili inazihifadhi), hivyo punguzo linafanya kuthibitisha saini (data ya muda) kuwa nafuu kuliko kuunda matokeo (data ya kudumu).

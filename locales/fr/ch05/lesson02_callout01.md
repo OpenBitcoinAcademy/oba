@@ -1,0 +1,1 @@
+La graine est le point de defaillance unique. Quiconque obtient votre graine peut deriver chaque cle privee de votre portefeuille et depenser tous vos bitcoins. Protegez la graine avec la meme rigueur que vous accorderiez a la valeur totale qu'elle controle. Stockez-la hors ligne. Ne la tapez jamais sur un site web. Ne la stockez jamais dans un service cloud.

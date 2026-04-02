@@ -1,0 +1,1 @@
+A prova Merkle cresce logaritmicamente com o numero de folhas. Uma arvore com 1.024 scripts requer apenas 10 hashes irmaos (10 * 32 = 320 bytes) na prova. O custo de adicionar condicoes alternativas raramente usadas e minimo: elas aumentam a prova em um nivel de hash sem afetar o custo do gasto por key path.

@@ -1,0 +1,1 @@
+Les attaques physiques contre les detenteurs supposes de bitcoins sont documentees et en augmentation. Ne divulguez pas publiquement combien de bitcoins vous detenez. Utilisez des phrases de passe sur les phrases de graine pour creer des portefeuilles a deni plausible. Considerez que la menace envers vos bitcoins peut etre physique, pas numerique.

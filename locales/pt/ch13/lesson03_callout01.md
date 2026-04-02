@@ -1,0 +1,1 @@
+Em 2013, uma mudanca de banco de dados no Bitcoin Core (de BerkeleyDB para LevelDB) acidentalmente alterou uma regra de consenso sobre o numero maximo de inputs em um bloco. O resultado foi uma divisao nao intencional da cadeia. A correcao exigiu rollback coordenado. Bugs de consenso nao sao riscos teoricos. Eles aconteceram e causaram disrupcao real.

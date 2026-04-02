@@ -1,0 +1,1 @@
+O gasto por key path e a otimizacao do caso comum. Um output Taproot bem projetado coloca o cenario de gasto mais provavel no key path (uma unica assinatura) e reserva o script path para alternativas. Quando todas as partes cooperam, a transacao e pequena, barata e privada. A arvore de scripts existe como seguro, mas nunca aparece na cadeia a menos que seja necessaria.

@@ -1,0 +1,1 @@
+Mbegu ni sehemu moja ya kushindikana. Mtu yeyote anayepata mbegu yako anaweza kutoa kila funguo binafsi katika pochi yako na kutumia bitcoin yako yote. Linda mbegu kwa uzito sawa na thamani yote inayoidhibiti. Ihifadhi nje ya mtandao. Usiiweke kwenye tovuti kamwe. Usiihifadhi kwenye huduma ya wingu kamwe.

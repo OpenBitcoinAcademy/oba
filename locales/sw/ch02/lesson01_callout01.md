@@ -1,0 +1,1 @@
+Unaweza kuchunguza miamala halisi ya Bitcoin kwa kutumia vivinjari vya blockchain kama mempool.space au blockstream.info. Ingiza kitambulisho cha muamala, anwani, au nambari ya kizuizi, na uone data halisi ambayo mtandao ulirekodi. Programu hii haihitaji mtandao, lakini blockchain ni ya umma na inaweza kutafutwa na mtu yeyote mwenye muunganisho wa mtandao.

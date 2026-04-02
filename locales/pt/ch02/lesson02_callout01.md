@@ -1,0 +1,1 @@
+A taxa que Alice paga nao vai para Bob. Ela vai para o minerador que inclui a transacao em um bloco. Taxas sao um incentivo para mineradores processarem transacoes. A taxa nao e uma porcentagem do valor enviado. Ela depende do peso da transacao em bytes virtuais, independentemente do valor transferido.

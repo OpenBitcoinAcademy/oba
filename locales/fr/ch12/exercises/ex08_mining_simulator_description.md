@@ -1,0 +1,1 @@
+Essayez de miner en trouvant un nonce qui produit un hachage avec des zeros en tete. Appuyez sur Miner pour essayer chaque nonce. Voyez combien de tentatives il faut pour trouver un hachage valide inferieur a la cible.

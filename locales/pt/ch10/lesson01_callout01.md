@@ -1,0 +1,1 @@
+Executar um no completo em hardware modesto e possivel. Um no podado precisa de cerca de 10 GB de espaco em disco. Um Raspberry Pi com cartao microSD pode validar o blockchain inteiro. A capacidade de rodar um no em casa, em hardware barato, e uma propriedade que os desenvolvedores do Bitcoin protegem com cuidado.

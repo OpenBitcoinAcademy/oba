@@ -1,0 +1,1 @@
+Ujumbe wa `getheaders` ulichukua nafasi ya mbinu ya zamani ya `getblocks` iliyotumika kabla ya njia ya kusawazisha vichwa kwanza. Kusawazisha vichwa kwanza kunairuhusu nodi kuthibitisha mnyororo wa uthibitisho wa kazi kabla ya kupakua vizuizi kamili. Hii inazuia mshambuliaji kupoteza kipimo data cha nodi kwa kuiweka vizuizi kwenye mnyororo dhaifu.

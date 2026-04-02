@@ -1,0 +1,1 @@
+Rastreie um pagamento Lightning de 3 saltos passo a passo. Alice paga Carol atraves de Bob. Cada passo mostra a oferta HTLC, valor e timelock. Apos Carol revelar a preimagem, observe-a se propagar de volta pela rota.

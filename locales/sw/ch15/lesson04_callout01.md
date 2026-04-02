@@ -1,0 +1,1 @@
+Liana inasaidia njia nyingi za kurejesha zenye kufuli ya wakati na seti za wasainiaji zinazongezeka. Usanidi wa kawaida: funguo ya mmiliki inatumia mara moja; baada ya miezi 6, 2-ya-3 na wanafamilia inaanzishwa; baada ya miezi 12, 3-ya-5 ikijumuisha wakili na notari inaanzishwa. Kila kiwango ni tawi tofauti la Miniscript lililokusanywa katika kielelezo kile kile.

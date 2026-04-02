@@ -1,0 +1,1 @@
+Kila ingizo ya muamala inasainiwa kwa uhuru. Muamala wenye ingizo tatu unahitaji saini tatu tofauti, zinazoweza kuwa kutoka kwa funguo binafsi tatu tofauti. Uhuru huu unawezesha uundaji wa pamoja wa miamala: wahusika wengi wanachangia ingizo bila kushiriki funguo.

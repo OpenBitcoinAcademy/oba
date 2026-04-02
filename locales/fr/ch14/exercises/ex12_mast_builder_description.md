@@ -1,0 +1,1 @@
+Construisez un arbre MAST a 2 feuilles a partir de deux scripts. Editez chaque script, puis construisez l'arbre pour voir les hachages de feuilles et la racine de Merkle calculee. Les feuilles sont triees avant le hachage, correspondant a la construction TapBranch de Taproot.

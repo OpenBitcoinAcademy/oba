@@ -1,0 +1,1 @@
+O cronograma de emissao do Bitcoin foi fixado no lancamento e nunca mudou. Cada halving reduz a taxa de nova oferta. Em contraste, moedas fiduciarias nao tem limite rigido de emissao, e bancos centrais podem aumentar a oferta monetaria a qualquer momento. O halving torna a politica monetaria do Bitcoin auditavel por qualquer pessoa executando um no.

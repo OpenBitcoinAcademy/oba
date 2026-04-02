@@ -1,0 +1,1 @@
+"Usiamini, thibitisha" si kauli mbiu. Ni kanuni ya muundo. Kila sheria katika itifaki ya Bitcoin inaweza kukaguliwa na programu inayoendeshwa kwenye vifaa vyako mwenyewe. Nodi kamili ndiyo zana inayofanya hili liwezekane. Bila hiyo, unaamini kompyuta ya mtu mwingine kukuambia ukweli kuhusu pesa zako.

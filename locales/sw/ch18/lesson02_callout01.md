@@ -1,0 +1,1 @@
+Ankara ya Lightning inasimba H(R), kiasi cha malipo, kitambulisho cha nodi ya mpokeaji, na vidokezo vya kupitisha. Mtumaji anatumia taarifa hii kuunda njia ya malipo. Ankara haina R yenyewe. Mpokeaji pekee ndiye anayejua R, na kuifichua ndiyo uthibitisho wa kriptografia kwamba malipo yamepokelewa.

@@ -1,0 +1,1 @@
+Voce pode explorar transacoes reais do Bitcoin usando exploradores de blockchain como mempool.space ou blockstream.info. Digite um ID de transacao, endereco ou numero de bloco e veja os dados reais que a rede registrou. O aplicativo funciona offline, mas o blockchain e publico e pesquisavel por qualquer pessoa com conexao a internet.

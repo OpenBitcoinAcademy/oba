@@ -1,0 +1,1 @@
+Construisez un chemin de derivation BIP44/84 en selectionnant chaque niveau. Touchez chaque composant pour parcourir les valeurs de purpose, coin type, account, change et index. Le chemin complet se met a jour au fur et a mesure.

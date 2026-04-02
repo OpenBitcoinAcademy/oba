@@ -1,0 +1,1 @@
+Nunca compartilhe sua chave privada. Nunca a digite em um site. Nunca a armazene em um servico de nuvem. A seguranca de cada bitcoin que voce possui depende de esse numero permanecer secreto. Se outra pessoa descobrir sua chave privada, ela pode tomar seu bitcoin, e nao ha como reverter a transacao.

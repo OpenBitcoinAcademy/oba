@@ -1,0 +1,1 @@
+Tokeni za ecash ni kama noti za kidijitali. Nambari ya serial inafungwa kwa upofu wakati wa utoaji, hivyo benki (mint) iliyochapisha noti haiwezi kufuatilia ni nani anaigawa. David Chaum alivumbua dhana hii mwaka 1983. Fedimint na Cashu zinaleta kwenye Bitcoin, na kutoa faragha kama ya pesa taslimu kwa malipo ya kidijitali.

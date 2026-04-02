@@ -1,0 +1,1 @@
+Bitcoin n'a pas besoin de calculer. Il a besoin de verifier que quelqu'un a calcule correctement. BitVM rend cette distinction operationnelle : tout le calcul se fait hors chaine, seules les preuves de fraude touchent la blockchain. La couche de base reste un moteur de verification, pas un moteur d'execution. L'ecosysteme evolue tandis que le protocole reste conservateur.

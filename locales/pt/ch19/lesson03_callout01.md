@@ -1,0 +1,1 @@
+Tokens de ecash sao como cedulas digitais. O numero de serie e cegado na emissao, entao o banco (mint) que imprimiu a nota nao pode rastrear quem a gasta. David Chaum inventou esse conceito em 1983. Fedimint e Cashu o trazem para o Bitcoin, fornecendo privacidade similar a dinheiro para pagamentos digitais.

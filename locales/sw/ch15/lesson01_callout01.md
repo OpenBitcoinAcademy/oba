@@ -1,0 +1,1 @@
+Andrew Poelstra, Pieter Wuille, na Sanket Kanjalkar walitengeneza Miniscript kuanzia 2019. Ilitokea kutokana na msongo wa vitendo: Blockstream ilihitaji kuunda sera ngumu za kutumia kwa bidhaa yake ya uhifadhi, Liquid, na kugundua kwamba Script iliyoandikwa kwa mkono ilikuwa na makosa mengi sana kukaguliwa kwa kiwango kikubwa. BIP 379 ilipendekezwa rasmi mwaka 2023.

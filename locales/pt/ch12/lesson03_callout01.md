@@ -1,0 +1,1 @@
+O consenso do Bitcoin e emergente, nao direcionado. Nenhum lider coordena a rede. Milhares de nos aplicam de forma independente as mesmas regras aos mesmos dados e chegam a mesma conclusao. Essa concordancia emergente e o que torna o Bitcoin descentralizado: remover qualquer no, minerador ou desenvolvedor nao muda nada sobre o resultado.

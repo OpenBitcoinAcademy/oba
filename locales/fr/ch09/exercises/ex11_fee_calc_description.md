@@ -1,0 +1,1 @@
+Entrez le nombre d'entrees et de sorties pour estimer le poids et les frais de transaction. Chaque entree ajoute 68 vB, chaque sortie ajoute 31 vB, plus 10 vB de frais fixes. Voyez les frais aux taux de 1, 5 et 20 sat/vB.

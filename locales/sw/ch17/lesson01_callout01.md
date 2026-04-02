@@ -1,0 +1,1 @@
+Tofauti ya alama ya kwenye mnyororo ni kubwa. Kutumia kwa OP_CHECKMULTISIG ya 3-ya-5 kunatumia takriban baiti 367 za data ya ushahidi. Kutumia kwa FROST kwa kizingiti kile kile kunatumia baiti 64: saini moja ya Schnorr, isiyoweza kutofautishwa na kutumia kwa funguo moja. Akiba inakua kadri kizingiti na idadi ya washiriki inavyoongezeka.

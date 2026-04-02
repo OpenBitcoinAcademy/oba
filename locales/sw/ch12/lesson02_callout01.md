@@ -1,0 +1,1 @@
+Ratiba ya utoaji ya Bitcoin iliwekwa wakati wa uzinduzi na haijabadilishwa kamwe. Kila kugawanyika nusu kunapunguza kiwango cha ugavi mpya. Kinyume chake, sarafu za fiat hazina kikomo cha utoaji, na benki kuu zinaweza kuongeza ugavi wa pesa wakati wowote. Kugawanyika nusu kunafanya sera ya fedha ya Bitcoin kuwa ya kukaguliwa na mtu yeyote anayeendesha nodi.

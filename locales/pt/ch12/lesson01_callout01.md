@@ -1,0 +1,1 @@
+Proof of work converte eletricidade em seguranca. Um atacante deve gastar pelo menos tanta energia quanto os mineradores honestos para reescrever a cadeia. Esse custo fisico e o que torna o livro-razao do Bitcoin resistente a adulteracao, diferente de sistemas onde a seguranca depende de confianca ou reputacao.

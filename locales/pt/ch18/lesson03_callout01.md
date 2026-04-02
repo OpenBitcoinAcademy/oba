@@ -1,0 +1,1 @@
+O protocolo de gossip do Lightning (BOLT #7) transmite anuncios de canais e atualizacoes pela rede. Os nos aprendem sobre novos canais, mudancas de taxa e canais desabilitados. Essa informacao e publica por padrao, mas canais privados existem: nao sao anunciados e sao usados apenas pelas partes envolvidas. Canais privados adicionam capacidade invisivel para o resto da rede.

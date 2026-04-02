@@ -1,0 +1,1 @@
+Cada input de transacao e assinado de forma independente. Uma transacao com tres inputs requer tres assinaturas separadas, potencialmente de tres chaves privadas diferentes. Essa independencia permite a construcao colaborativa de transacoes: multiplas partes contribuem inputs sem compartilhar chaves.

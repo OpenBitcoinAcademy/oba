@@ -1,0 +1,1 @@
+Uma fatura Lightning codifica H(R), o valor do pagamento, o ID do no do destinatario e dicas de roteamento. O remetente usa essas informacoes para construir o caminho de pagamento. A fatura nao contem o proprio R. So o destinatario conhece R, e revela-lo e a prova criptografica de que o pagamento foi recebido.

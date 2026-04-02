@@ -1,0 +1,1 @@
+Digite qualquer coisa e veja o hash SHA-256 atualizar em tempo real. Mude um unico caractere e observe o hash inteiro mudar. Alterne entre saida em hexadecimal, binario e base64 para ver o mesmo hash em diferentes representacoes.

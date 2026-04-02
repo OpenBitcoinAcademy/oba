@@ -1,0 +1,7 @@
+## Produits construits sur Miniscript
+
+Liana Wallet est un portefeuille Bitcoin open source construit specifiquement autour de la recuperation a verrou temporel de Miniscript. Developpe par Wizardsardine et publie sous la licence BSD 3-Clause, Liana permet aux utilisateurs de configurer une cle de depense principale avec un ou plusieurs chemins de recuperation qui s'activent apres des delais choisis. Le portefeuille gere la generation de descripteurs, la derivation d'adresses et la construction de PSBT. Les utilisateurs definissent leur politique via une interface graphique sans ecrire de Miniscript a la main.
+
+AnchorWatch adopte une approche differente. Fondee par Rob Hamilton, AnchorWatch fournit une garde assuree de bitcoins garantie par Lloyd's of London. Le modele de garde utilise des politiques Miniscript ou AnchorWatch detient une cle de recuperation qui ne s'active qu'apres un verrou temporel. L'assurance couvre la perte de la cle principale. Parce que les conditions de depense sont encodees en Miniscript, l'assureur peut verifier la politique sur la chaine : la cle de recuperation n'a aucun acces avant le verrou temporel, et le detenteur principal conserve le controle total en fonctionnement normal.
+
+Les deux produits existent parce que Miniscript a rendu les politiques de depense complexes portables et verifiables. La politique est dans le descripteur. N'importe quel portefeuille, signataire ou auditeur compatible peut l'analyser et confirmer les conditions. La confiance repose sur les mathematiques, pas sur le fournisseur.

@@ -1,0 +1,1 @@
+P2SH a transfere le cout des scripts complexes de l'expediteur au destinataire. Avant P2SH, la sortie de l'expediteur devait contenir le script complet, rendant les conditions complexes couteuses pour l'expediteur. Avec P2SH, la sortie ne contient qu'un hachage de 20 octets. Le destinataire revele le script complet quand il depense, payant le cout a ce moment-la.

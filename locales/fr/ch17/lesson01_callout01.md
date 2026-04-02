@@ -1,0 +1,1 @@
+La difference d'empreinte sur la chaine est spectaculaire. Une depense OP_CHECKMULTISIG 3-of-5 utilise environ 367 octets de donnees temoin. Une depense FROST du meme seuil utilise 64 octets : une signature Schnorr, indiscernable d'une depense a cle unique. Les economies augmentent avec le seuil et le nombre de participants.

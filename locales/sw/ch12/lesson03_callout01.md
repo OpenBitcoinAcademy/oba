@@ -1,0 +1,1 @@
+Makubaliano ya Bitcoin ni yanayojitokeza, si yanayoelekezwa. Hakuna kiongozi anayeratibu mtandao. Maelfu ya nodi kwa uhuru zinatumia sheria zile zile kwa data ile ile na kufika kwenye hitimisho lile lile. Makubaliano haya yanayojitokeza ndiyo yanayofanya Bitcoin kuwa ya kimadaraka: kuondoa nodi yoyote moja, mchimbaji, au mtengenezaji hakubadilishi matokeo yoyote.

@@ -1,0 +1,1 @@
+Saini za ECDSA ni kubwa kuliko saini za Schnorr (baiti 71-73 dhidi ya baiti 64) na hazisaidii ujumlishaji wa saini nyingi wa asili. Licha ya vikomo hivi, ECDSA bado inatumika kwa uoanifu wa nyuma na hati zilizopo na kwa kutumia matokeo ya SegWit v0.

@@ -1,0 +1,1 @@
+SegWit ilianzisha mti wa pili wa Merkle kwa data ya ushahidi. Mzizi wa Merkle wa ushahidi unajifungwa katika matokeo ya coinbase, si katika kichwa cha kizuizi. Hii inahifadhi uoanifu wa nyuma: nodi za zamani zinaona muundo uleule wa kichwa cha kizuizi. Nodi za SegWit zinathibitisha mti wa Merkle wa miamala na mti wa Merkle wa ushahidi.

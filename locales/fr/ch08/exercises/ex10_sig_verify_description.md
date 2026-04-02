@@ -1,0 +1,1 @@
+Generez une signature et verifiez-la par rapport a une cle publique. Une paire de cles aleatoire signe un message fixe. Vous voyez la cle publique, la signature encodee en DER, et pouvez verifier que la signature correspond.

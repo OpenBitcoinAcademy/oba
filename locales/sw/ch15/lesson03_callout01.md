@@ -1,0 +1,1 @@
+Bitcoin Core imesaidia vielelezo vya matokeo tangu toleo 0.17 (2018) na vielelezo vya Miniscript tangu toleo 24.0 (2022). Unapoita `listdescriptors` kwenye pochi ya kisasa ya Bitcoin Core, inarudisha seti kamili ya vielelezo ambayo pochi inatumia. Unaweza kuuza nje vielelezo hivi na kuviingiza kwenye pochi nyingine kuunda upya seti ileile ya anwani.

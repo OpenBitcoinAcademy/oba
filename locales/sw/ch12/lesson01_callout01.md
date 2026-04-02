@@ -1,0 +1,1 @@
+Uthibitisho wa kazi unabadilisha umeme kuwa usalama. Mshambuliaji lazima atumie angalau nishati ile ile kama wachimbaji wa uaminifu kuandika upya mnyororo. Gharama hii ya kimwili ndiyo inayofanya daftari la Bitcoin kuwa sugu dhidi ya kuchezwa, tofauti na mifumo ambapo usalama unategemea uaminifu au sifa peke yake.

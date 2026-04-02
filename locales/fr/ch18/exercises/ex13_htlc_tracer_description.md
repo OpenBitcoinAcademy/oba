@@ -1,0 +1,1 @@
+Tracez un paiement Lightning a 3 sauts etape par etape. Alice paie Carol a travers Bob. Chaque etape montre l'offre HTLC, le montant et le verrou temporel. Apres que Carol revele la preimage, regardez-la se propager en arriere a travers la route.

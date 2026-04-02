@@ -1,0 +1,1 @@
+SHA-256 produit 256 bits de sortie. Cela represente $2^{256}$ valeurs possibles, un nombre si grand qu'il depasse le nombre estime d'atomes dans l'univers observable. Trouver deux entrees differentes qui produisent le meme hachage est, a toutes fins pratiques, impossible.

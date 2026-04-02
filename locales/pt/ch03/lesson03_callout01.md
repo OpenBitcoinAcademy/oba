@@ -1,0 +1,1 @@
+Os dados que seu no armazena sao autoritativos, nao porque alguma autoridade os designou, mas porque seu no os verificou de forma independente. Um resultado de `getblock` do seu no carrega o peso de cada regra de consenso que seu software aplicou durante a verificacao.

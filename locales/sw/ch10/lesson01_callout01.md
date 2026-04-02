@@ -1,0 +1,1 @@
+Kuendesha nodi kamili kwenye vifaa vya kawaida inawezekana. Nodi iliyopunguzwa inahitaji takriban GB 10 za nafasi ya diski. Raspberry Pi yenye kadi ya microSD inaweza kuthibitisha blockchain nzima. Uwezo wa kuendesha nodi nyumbani, kwenye vifaa vya bei nafuu, ni sifa ambayo watengenezaji wa Bitcoin wanaihifadhi kwa umakini.

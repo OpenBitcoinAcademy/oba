@@ -1,0 +1,1 @@
+Muamala wa ufadhili unatangazwa baada tu ya wahusika wote wawili kusaini muamala wa kwanza wa ahadi. Hakuna mhusika anayeweza kushikilia fedha za mwingine kama mateka. Ikiwa kitu kitaenda vibaya kabla ya ahadi ya kwanza kusainiwa, muamala wa ufadhili hautangazwi kamwe na hakuna fedha ziko hatarini.

@@ -1,0 +1,1 @@
+A transacao de funding e transmitida somente apos ambas as partes terem assinado a primeira transacao de commitment. Nenhuma parte pode manter os fundos da outra como refem. Se algo der errado antes do primeiro commitment ser assinado, a transacao de funding nunca e transmitida e nenhum fundo esta em risco.

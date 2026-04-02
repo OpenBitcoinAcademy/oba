@@ -1,0 +1,72 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - goos: linux
+            goarch: amd64
+          - goos: linux
+            goarch: arm64
+          - goos: windows
+            goarch: amd64
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Install Gio dependencies
+        if: matrix.goos == 'linux'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq gcc pkg-config \
+            libwayland-dev libx11-dev libx11-xcb-dev \
+            libxkbcommon-dev libxkbcommon-x11-dev \
+            libgles2-mesa-dev libegl1-mesa-dev \
+            libffi-dev libvulkan-dev \
+            libxcursor-dev libxfixes-dev
+      - name: Build
+        env:
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+        run: |
+          ext=""
+          if [ "${{ matrix.goos }}" = "windows" ]; then ext=".exe"; fi
+          go build -o oba-${{ matrix.goos }}-${{ matrix.goarch }}${ext} ./cmd/oba
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: oba-${{ matrix.goos }}-${{ matrix.goarch }}
+          path: oba-*
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+      - name: Compute checksums
+        run: |
+          cd artifacts
+          find . -type f -name "oba-*" -exec mv {} . \;
+          sha256sum oba-* > SHA256SUMS
+          cat SHA256SUMS
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            artifacts/oba-*
+            artifacts/SHA256SUMS
+          generate_release_notes: true

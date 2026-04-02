@@ -1,0 +1,1 @@
+Usishiriki funguo yako binafsi kamwe. Usiiweke kwenye tovuti kamwe. Usiihifadhi kwenye huduma ya wingu kamwe. Usalama wa kila bitcoin unayomiliki unategemea nambari hii kubaki siri. Ikiwa mtu mwingine anajifunza funguo yako binafsi, anaweza kuchukua bitcoin yako, na hakuna njia ya kubatilisha muamala.

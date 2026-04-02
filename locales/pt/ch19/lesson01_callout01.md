@@ -1,0 +1,1 @@
+O conservadorismo da camada base nao e uma fraqueza. E a propriedade que torna tudo mais possivel. Layers 2 e 3 podem experimentar livremente porque sabem que a Layer 1 nao mudara sob elas. Uma base estavel habilita experimentacao instavel acima dela.

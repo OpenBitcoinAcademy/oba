@@ -1,0 +1,1 @@
+Transaction pinning ni wasiwasi halisi kwa itifaki zilizojengwa juu ya Bitcoin, kama Lightning Network. Matokeo ya nanga (yaliyofafanuliwa katika vipimo vya BOLT) na package relay (inayotumwa katika Bitcoin Core) zinafanya kazi pamoja kupunguza shambulio hili. Muundo wa mfumo wa ada unaendelea kubadilika kadri matumizi mapya yanavyojitokeza.

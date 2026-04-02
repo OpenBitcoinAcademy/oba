@@ -1,0 +1,1 @@
+Le consensus de Bitcoin est emergent, pas dirige. Aucun leader ne coordonne le reseau. Des milliers de noeuds appliquent independamment les memes regles aux memes donnees et arrivent a la meme conclusion. Cet accord emergent est ce qui rend Bitcoin decentralise : retirer n'importe quel noeud, mineur ou developpeur ne change rien au resultat.

@@ -1,0 +1,1 @@
+A taxa nao e uma porcentagem do valor enviado. Uma transacao enviando 0,001 BTC e uma transacao enviando 1.000 BTC podem ter a mesma taxa se tiverem o mesmo peso. Taxas refletem o custo do espaco de bloco, nao o valor sendo transferido.

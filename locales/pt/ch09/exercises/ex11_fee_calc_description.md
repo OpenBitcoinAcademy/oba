@@ -1,0 +1,1 @@
+Insira o numero de inputs e outputs para estimar o peso e as taxas da transacao. Cada input adiciona 68 vB, cada output adiciona 31 vB, mais 10 vB de overhead. Veja a taxa nas taxas de 1, 5 e 20 sat/vB.

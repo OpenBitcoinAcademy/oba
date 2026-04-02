@@ -1,0 +1,1 @@
+O coordenador ve commitments de nonce e shares de assinatura, mas nunca shares de chave secreta. Nem mesmo um coordenador malicioso pode forjar uma assinatura: precisaria resolver o problema do logaritmo discreto. A funcao do coordenador e roteamento de mensagens, nada mais. Qualquer participante pode servir como coordenador, ou a funcao pode alternar entre rodadas.

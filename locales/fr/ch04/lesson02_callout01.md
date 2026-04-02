@@ -1,0 +1,1 @@
+Ne partagez jamais votre cle privee. Ne la tapez jamais sur un site web. Ne la stockez jamais dans un service cloud. La securite de chaque bitcoin que vous possedez depend du fait que ce nombre reste secret. Si quelqu'un d'autre apprend votre cle privee, il peut prendre vos bitcoins, et il n'y a aucun moyen d'annuler la transaction.

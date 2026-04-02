@@ -1,0 +1,1 @@
+Confiar apenas na memoria para uma frase semente e perigoso. Se voce esquecer a frase e perder o banco de dados da carteira, o bitcoin se foi para sempre. Se voce morrer sem deixar a frase semente acessivel a herdeiros, eles nao poderao herdar os fundos. Escreva. Armazene fisicamente. Teste a recuperacao.

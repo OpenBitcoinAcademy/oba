@@ -1,0 +1,1 @@
+O SegWit introduziu uma segunda arvore Merkle para dados de witness. A raiz Merkle de witness e comprometida em um output coinbase, nao no cabecalho do bloco. Isso preserva a compatibilidade retroativa: nos legacy veem o mesmo formato de cabecalho de bloco. Nos segwit verificam tanto a arvore Merkle de transacoes quanto a arvore Merkle de witness.

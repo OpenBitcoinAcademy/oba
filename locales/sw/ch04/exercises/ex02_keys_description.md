@@ -1,0 +1,1 @@
+Bonyeza Zalisha kuunda funguo binafsi ya nasibu ya Bitcoin. Ona funguo ya umma inayolingana ikitolewa moja kwa moja kwa kutumia uzidishaji wa elliptic curve. Funguo zote mbili zinaonyeshwa kwa hexadecimal pamoja na idadi zao za baiti.

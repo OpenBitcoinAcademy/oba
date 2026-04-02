@@ -1,0 +1,1 @@
+La preuve de travail convertit l'electricite en securite. Un attaquant doit depenser au moins autant d'energie que les mineurs honnetes pour reecrire la chaine. Ce cout physique est ce qui rend le registre de Bitcoin resistant aux manipulations, contrairement aux systemes ou la securite repose sur la confiance ou la reputation seule.

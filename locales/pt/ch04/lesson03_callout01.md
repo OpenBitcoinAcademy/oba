@@ -1,0 +1,1 @@
+O checksum em um endereco detecta erros de digitacao. Se voce digitar errado um unico caractere, o endereco e invalido e sua carteira se recusara a enviar para ele. Esse e um recurso de seguranca deliberado. Sem checksums, um erro de digitacao enviaria bitcoin para um endereco que ninguem controla, perdido para sempre.

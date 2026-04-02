@@ -1,0 +1,1 @@
+RBF na CPFP zinatatua tatizo lile lile (miamala iliyokwama) kutoka pande tofauti. RBF inamruhusu mtumaji kurekebisha. CPFP inamruhusu mpokeaji kurekebisha. Zote mbili zinaongeza kiwango halisi cha ada ili kufanya muamala kuwa wa kuvutia kwa wachimbaji.

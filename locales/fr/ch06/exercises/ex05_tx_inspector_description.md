@@ -1,0 +1,1 @@
+Examinez l'anatomie d'une vraie transaction Bitcoin. C'est le premier paiement de Satoshi a Hal Finney du 12 janvier 2009. Voyez les entrees, les sorties et les metadonnees qui composent chaque transaction.

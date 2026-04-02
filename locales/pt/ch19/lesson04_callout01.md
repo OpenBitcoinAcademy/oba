@@ -1,0 +1,1 @@
+O Bitcoin nao precisa computar. Precisa verificar que alguem computou corretamente. BitVM torna essa distincao operacional: toda computacao acontece off-chain, apenas provas de fraude tocam o blockchain. A camada base permanece um motor de verificacao, nao um motor de execucao. O ecossistema evolui enquanto o protocolo permanece conservador.

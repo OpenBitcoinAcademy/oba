@@ -1,0 +1,1 @@
+Construa uma arvore MAST de 2 folhas a partir de dois scripts. Edite cada script e construa a arvore para ver os hashes de folha e a raiz Merkle calculada. As folhas sao ordenadas antes do hashing, correspondendo a construcao TapBranch do Taproot.

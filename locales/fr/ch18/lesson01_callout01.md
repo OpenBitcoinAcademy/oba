@@ -1,0 +1,1 @@
+La transaction de financement n'est diffusee qu'apres que les deux parties ont signe la premiere transaction d'engagement. Aucune partie ne peut retenir les fonds de l'autre en otage. Si quelque chose tourne mal avant la signature du premier engagement, la transaction de financement n'est jamais diffusee et aucun fonds n'est en danger.

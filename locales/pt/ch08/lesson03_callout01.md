@@ -1,0 +1,1 @@
+A propriedade de linearidade do Schnorr torna a agregacao de assinaturas possivel. Se o assinante A produz a assinatura sA e o assinante B produz sB, a agregacao sA + sB e uma assinatura valida para a chave publica combinada A + B. O ECDSA nao possui essa propriedade, razao pela qual multisig exigia assinaturas separadas ate o Taproot.

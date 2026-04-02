@@ -1,0 +1,1 @@
+Matokeo chini ya thamani fulani yanaitwa vumbi. Yanagharimu zaidi katika ada kuyatumia kuliko thamani yake. Ukiunda matokeo ya chenji ya satoshi 100 lakini kuyatumia kunahitaji ada ya satoshi 300, sarafu hizo zimepotea kimsingi. Pochi zinaepuka kuunda matokeo ya vumbi kwa kuongeza kiasi kidogo kinachobaki kwenye ada badala yake.

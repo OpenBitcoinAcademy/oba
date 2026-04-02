@@ -1,0 +1,1 @@
+La ristourne temoin segwit a ete concue pour reduire le cout des donnees de signature par rapport aux donnees de creation d'UTXO. Creer des UTXO a un cout a long terme (chaque noeud complet les stocke), donc la ristourne rend moins couteux de verifier les signatures (donnees temporaires) que de creer des sorties (donnees persistantes).

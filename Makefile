@@ -1,4 +1,4 @@
-.PHONY: build test test-cover lint translate-check run clean
+.PHONY: build test test-cover lint translate-check run clean build-android
 
 build:
 	go build -o oba ./cmd/oba
@@ -21,5 +21,10 @@ translate-check:
 run: build
 	./oba
 
+build-android:
+	@echo "Requires: ANDROID_SDK_ROOT, ANDROID_NDK_HOME, gogio"
+	@echo "Install gogio: go install gioui.org/cmd/gogio@latest"
+	gogio -target android -appid org.openbitcoinacademy.oba -o oba.apk ./cmd/oba
+
 clean:
-	rm -f oba coverage.out coverage.html
+	rm -f oba oba.apk coverage.out coverage.html

@@ -1,0 +1,1 @@
+La reutilisation de nonce est catastrophique. Si deux signatures partagent le meme nonce et la meme cle privee, la cle privee peut etre extraite algebriquement. La generation deterministe de nonce (RFC 6979, BIP340) empeche cela en calculant le nonce a partir de la cle privee et du message. Il n'y a aucune aleatoire qui puisse echouer.

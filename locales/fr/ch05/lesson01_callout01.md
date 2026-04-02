@@ -1,0 +1,1 @@
+Si vous controlez vos cles, vous controlez vos bitcoins. Si quelqu'un d'autre detient vos cles (une plateforme d'echange custodiale, par exemple), cette personne controle vos bitcoins. Vous lui faites confiance pour agir honnetement et rester solvable. L'expression "pas vos cles, pas vos pieces" resume cette distinction.

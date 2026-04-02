@@ -1,0 +1,1 @@
+Aucune quantite de puissance de hachage ne permet a un attaquant de creer des bitcoins a partir de rien, de depenser les pieces d'autres personnes ou de changer les regles sans consensus. Un attaquant a 51 % peut annuler ses propres transactions recentes, mais le cout de l'attaque depasse souvent le gain potentiel. Les incitations economiques favorisent le minage honnete.

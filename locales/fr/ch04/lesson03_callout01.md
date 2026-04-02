@@ -1,0 +1,1 @@
+La somme de controle dans une adresse detecte les fautes de frappe. Si vous vous trompez d'un seul caractere, l'adresse est invalide et votre portefeuille refusera d'y envoyer des fonds. C'est une fonctionnalite de securite deliberee. Sans sommes de controle, une faute de frappe enverrait des bitcoins a une adresse que personne ne controle, perdus pour toujours.

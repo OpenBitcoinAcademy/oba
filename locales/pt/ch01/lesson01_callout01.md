@@ -1,0 +1,1 @@
+Em muitos paises, as pessoas viram suas economias serem destruidas pela inflacao da noite para o dia. Quando um governo imprime dinheiro demais, os precos sobem ate que a moeda se torna sem valor. O Bitcoin nasceu desse problema.

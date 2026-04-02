@@ -1,0 +1,1 @@
+Une facture Lightning encode H(R), le montant du paiement, l'identifiant du noeud destinataire et des indices de routage. L'expediteur utilise ces informations pour construire le chemin de paiement. La facture ne contient pas R lui-meme. Seul le destinataire connait R, et le reveler est la preuve cryptographique que le paiement a ete recu.

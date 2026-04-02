@@ -1,0 +1,1 @@
+Parcourez chaque etape de la derivation d'une adresse Bitcoin. En partant d'une paire de cles fraichement generee, progressez a travers le hachage SHA-256, le hachage RIPEMD-160, l'ajout de l'octet de version, le calcul de la somme de controle et l'encodage Base58Check. Le resultat final est une adresse testnet valide.

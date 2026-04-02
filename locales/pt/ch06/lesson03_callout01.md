@@ -1,0 +1,1 @@
+O truque do marker/flag do segwit e retrocompativel. Parsers legacy leem o marker (0x00) como "zero inputs", o que e invalido, entao rejeitam os dados. Parsers com suporte a segwit reconhecem o zero como um sinal do formato estendido e continuam lendo o flag, inputs, outputs, witness e locktime. Um byte distingue os dois formatos sem quebrar software mais antigo.

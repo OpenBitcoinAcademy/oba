@@ -1,0 +1,1 @@
+Examinez l'en-tete du bloc de genese Bitcoin. Voyez les six champs : version, hachage du bloc precedent, racine de Merkle, horodatage, target bits et nonce. Le hachage du bloc est calcule a partir de l'en-tete en utilisant le double-SHA-256.

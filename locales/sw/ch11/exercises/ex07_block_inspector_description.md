@@ -1,0 +1,1 @@
+Chunguza kichwa cha kizuizi cha kwanza cha Bitcoin. Ona sehemu zote sita: toleo, hash ya kizuizi kilichotangulia, mzizi wa Merkle, muda, biti za lengo, na nonce. Hash ya kizuizi inakokotolewa kutoka kwa kichwa kwa kutumia SHA-256 mbili.

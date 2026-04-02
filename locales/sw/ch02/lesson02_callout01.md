@@ -1,0 +1,1 @@
+Ada anayolipa Alice haendi kwa Bob. Inaenda kwa mchimbaji anayeingiza muamala kwenye kizuizi. Ada ni motisha kwa wachimbaji kuchakata miamala. Ada si asilimia ya kiasi kinachotumwa. Inategemea uzani wa muamala katika baiti za kawaida, bila kujali thamani inayohamishwa.

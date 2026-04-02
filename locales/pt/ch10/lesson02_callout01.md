@@ -1,0 +1,1 @@
+A mensagem `getheaders` substituiu a abordagem anterior `getblocks` usada antes do metodo de sincronizacao headers-first. A sincronizacao headers-first permite que o no verifique a cadeia de proof of work antes de baixar blocos completos. Isso impede que um atacante desperdice a largura de banda do no alimentando-o com blocos de uma cadeia mais fraca.

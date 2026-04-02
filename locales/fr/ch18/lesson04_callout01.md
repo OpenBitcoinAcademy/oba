@@ -1,0 +1,1 @@
+Une tour de guet est un service qui surveille la blockchain au nom d'un noeud Lightning. Si le noeud se deconnecte et que sa contrepartie diffuse un engagement revoque, la tour de guet le detecte et soumet la transaction de penalite. Les tours de guet ajoutent une couche de securite supplementaire pour les noeuds qui ne peuvent pas garantir un fonctionnement 24h/24.

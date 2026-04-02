@@ -1,0 +1,1 @@
+Katika nchi nyingi, watu wameona akiba yao ikifutiliwa mbali na mfumuko wa bei usiku mmoja. Serikali inapochapisha pesa nyingi kupita kiasi, bei zinapanda hadi sarafu inakuwa haina thamani. Bitcoin ilizaliwa kutokana na tatizo hili.

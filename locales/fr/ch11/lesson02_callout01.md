@@ -1,0 +1,1 @@
+Le bloc de genese (bloc 0) est code en dur dans chaque noeud Bitcoin. Il ne peut pas etre modifie. Sa transaction coinbase contient le texte : "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks." Cela sert a la fois d'horodatage et de declaration sur le systeme financier que Bitcoin a ete concu pour adresser.

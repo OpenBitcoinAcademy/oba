@@ -1,0 +1,1 @@
+Fuata kila hatua ya uundaji wa anwani ya Bitcoin. Kuanzia jozi mpya ya funguo iliyozalishwa, endelea kupitia hashing ya SHA-256, hashing ya RIPEMD-160, kuongeza baiti ya toleo, kukokotoa ukaguzi wa jumla, na usimbaji wa Base58Check. Matokeo ya mwisho ni anwani halali ya testnet.

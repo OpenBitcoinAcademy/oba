@@ -1,0 +1,1 @@
+La preuve de Merkle croit de maniere logarithmique avec le nombre de feuilles. Un arbre avec 1 024 scripts ne necessite que 10 hachages freres (10 * 32 = 320 octets) dans la preuve. Le cout d'ajout de conditions de repli rarement utilisees est minimal : elles augmentent la preuve d'un niveau de hachage sans affecter le cout de la depense par chemin de cle.

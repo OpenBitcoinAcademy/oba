@@ -1,0 +1,1 @@
+RBF e CPFP resolvem o mesmo problema (transacoes presas) de lados diferentes. RBF permite que o remetente corrija. CPFP permite que o destinatario corrija. Ambos aumentam a taxa efetiva para tornar a transacao atraente para mineradores.

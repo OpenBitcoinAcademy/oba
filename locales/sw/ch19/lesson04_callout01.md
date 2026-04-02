@@ -1,0 +1,1 @@
+Bitcoin haihitaji kuhesabu. Inahitaji kuthibitisha kwamba mtu alihesabu kwa usahihi. BitVM inafanya tofauti hii kuwa ya operesheni: hesabu yote inatokea nje ya mnyororo, uthibitisho wa ulaghai pekee unagusa blockchain. Tabaka la msingi linabaki injini ya uthibitishaji, si injini ya utekelezaji. Mfumo unabadilika huku itifaki ikibaki ya tahadhari.

@@ -1,0 +1,1 @@
+Assinaturas ECDSA sao maiores que assinaturas Schnorr (71-73 bytes vs 64 bytes) e nao suportam agregacao nativa de multi-assinatura. Apesar dessas limitacoes, o ECDSA continua em uso para compatibilidade retroativa com scripts existentes e para gastar outputs segwit v0.

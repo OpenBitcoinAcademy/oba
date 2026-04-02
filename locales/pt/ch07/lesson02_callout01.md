@@ -1,0 +1,1 @@
+O P2SH transferiu o custo de scripts complexos do remetente para o destinatario. Antes do P2SH, o output do remetente precisava conter o script completo, tornando condicoes complexas caras para o remetente. Com P2SH, o output contem apenas um hash de 20 bytes. O destinatario revela o script completo quando gasta, pagando o custo nesse momento.

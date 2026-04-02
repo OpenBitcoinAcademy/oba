@@ -1,0 +1,1 @@
+Ruzuku ya kizuizi ilianza na BTC 50 kwa kila kizuizi mwaka 2009 na inagawanyika nusu kila vizuizi 210,000 (takriban miaka minne). Ruzuku inapopungua, ada za miamala zinakuwa sehemu kubwa zaidi ya mapato ya wachimbaji. Baada ya takriban mwaka 2140, ruzuku itafikia sifuri na ada zitakuwa motisha pekee. Jumla ya ugavi wa bitcoin inakaribia lakini haizidi milioni 21.

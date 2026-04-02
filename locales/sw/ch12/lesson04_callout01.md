@@ -1,0 +1,1 @@
+Hakuna kiasi cha nguvu ya hash kinachomruhusu mshambuliaji kuunda bitcoin kutoka hapana, kutumia sarafu za watu wengine, au kubadilisha sheria bila makubaliano. Mshambuliaji wa asilimia 51 anaweza kubatilisha miamala yake ya hivi karibuni, lakini gharama ya shambulio mara nyingi inazidi faida inayoweza kupatikana. Motisha za kiuchumi zinaunga mkono uchimbaji wa uaminifu.

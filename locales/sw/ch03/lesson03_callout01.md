@@ -1,0 +1,1 @@
+Data ambayo nodi yako inahifadhi ni ya mamlaka, si kwa sababu mamlaka fulani iliiainisha, bali kwa sababu nodi yako iliithibitisha kwa uhuru. Matokeo ya `getblock` kutoka nodi yako yanabeba uzito wa kila sheria ya makubaliano ambayo programu yako ilitekeleza wakati wa uthibitishaji.

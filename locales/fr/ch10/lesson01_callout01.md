@@ -1,0 +1,1 @@
+Faire tourner un noeud complet sur du materiel modeste est possible. Un noeud elague a besoin d'environ 10 Go d'espace disque. Un Raspberry Pi avec une carte microSD peut valider l'integralite de la blockchain. La capacite de faire tourner un noeud chez soi, sur du materiel bon marche, est une propriete que les developpeurs Bitcoin protegent soigneusement.

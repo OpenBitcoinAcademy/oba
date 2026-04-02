@@ -1,0 +1,1 @@
+Mashambulizi ya kimwili dhidi ya watu wanaoshukiwa kumiliki bitcoin yameandikwa na yanaongezeka. Usitangaze hadharani kiasi gani cha bitcoin unashikilia. Tumia maneno ya siri kwenye maneno ya mbegu kuunda pochi za kukataa kuaminika. Fikiria kwamba tishio kwa bitcoin yako linaweza kuwa la kimwili, si la kidijitali.

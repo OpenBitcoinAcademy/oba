@@ -1,0 +1,1 @@
+RGB herite de la protection contre la double depense de Bitcoin sans mettre aucune donnee de contrat sur la chaine. La blockchain ne grossit pas, mais la garantie de securite est la meme. Un UTXO scelle ne peut pas etre depense deux fois, donc un jeton RGB ne peut pas etre transfere deux fois. Le consensus de Bitcoin fait le travail difficile. RGB gere la logique applicative.

@@ -1,0 +1,1 @@
+Appuyez sur Generer pour creer une cle privee Bitcoin aleatoire. Voyez la cle publique correspondante derivee en temps reel par multiplication sur courbe elliptique. Les deux cles sont affichees en hexadecimal avec leur nombre d'octets.

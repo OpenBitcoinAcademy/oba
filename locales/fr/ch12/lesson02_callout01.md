@@ -1,0 +1,1 @@
+Le calendrier d'emission de Bitcoin a ete fixe au lancement et n'a jamais change. Chaque halving reduit le taux de nouvelle offre. En comparaison, les monnaies fiduciaires n'ont pas de limite d'emission fixe, et les banques centrales peuvent augmenter la masse monetaire a tout moment. Le halving rend la politique monetaire de Bitcoin verifiable par quiconque executant un noeud.

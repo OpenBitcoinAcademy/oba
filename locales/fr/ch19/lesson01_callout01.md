@@ -1,0 +1,1 @@
+Le conservatisme de la couche de base n'est pas une faiblesse. C'est la propriete qui rend tout le reste possible. Les couches 2 et 3 peuvent experimenter librement parce qu'elles savent que la couche 1 ne changera pas sous elles. Une fondation stable permet l'experimentation instable au-dessus.

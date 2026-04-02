@@ -1,0 +1,1 @@
+SegWit a introduit un second arbre de Merkle pour les donnees temoin. La racine de Merkle du temoin est engagee dans une sortie coinbase, pas dans l'en-tete du bloc. Cela preserve la retro-compatibilite : les noeuds legacy voient le meme format d'en-tete de bloc. Les noeuds segwit verifient a la fois l'arbre de Merkle des transactions et l'arbre de Merkle des temoins.

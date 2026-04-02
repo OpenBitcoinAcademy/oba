@@ -1,0 +1,1 @@
+SHA-256 inazalisha biti 256 za matokeo. Hiyo ni thamani $2^{256}$ zinazowezekana, nambari kubwa sana hadi inazidi idadi inayokadiriwa ya atomi katika ulimwengu unaoonekana. Kupata ingizo mbili tofauti zinazozalisha hash sawa ni, kwa madhumuni yote ya vitendo, haiwezekani.

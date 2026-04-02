@@ -1,0 +1,1 @@
+Nenhuma quantidade de poder de hash permite que um atacante crie bitcoin do nada, gaste moedas de outras pessoas ou mude as regras sem consenso. Um atacante de 51% pode reverter suas proprias transacoes recentes, mas o custo do ataque frequentemente excede o ganho potencial. Os incentivos economicos favorecem a mineracao honesta.

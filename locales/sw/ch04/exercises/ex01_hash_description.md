@@ -1,0 +1,1 @@
+Andika chochote na uone hash yake ya SHA-256 ikisasishwa moja kwa moja. Badilisha herufi moja na uangalie hash nzima ikibadilika. Geuza kati ya hex, binary, na base64 kuona hash ileile katika uwakilishi tofauti.

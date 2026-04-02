@@ -1,0 +1,1 @@
+Ukaguzi wa jumla katika anwani unakamata makosa ya maandishi. Ukikosea herufi moja, anwani ni batili na pochi yako itakataa kutuma kwake. Hii ni kipengele cha usalama kwa makusudi. Bila ukaguzi wa jumla, kosa la maandishi lingetuma bitcoin kwa anwani ambayo hakuna mtu anayeidhibiti, iliyopotea milele.

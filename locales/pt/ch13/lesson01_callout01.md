@@ -1,0 +1,1 @@
+O Bitcoin usa um modelo de pagamento push. Voce autoriza um pagamento especifico assinando uma transacao especifica. Ninguem pode puxar fundos da sua carteira sem sua assinatura. Compare com um cartao de credito, onde compartilhar o numero do cartao permite que qualquer pessoa debite sua conta. O modelo push elimina uma categoria inteira de fraude.

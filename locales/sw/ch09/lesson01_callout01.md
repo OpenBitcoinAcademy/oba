@@ -1,0 +1,1 @@
+Ada si asilimia ya kiasi kinachotumwa. Muamala unaotuma BTC 0.001 na muamala unaotuma BTC 1,000 unaweza kuwa na ada sawa ikiwa una uzani uleule. Ada zinaonyesha gharama ya nafasi ya kizuizi, si thamani inayohamishwa.

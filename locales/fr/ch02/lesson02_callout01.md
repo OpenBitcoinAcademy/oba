@@ -1,0 +1,1 @@
+Les frais qu'Alice paie ne vont pas a Bob. Ils vont au mineur qui inclut la transaction dans un bloc. Les frais sont une incitation pour que les mineurs traitent les transactions. Les frais ne sont pas un pourcentage du montant envoye. Ils dependent du poids de la transaction en octets virtuels, quel que soit la valeur transferee.

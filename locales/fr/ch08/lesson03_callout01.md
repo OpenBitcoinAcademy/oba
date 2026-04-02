@@ -1,0 +1,1 @@
+La propriete de linearite de Schnorr rend l'agregation de signatures possible. Si le signataire A produit la signature sA et le signataire B produit sB, l'agregat sA + sB est une signature valide pour la cle publique combinee A + B. ECDSA ne possede pas cette propriete, c'est pourquoi le multisig necessitait des signatures separees jusqu'a Taproot.

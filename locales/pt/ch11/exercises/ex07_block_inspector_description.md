@@ -1,0 +1,1 @@
+Examine o cabecalho do bloco genesis do Bitcoin. Veja todos os seis campos: versao, hash do bloco anterior, raiz merkle, timestamp, target bits e nonce. O hash do bloco e calculado a partir do cabecalho usando double-SHA-256.

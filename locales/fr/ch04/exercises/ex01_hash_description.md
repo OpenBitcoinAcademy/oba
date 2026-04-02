@@ -1,0 +1,1 @@
+Tapez n'importe quoi et voyez son hachage SHA-256 se mettre a jour en temps reel. Changez un seul caractere et regardez le hachage entier changer. Basculez entre les sorties hex, binaire et base64 pour voir le meme hachage dans differentes representations.

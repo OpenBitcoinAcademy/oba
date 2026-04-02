@@ -1,0 +1,1 @@
+Reutilizacao de nonce e catastrofica. Se duas assinaturas compartilham o mesmo nonce e chave privada, a chave privada pode ser extraida algebricamente. A geracao deterministica de nonce (RFC 6979, BIP340) previne isso computando o nonce a partir da chave privada e da mensagem. Nao ha aleatoriedade que possa falhar.

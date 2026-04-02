@@ -1,0 +1,1 @@
+Chaque entree de transaction est signee independamment. Une transaction avec trois entrees necessite trois signatures separees, potentiellement de trois cles privees differentes. Cette independance permet la construction collaborative de transactions : plusieurs parties contribuent des entrees sans partager leurs cles.

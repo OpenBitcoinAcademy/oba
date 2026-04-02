@@ -1,0 +1,1 @@
+Fuatilia malipo ya Lightning ya vituo 3 hatua kwa hatua. Alice anamlipa Carol kupitia Bob. Kila hatua inaonyesha ofa ya HTLC, kiasi, na kufuli ya wakati. Baada ya Carol kufichua preimage, angalia ikieneea nyuma kupitia njia.

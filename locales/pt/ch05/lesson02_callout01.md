@@ -1,0 +1,1 @@
+A semente e o ponto unico de falha. Qualquer pessoa que obtenha sua semente pode derivar todas as chaves privadas da sua carteira e gastar todo o seu bitcoin. Proteja a semente com o mesmo rigor que voce protegeria o valor total que ela controla. Armazene-a offline. Nunca a digite em um site. Nunca a armazene em um servico de nuvem.

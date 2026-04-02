@@ -1,0 +1,1 @@
+Le depot Bitcoin Core a recu des contributions de plus de 900 developpeurs depuis 2009. Le projet n'a pas de PDG, pas de siege social et pas d'organisation formelle. Les decisions sont prises par discussion technique et consensus approximatif entre les contributeurs. Ce modele de developpement decentralise reflete le reseau decentralise qu'il produit.

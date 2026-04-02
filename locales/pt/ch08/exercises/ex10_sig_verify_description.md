@@ -1,0 +1,1 @@
+Gere uma assinatura e verifique-a contra uma chave publica. Um par de chaves aleatorio assina uma mensagem fixa. Voce ve a chave publica, a assinatura codificada em DER, e pode verificar que a assinatura corresponde.

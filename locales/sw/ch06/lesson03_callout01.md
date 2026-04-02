@@ -1,0 +1,1 @@
+Hila ya alama/bendera ya SegWit inaoana nyuma. Vichambuzi vya zamani vinasoma alama (0x00) kama "ingizo sifuri," ambayo ni batili, hivyo vinakataa data. Vichambuzi vinavyofahamu SegWit vinatambua sifuri kama ishara ya muundo wa kijuu na kuendelea kusoma bendera, ingizo, matokeo, ushahidi, na locktime. Baiti moja inatofautisha muundo mbili bila kuvunja programu za zamani.

@@ -1,0 +1,1 @@
+Outputs abaixo de um certo valor sao chamados dust. Eles custam mais em taxas para gastar do que valem. Se voce criar um output de troco de 100 satoshis, mas gasta-lo exige uma taxa de 300 satoshis, essas moedas sao efetivamente perdidas. Carteiras evitam criar outputs de dust adicionando sobras minusculas a taxa.

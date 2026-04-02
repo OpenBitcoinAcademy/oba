@@ -1,0 +1,1 @@
+Ubadilishaji wa muamala ulikuwa tatizo halisi kabla ya SegWit. Mtu yeyote anayesambaza muamala angeweza kubadilisha usimbaji wa saini kwa njia inayobadilisha txid bila kubatilisha muamala. Hii ilivunja itifaki zilizotegemea txid kubaki imara, ikijumuisha toleo za awali za njia za malipo. SegWit ilirekebisha hili kwa kuondoa saini kwenye ukokotoaji wa txid.

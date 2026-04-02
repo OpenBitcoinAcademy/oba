@@ -1,0 +1,1 @@
+Tente minerar encontrando um nonce que produza um hash com zeros iniciais. Pressione Minerar para tentar cada nonce. Veja quantas tentativas sao necessarias para encontrar um hash valido abaixo do alvo.

@@ -1,0 +1,1 @@
+P2SH ilihamisha gharama ya hati ngumu kutoka kwa mtumaji hadi mpokeaji. Kabla ya P2SH, matokeo ya mtumaji yalipaswa kuwa na hati kamili, na kufanya masharti magumu kuwa ghali kwa mtumaji. Kwa P2SH, matokeo yana hash ya baiti 20 pekee. Mpokeaji anafichua hati kamili anapotumia, na kulipa gharama wakati huo.

@@ -1,0 +1,1 @@
+Les jetons ecash sont comme des billets de banque numeriques. Le numero de serie est aveugle a l'emission, donc la banque (atelier) qui a imprime le billet ne peut pas suivre qui le depense. David Chaum a invente ce concept en 1983. Fedimint et Cashu l'apportent a Bitcoin, offrant une vie privee similaire a l'argent liquide pour les paiements numeriques.

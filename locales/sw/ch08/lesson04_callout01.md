@@ -1,0 +1,1 @@
+Kutumia nonce tena ni janga. Ikiwa saini mbili zinashiriki nonce ileile na funguo binafsi, funguo binafsi inaweza kutolewa kwa njia ya algebra. Uzalishaji wa nonce wa uhakika (RFC 6979, BIP340) unazuia hili kwa kukokotoa nonce kutoka kwa funguo binafsi na ujumbe. Hakuna nasibu inayoweza kushindwa.

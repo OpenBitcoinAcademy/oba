@@ -1,0 +1,1 @@
+Les frais ne sont pas un pourcentage du montant envoye. Une transaction envoyant 0.001 BTC et une transaction envoyant 1 000 BTC peuvent avoir les memes frais si elles ont le meme poids. Les frais refletent le cout de l'espace de bloc, pas la valeur transferee.

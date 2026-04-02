@@ -1,0 +1,1 @@
+O Bitcoin Core suporta output descriptors desde a versao 0.17 (2018) e descriptors Miniscript desde a versao 24.0 (2022). Quando voce chama `listdescriptors` em uma carteira moderna do Bitcoin Core, ele retorna o conjunto completo de descriptors que a carteira usa. Voce pode exportar esses descriptors e importa-los em outra carteira para recriar o mesmo conjunto de enderecos.

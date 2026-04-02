@@ -1,0 +1,1 @@
+A diferenca de pegada on-chain e dramatica. Um gasto OP_CHECKMULTISIG 3-de-5 usa cerca de 367 bytes de dados de witness. Um gasto FROST do mesmo threshold usa 64 bytes: uma assinatura Schnorr, indistinguivel de um gasto de chave unica. A economia cresce conforme o threshold e a contagem de participantes aumentam.

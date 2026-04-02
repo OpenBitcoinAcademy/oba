@@ -1,0 +1,1 @@
+Kutegemea kumbukumbu pekee kwa maneno ya mbegu ni hatari. Ukisahau maneno na kupoteza hifadhidata ya pochi, bitcoin imepotea milele. Ukifa bila kuacha maneno ya mbegu yanayopatikana kwa warithi, hawawezi kurithi fedha. Yaandike. Yahifadhi kimwili. Jaribu kurejesha.

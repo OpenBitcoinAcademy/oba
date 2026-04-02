@@ -1,0 +1,1 @@
+"Nao confie, verifique" nao e um slogan. E um principio de design. Cada regra no protocolo Bitcoin pode ser verificada por software rodando em seu proprio hardware. Um no completo e a ferramenta que torna isso possivel. Sem ele, voce esta confiando no computador de outra pessoa para dizer a verdade sobre seu dinheiro.

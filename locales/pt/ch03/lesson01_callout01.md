@@ -1,0 +1,1 @@
+O repositorio do Bitcoin Core recebeu contribuicoes de mais de 900 desenvolvedores desde 2009. O projeto nao tem CEO, nao tem sede e nao tem organizacao formal. Decisoes sao tomadas por meio de discussao tecnica e consenso aproximado entre os contribuidores. Esse modelo de desenvolvimento descentralizado espelha a rede descentralizada que ele produz.

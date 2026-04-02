@@ -1,0 +1,1 @@
+RBF et CPFP resolvent le meme probleme (transactions bloquees) de cotes differents. RBF permet a l'expediteur de corriger. CPFP permet au destinataire de corriger. Les deux augmentent le taux de frais effectif pour rendre la transaction attractive pour les mineurs.

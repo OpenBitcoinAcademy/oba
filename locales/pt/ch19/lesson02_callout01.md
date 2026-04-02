@@ -1,0 +1,1 @@
+RGB herda a protecao contra gasto duplo do Bitcoin sem colocar nenhum dado de contrato on-chain. O blockchain nao cresce, mas a garantia de seguranca e a mesma. Um UTXO selado nao pode ser gasto duas vezes, entao um token RGB nao pode ser transferido duas vezes. O consenso do Bitcoin faz o trabalho pesado. RGB lida com a logica da aplicacao.

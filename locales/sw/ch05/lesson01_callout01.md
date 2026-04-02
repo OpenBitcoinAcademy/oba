@@ -1,0 +1,1 @@
+Ukidhibiti funguo zako, unadhibiti bitcoin yako. Ikiwa mtu mwingine anashikilia funguo zako (soko la ubadilishaji linalosimamiwa, kwa mfano), wanadhibiti bitcoin yako. Unawaamini kutenda kwa uaminifu na kubaki na uwezo wa kifedha. Usemi "si funguo zako, si sarafu zako" unakamata tofauti hii.

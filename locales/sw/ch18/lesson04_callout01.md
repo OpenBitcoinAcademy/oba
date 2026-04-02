@@ -1,0 +1,1 @@
+Mnara wa ulinzi ni huduma inayofuatilia blockchain kwa niaba ya nodi ya Lightning. Ikiwa nodi inaenda nje ya mtandao na mhusika wake anatangaza ahadi iliyobatilishwa, mnara wa ulinzi unaigundua na kuwasilisha muamala wa adhabu. Minara ya ulinzi inaongeza tabaka la ziada la usalama kwa nodi ambazo haziwezi kuhakikisha kuwepo mtandaoni masaa 24/7.

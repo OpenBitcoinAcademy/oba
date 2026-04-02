@@ -1,0 +1,1 @@
+Hazina ya Bitcoin Core imepokea michango kutoka kwa watengenezaji zaidi ya 900 tangu 2009. Mradi hauna mkurugenzi mkuu, hauna makao makuu, na hauna shirika rasmi. Maamuzi yanafanywa kupitia majadiliano ya kiufundi na makubaliano kati ya wachangiaji. Mfano huu wa utengenezaji wa kimadaraka unaakisi mtandao wa kimadaraka unaouzalisha.

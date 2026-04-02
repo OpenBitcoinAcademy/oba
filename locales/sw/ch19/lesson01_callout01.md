@@ -1,0 +1,1 @@
+Tahadhari ya tabaka la msingi si udhaifu. Ni sifa inayofanya kila kitu kingine kiwezekane. Tabaka 2 na 3 zinaweza kujaribu kwa uhuru kwa sababu zinajua Tabaka 1 haitabadilika chini yao. Msingi thabiti unawezesha majaribio yasiyo thabiti juu yake.

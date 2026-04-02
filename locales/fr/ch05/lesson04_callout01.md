@@ -1,0 +1,1 @@
+Se fier a la memoire seule pour une phrase de graine est dangereux. Si vous oubliez la phrase et perdez la base de donnees du portefeuille, les bitcoins sont partis pour toujours. Si vous mourez sans laisser la phrase de graine accessible a vos heritiers, ils ne peuvent pas heriter des fonds. Ecrivez-la. Stockez-la physiquement. Testez la recuperation.

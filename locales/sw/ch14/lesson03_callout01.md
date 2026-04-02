@@ -1,0 +1,1 @@
+Uthibitisho wa Merkle unakua kwa logarithimu na idadi ya majani. Mti wenye hati 1,024 unahitaji hash 10 za ndugu pekee (10 * 32 = baiti 320) katika uthibitisho. Gharama ya kuongeza masharti ya mbadala yanayotumika nadra ni ndogo: yanaongeza uthibitisho kwa kiwango kimoja cha hash bila kuathiri gharama ya kutumia kwa njia ya funguo kabisa.

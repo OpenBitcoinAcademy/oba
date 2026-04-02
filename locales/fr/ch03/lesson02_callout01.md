@@ -1,0 +1,1 @@
+"Ne faites pas confiance, verifiez" n'est pas un slogan. C'est un principe de conception. Chaque regle du protocole Bitcoin peut etre verifiee par un logiciel tournant sur votre propre materiel. Un noeud complet est l'outil qui rend cela possible. Sans lui, vous faites confiance a l'ordinateur de quelqu'un d'autre pour vous dire la verite sur votre argent.

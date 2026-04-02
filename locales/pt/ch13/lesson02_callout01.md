@@ -1,0 +1,1 @@
+Ataques fisicos contra suspeitos de possuirem bitcoin sao documentados e estao aumentando. Nao divulgue publicamente quanto bitcoin voce possui. Use frases secretas em frases semente para criar carteiras de negacao plausivel. Considere que a ameaca ao seu bitcoin pode ser fisica, nao digital.

@@ -1,0 +1,1 @@
+Les donnees que votre noeud stocke font autorite, non pas parce qu'une autorite les a designees comme telles, mais parce que votre noeud les a verifiees de maniere independante. Un resultat `getblock` de votre noeud porte le poids de chaque regle de consensus que votre logiciel a appliquee lors de la verification.

@@ -1,0 +1,1 @@
+Liana suporta multiplos caminhos de recuperacao com timelock e conjuntos crescentes de assinantes. Uma configuracao tipica: a chave do proprietario gasta imediatamente; apos 6 meses, um 2-de-3 com membros da familia ativa; apos 12 meses, um 3-de-5 incluindo advogado e notario ativa. Cada nivel e um ramo Miniscript separado compilado no mesmo descriptor.

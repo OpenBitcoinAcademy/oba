@@ -1,0 +1,1 @@
+Bitcoin utilise un modele de paiement push. Vous autorisez un paiement specifique en signant une transaction specifique. Personne ne peut retirer des fonds de votre portefeuille sans votre signature. Comparez avec une carte de credit, ou partager votre numero de carte permet a quiconque de debiter votre compte. Le modele push elimine une categorie entiere de fraude.

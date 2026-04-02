@@ -1,0 +1,7 @@
+## Bidhaa Zilizojengwa kwa Miniscript
+
+Liana Wallet ni pochi ya Bitcoin ya chanzo wazi iliyojengwa hasa kuhusu kurejesha kwa kufuli ya wakati ya Miniscript. Iliyotengenezwa na Wizardsardine na kutolewa chini ya leseni ya BSD 3-Clause, Liana inaruhusu watumiaji kusanidi funguo ya msingi ya kutumia na njia moja au zaidi za kurejesha zinazoanzishwa baada ya kuchelewa kulichaguliwa. Pochi inashughulikia uzalishaji wa vielelezo, uundaji wa anwani, na uundaji wa PSBT. Watumiaji wanaweka sera yao kupitia kiolesura cha picha bila kuandika Miniscript kwa mkono.
+
+AnchorWatch inachukua mbinu tofauti. Iliyoanzishwa na Rob Hamilton, AnchorWatch inatoa uhifadhi wa Bitcoin uliobimishwa na Lloyd's of London. Mfano wa uhifadhi unatumia sera za Miniscript ambapo AnchorWatch inashikilia funguo ya kurejesha inayoanzishwa baada ya kufuli ya wakati pekee. Bima inashughulikia kupoteza funguo ya msingi. Kwa sababu masharti ya kutumia yamesimbwa katika Miniscript, mbimishaji anaweza kuthibitisha sera kwenye mnyororo: funguo ya kurejesha haina ufikiaji kabla ya kufuli ya wakati, na mshikaji wa msingi anadumisha udhibiti kamili wakati wa operesheni ya kawaida.
+
+Bidhaa zote mbili zipo kwa sababu Miniscript ilifanya sera ngumu za kutumia kuwa za kusafirishwa na kuthibitishwa. Sera iko katika kielelezo. Pochi yoyote, kisainiaji, au mkaguzi anayeoana anaweza kuichambua na kuthibitisha masharti. Uaminifu uko katika hisabati, si muuzaji.

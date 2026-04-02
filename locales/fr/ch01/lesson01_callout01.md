@@ -1,0 +1,1 @@
+Dans de nombreux pays, les gens ont vu leurs economies aneanties par l'inflation du jour au lendemain. Quand un gouvernement imprime trop de monnaie, les prix augmentent jusqu'a ce que la devise devienne sans valeur. Bitcoin est ne de ce probleme.
