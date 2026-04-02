@@ -1,0 +1,1 @@
+RBF and CPFP solve the same problem (stuck transactions) from different sides. RBF lets the sender fix it. CPFP lets the recipient fix it. Both increase the effective fee rate to make the transaction attractive to miners.

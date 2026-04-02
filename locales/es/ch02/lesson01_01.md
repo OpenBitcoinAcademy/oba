@@ -1,9 +1,7 @@
-## Cómo se ve una transacción
+## El sistema Bitcoin
 
-Una transacción de Bitcoin es una estructura de datos que transfiere bitcoin de un propietario a otro. Contiene entradas (que referencian salidas anteriores para gastar), salidas (que crean nuevas cantidades gastables) y datos de autorización (firmas que prueban que el gastador controla las claves).
+Bitcoin consta de tres componentes que trabajan juntos: usuarios con billeteras que contienen claves, transacciones propagadas a través de una red entre pares, y mineros que producen la blockchain de consenso mediante computación competitiva.
 
-Las entradas indican de dónde proviene el bitcoin. Cada entrada hace referencia a una salida de una transacción anterior que aún no se ha gastado. Esta salida sin gastar se llama UTXO (unspent transaction output).
+La blockchain es el registro autoritativo de todas las transacciones. Cada nodo completo en la red mantiene una copia. Ninguna entidad la controla. Los usuarios verifican el funcionamiento correcto del sistema ejecutando software en sus propias computadoras.
 
-Las salidas indican a dónde va el bitcoin. Cada salida especifica una cantidad en satoshis y una condición de bloqueo (un script) que determina quién puede gastarla.
-
-Una transacción consume salidas anteriores y crea nuevas. No hay nada "almacenado en una cuenta". Bitcoin rastrea la propiedad a través de una cadena de salidas, cada una bloqueada a una clave específica.
+A diferencia de los sistemas bancarios, Bitcoin no requiere confianza en terceros. Las reglas del protocolo, aplicadas de forma independiente por cada nodo, reemplazan el rol de una autoridad central.

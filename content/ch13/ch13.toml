@@ -1,0 +1,67 @@
+[chapter]
+id = "ch13"
+title_key = "chapters.ch13_title"
+description_key = "chapters.ch13_description"
+
+# Lesson 1: Security Principles
+[[lessons]]
+id = "ch13.lesson01"
+title_key = "lessons.ch13_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 2: User Security Best Practices
+[[lessons]]
+id = "ch13.lesson02"
+title_key = "lessons.ch13_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0, 2]
+
+# Lesson 3: Development Security
+[[lessons]]
+id = "ch13.lesson03"
+title_key = "lessons.ch13_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]

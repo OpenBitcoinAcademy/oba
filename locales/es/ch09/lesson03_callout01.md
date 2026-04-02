@@ -1,0 +1,1 @@
+RBF y CPFP resuelven el mismo problema (transacciones atascadas) desde lados diferentes. RBF permite que el emisor lo solucione. CPFP permite que el receptor lo solucione. Ambos aumentan la tasa de comisión efectiva para hacer la transacción atractiva para los mineros.

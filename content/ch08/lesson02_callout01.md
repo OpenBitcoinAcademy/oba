@@ -1,0 +1,1 @@
+ECDSA signatures are larger than Schnorr signatures (71-73 bytes vs 64 bytes) and do not support native multisignature aggregation. Despite these limitations, ECDSA remains in use for backward compatibility with existing scripts and for spending segwit v0 outputs.

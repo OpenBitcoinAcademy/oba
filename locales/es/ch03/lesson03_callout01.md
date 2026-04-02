@@ -1,0 +1,1 @@
+Los datos que tu nodo almacena son autoritativos, no porque alguna autoridad los designo asi, sino porque tu nodo los verifico de forma independiente. Un resultado de `getblock` de tu nodo tiene el peso de cada regla de consenso que tu software aplico durante la verificacion.

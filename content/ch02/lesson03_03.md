@@ -1,9 +1,7 @@
-## Transaction Fees
+## The Big Picture
 
-Bitcoin transactions do not have an explicit fee field. The fee is implicit: it is the difference between the total value of all inputs and the total value of all outputs.
+Bitcoin works because thousands of independent nodes follow the same rules without coordination. Each node verifies every transaction and every block on its own. No node trusts another.
 
-If your inputs total 100,000 satoshis and your outputs total 99,800 satoshis, the fee is 200 satoshis. Miners collect this fee as an incentive to include your transaction in a block.
+Wallets manage keys and construct transactions. The peer-to-peer network propagates transactions and blocks. Miners compete to add blocks through proof of work. Full nodes enforce the rules by rejecting anything invalid.
 
-Higher fees mean faster confirmation. When the network is busy, miners prioritize transactions with higher fee rates. A transaction that pays too little may wait hours or days.
-
-The fee rate depends on the transaction weight (measured in virtual bytes, or vbytes), not the amount being sent. Segwit introduced weight units where witness data (signatures) is discounted compared to other transaction data. A transaction sending 0.001 BTC can cost the same fee as one sending 1,000 BTC, if both have the same structure.
+These components form a system where value can move between people anywhere in the world without requiring permission from or trust in any third party. The rest of this course dives into each component in detail.

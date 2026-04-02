@@ -1,0 +1,1 @@
+Relying on memory alone for a seed phrase is dangerous. If you forget the phrase and lose the wallet database, the bitcoin is gone forever. If you die without leaving the seed phrase accessible to heirs, they cannot inherit the funds. Write it down. Store it physically. Test the recovery.

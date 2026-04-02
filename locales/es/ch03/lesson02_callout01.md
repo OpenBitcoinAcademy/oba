@@ -1,0 +1,1 @@
+"Don't trust, verify" no es un eslogan. Es un principio de diseno. Cada regla en el protocolo Bitcoin puede ser comprobada por software ejecutandose en tu propio hardware. Un nodo completo es la herramienta que hace esto posible. Sin el, estas confiando en la computadora de otra persona para que te diga la verdad sobre tu dinero.

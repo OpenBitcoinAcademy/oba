@@ -1,0 +1,1 @@
+Segwit introdujo un segundo arbol Merkle para los datos de testigo. La raiz Merkle de testigo se compromete en una salida coinbase, no en el encabezado del bloque. Esto preserva la compatibilidad hacia atras: los nodos legacy ven el mismo formato de encabezado de bloque. Los nodos segwit verifican tanto el arbol Merkle de transacciones como el arbol Merkle de testigos.

@@ -1,0 +1,1 @@
+El bloque genesis (bloque 0) esta codificado de forma fija en cada nodo de Bitcoin. No puede ser modificado. Su transaccion coinbase contiene el texto: "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks." Esto sirve tanto como marca de tiempo como una declaracion sobre el sistema financiero que Bitcoin fue disenado para abordar.

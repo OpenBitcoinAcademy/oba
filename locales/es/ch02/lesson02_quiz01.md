@@ -1,5 +1,5 @@
-Qué hace OP_EQUALVERIFY en un script P2PKH?
+Que sucede con la transacción de Alice después de que la transmite?
 
-- Firma la transacción
-- Coloca la clave pública en la pila
-- Verifica que el hash de clave pública proporcionado coincida con el hash esperado
+- Va directamente a la billetera de Bob
+- Los nodos la verifican de forma independiente y la agregan a su mempool
+- Se almacena en un servidor central hasta que un minero la recupera

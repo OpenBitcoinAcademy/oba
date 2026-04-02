@@ -1,0 +1,1 @@
+Physical attacks against suspected bitcoin holders are documented and increasing. Do not publicly disclose how much bitcoin you hold. Use passphrases on seed phrases to create plausible-deniability wallets. Consider that the threat to your bitcoin may be physical, not digital.

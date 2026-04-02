@@ -1,0 +1,1 @@
+Bitcoin usa un modelo de pago por empuje. Tu autorizas un pago especifico firmando una transaccion especifica. Nadie puede extraer fondos de tu billetera sin tu firma. Compara esto con una tarjeta de credito, donde compartir tu numero de tarjeta permite que cualquiera haga cargos a tu cuenta. El modelo de empuje elimina toda una categoria de fraude.

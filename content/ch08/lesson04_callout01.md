@@ -1,0 +1,1 @@
+Nonce reuse is catastrophic. If two signatures share the same nonce and private key, the private key can be algebraically extracted. Deterministic nonce generation (RFC 6979, BIP340) prevents this by computing the nonce from the private key and message. There is no randomness to fail.

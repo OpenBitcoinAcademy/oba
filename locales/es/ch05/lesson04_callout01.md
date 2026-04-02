@@ -1,0 +1,1 @@
+Depender solo de la memoria para una frase semilla es peligroso. Si olvidas la frase y pierdes la base de datos de la billetera, el bitcoin se pierde para siempre. Si mueres sin dejar la frase semilla accesible a tus herederos, ellos no pueden heredar los fondos. Escríbela. Almacénala físicamente. Prueba la recuperación.

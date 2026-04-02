@@ -1,5 +1,5 @@
-What does OP_EQUALVERIFY do in a P2PKH script?
+What happens to Alice's transaction after she broadcasts it?
 
-- It signs the transaction
-- It pushes the public key onto the stack
-- It checks that the provided public key hash matches the expected hash
+- It goes directly to Bob's wallet
+- Nodes verify it independently and add it to their mempool
+- It is stored in a central server until a miner retrieves it

@@ -1,13 +1,7 @@
-## Construyendo la transacción
+## Por qué la minería proporciona seguridad
 
-Una transacción legacy tiene cuatro campos: versión, entradas, salidas y locktime. Las transacciones segwit modernas agregan tres más: un marcador, una bandera y una estructura de testigo que contiene los datos de autorización (firmas) separados de las entradas.
+Los mineros solo pueden obtener recompensas creando bloques que sigan las reglas de consenso. Un bloque con transacciones inválidas es rechazado por cada nodo completo en la red. La electricidad del minero se desperdicia y no gana nada.
 
-**Versión** es un número (actualmente 1 o 2) que indica a los nodos qué reglas de validación aplicar.
+Esto crea un incentivo económico para comportarse honestamente. La minería honesta es rentable. La minería deshonesta desperdicia recursos. Cuanta más potencia de cómputo se dedique a la minería honesta, más difícil se vuelve para cualquier atacante producir bloques fraudulentos.
 
-**Entradas** listan los UTXOs que se van a gastar. Cada entrada especifica el ID de la transacción anterior, el índice de la salida dentro de esa transacción, un script de entrada y un número de secuencia.
-
-**Salidas** listan los nuevos UTXOs que se crean. Cada salida especifica una cantidad en satoshis y un script de bloqueo.
-
-**Locktime** generalmente es cero. Cuando se configura con una altura de bloque futura o una marca de tiempo, la transacción no puede incluirse en un bloque hasta ese punto.
-
-La transacción se serializa en una secuencia de bytes, se aplica doble hash con SHA-256, y el resultado es el ID de la transacción.
+Para revertir una transacción confirmada, un atacante necesitaría rehacer el proof of work del bloque que contiene esa transacción y de cada bloque construido sobre él. Cada confirmación adicional hace la reversión exponencialmente más costosa.

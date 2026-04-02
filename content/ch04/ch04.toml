@@ -1,0 +1,94 @@
+[chapter]
+id = "ch04"
+title_key = "chapters.ch04_title"
+description_key = "chapters.ch04_description"
+
+# Lesson 1: Hashing
+[[lessons]]
+id = "ch04.lesson01"
+title_key = "lessons.ch04_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "hash_flow"
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex01_hash"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 2: Keys
+[[lessons]]
+id = "ch04.lesson02"
+title_key = "lessons.ch04_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "key_derivation"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex02_keys"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 3: Addresses
+[[lessons]]
+id = "ch04.lesson03"
+title_key = "lessons.ch04_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "address_pipeline"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex03_address"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0, 1, 2]

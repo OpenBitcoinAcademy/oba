@@ -1,7 +1,7 @@
-## Selecting UTXOs
+## The Mining Lottery
 
-Building a transaction starts with choosing which outputs to spend. Your wallet scans the blockchain for UTXOs locked to your addresses. These are the coins you control.
+Mining is a decentralized lottery. Each miner creates a candidate block from transactions in their mempool. They hash the block header repeatedly, changing a number called the nonce each time, looking for a hash value below a target set by the network.
 
-To send 0.5 BTC, your wallet selects one or more UTXOs that sum to at least 0.5 BTC. If the smallest UTXO is 0.8 BTC, that single UTXO becomes the input. The excess (minus fees) returns to you as change.
+Finding a valid hash requires trillions of attempts. Verifying a valid hash requires computing it once. This asymmetry is the core of proof of work: creating a valid block is expensive, checking one is cheap.
 
-If no single UTXO is large enough, the wallet combines multiple UTXOs as separate inputs in the same transaction. Each input requires its own signature.
+The miner who finds a valid hash first broadcasts the block. Other miners verify it, accept it, and immediately begin working on the next block. The winner collects the block reward: newly created bitcoins (the subsidy) plus the sum of all transaction fees in the block.

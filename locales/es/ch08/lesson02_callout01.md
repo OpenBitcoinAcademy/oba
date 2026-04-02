@@ -1,0 +1,1 @@
+Las firmas ECDSA son más grandes que las firmas Schnorr (71-73 bytes vs 64 bytes) y no soportan agregación nativa de multifirma. A pesar de estas limitaciones, ECDSA sigue en uso por compatibilidad con scripts existentes y para gastar salidas segwit v0.

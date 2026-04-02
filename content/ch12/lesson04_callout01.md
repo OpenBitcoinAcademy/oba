@@ -1,0 +1,1 @@
+No amount of hash power lets an attacker create bitcoin from nothing, spend other people's coins, or change the rules without consensus. A 51% attacker can reverse their own recent transactions, but the cost of the attack often exceeds the potential gain. The economic incentives favor honest mining.

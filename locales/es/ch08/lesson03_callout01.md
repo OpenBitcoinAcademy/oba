@@ -1,0 +1,1 @@
+La propiedad de linealidad de Schnorr hace posible la agregación de firmas. Si el firmante A produce la firma sA y el firmante B produce sB, el agregado sA + sB es una firma válida para la clave pública combinada A + B. ECDSA carece de esta propiedad, por lo que multisig requería firmas separadas hasta Taproot.

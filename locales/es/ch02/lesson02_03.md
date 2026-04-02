@@ -1,12 +1,7 @@
-## P2PKH paso a paso
+## Del mempool a la blockchain
 
-Esto es lo que sucede cuando un script P2PKH se ejecuta:
+La transacción de Alice permanece en el mempool, esperando que un minero la incluya en un bloque. Los mineros seleccionan transacciones de su mempool, priorizando aquellas con tasas de comisión más altas por unidad de peso.
 
-1. La firma y la clave pública se colocan en la pila (desde el script de desbloqueo).
-2. OP_DUP duplica la clave pública en la pila.
-3. OP_HASH160 aplica un hash al elemento superior (la clave pública duplicada) con SHA-256 y luego RIPEMD-160.
-4. El hash de clave pública esperado se coloca en la pila (desde el script de bloqueo).
-5. OP_EQUALVERIFY extrae los dos elementos superiores y verifica que sean iguales. Si difieren, el script falla.
-6. OP_CHECKSIG extrae la firma y la clave pública, verifica la firma contra los datos de la transacción. Si es válida, coloca verdadero en la pila.
+Unos cinco minutos después, un minero encuentra una solución válida de proof of work para un nuevo bloque que incluye la transacción de Alice. El minero transmite el bloque. Cada nodo completo verifica el bloque de forma independiente: proof of work válido, transacciones válidas, formato correcto. Los nodos que aceptan el bloque lo agregan a su copia de la blockchain.
 
-El resultado: verdadero en la pila. El gasto queda autorizado. La firma demuestra que el gastador controla la clave privada, sin revelarla.
+La transacción de Alice ahora tiene una confirmación. La billetera de Bob actualiza el estado. Cada bloque subsiguiente construido sobre este agrega otra confirmación. Después de seis confirmaciones (aproximadamente una hora), la transacción se considera altamente segura contra reversión.

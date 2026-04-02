@@ -1,0 +1,1 @@
+The seed is the single point of failure. Anyone who obtains your seed can derive every private key in your wallet and spend all your bitcoin. Protect the seed with the same rigor you would protect the total value it controls. Store it offline. Never type it into a website. Never store it in a cloud service.

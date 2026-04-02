@@ -1,0 +1,64 @@
+[chapter]
+id = "ch11"
+title_key = "chapters.ch11_title"
+description_key = "chapters.ch11_description"
+
+# Lesson 1: Blocks and Confirmation
+[[lessons]]
+id = "ch11.lesson01"
+title_key = "lessons.ch11_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 2: Block Structure
+[[lessons]]
+id = "ch11.lesson02"
+title_key = "lessons.ch11_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 3: Merkle Trees
+[[lessons]]
+id = "ch11.lesson03"
+title_key = "lessons.ch11_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]

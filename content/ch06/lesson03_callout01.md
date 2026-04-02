@@ -1,0 +1,1 @@
+The segwit marker/flag trick is backwards compatible. Legacy parsers read the marker (0x00) as "zero inputs," which is invalid, so they reject the data. Segwit-aware parsers recognize the zero as a signal for the extended format and continue reading the flag, inputs, outputs, witness, and locktime. One byte distinguishes the two formats without breaking older software.

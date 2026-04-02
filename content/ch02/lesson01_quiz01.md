@@ -1,5 +1,5 @@
-What does a transaction input reference?
+What does a Bitcoin wallet contain?
 
-- A wallet balance
-- An unspent output from a previous transaction
-- A block number
+- Bitcoin coins
+- A copy of the blockchain
+- Keys used to sign transactions

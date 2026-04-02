@@ -1,0 +1,1 @@
+El mensaje `getheaders` reemplazo al antiguo enfoque `getblocks` utilizado antes del metodo de sincronizacion por cabeceras. La sincronizacion por cabeceras permite al nodo verificar la cadena de proof of work antes de descargar bloques completos. Esto evita que un atacante desperdicie el ancho de banda del nodo alimentandolo con bloques de una cadena mas debil.

@@ -1,0 +1,1 @@
+La comisión no es un porcentaje del monto enviado. Una transacción que envía 0.001 BTC y una transacción que envía 1,000 BTC pueden tener la misma comisión si tienen el mismo peso. Las comisiones reflejan el costo del espacio en el bloque, no el valor que se transfiere.

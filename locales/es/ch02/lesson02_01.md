@@ -1,7 +1,7 @@
-## Scripts de bloqueo
+## Alice le paga a Bob
 
-Cada salida de transacción contiene un script de bloqueo, llamado scriptPubKey. Este script define las condiciones que deben cumplirse para gastar la salida.
+Alice quiere comprar un producto en la tienda en línea de Bob. La página de pago de Bob muestra una opción de pago con Bitcoin, con un monto y una dirección Bitcoin.
 
-El script de bloqueo más sencillo de entender es Pay-to-Public-Key-Hash (P2PKH). Dice: "Para gastar esta salida, demuestra que posees la clave privada correspondiente a este hash de clave pública." Las transacciones modernas usan formatos más nuevos (P2WPKH para SegWit, P2TR para Taproot), pero P2PKH demuestra el concepto central con mayor claridad.
+Alice abre su aplicación de billetera. Esta escanea la blockchain en busca de salidas de transacciones no gastadas (UTXOs) bloqueadas a sus direcciones. Su billetera encuentra un UTXO de 0.015 BTC, más que suficiente para cubrir el precio de Bob de 0.01 BTC.
 
-En notación de script, un bloqueo P2PKH se ve así: OP_DUP OP_HASH160 <pubkey_hash> OP_EQUALVERIFY OP_CHECKSIG. Cada pieza es una instrucción que el motor de scripts de Bitcoin ejecuta.
+La billetera de Alice construye una transacción con una entrada (referenciando su UTXO de 0.015 BTC) y dos salidas: 0.01 BTC a la dirección de Bob, y 0.0049 BTC de vuelta a Alice como cambio. Los 0.0001 BTC restantes son la comisión de transacción.

@@ -1,0 +1,1 @@
+Bitcoin's consensus is emergent, not directed. No leader coordinates the network. Thousands of nodes independently apply the same rules to the same data and arrive at the same conclusion. This emergent agreement is what makes Bitcoin decentralized: removing any single node, miner, or developer changes nothing about the outcome.

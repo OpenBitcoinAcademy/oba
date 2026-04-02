@@ -1,0 +1,92 @@
+[chapter]
+id = "ch12"
+title_key = "chapters.ch12_title"
+description_key = "chapters.ch12_description"
+
+# Lesson 1: Proof of Work
+[[lessons]]
+id = "ch12.lesson01"
+title_key = "lessons.ch12_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 2: Block Rewards and the Halving
+[[lessons]]
+id = "ch12.lesson02"
+title_key = "lessons.ch12_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0]
+
+# Lesson 3: Consensus and Chain Selection
+[[lessons]]
+id = "ch12.lesson03"
+title_key = "lessons.ch12_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 4: Attacks and Governance
+[[lessons]]
+id = "ch12.lesson04"
+title_key = "lessons.ch12_lesson04_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]

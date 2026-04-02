@@ -1,0 +1,1 @@
+The `getheaders` message replaced the older `getblocks` approach used before the headers-first sync method. Headers-first sync lets the node verify the proof-of-work chain before downloading full blocks. This prevents an attacker from wasting the node's bandwidth by feeding it blocks on a weaker chain.

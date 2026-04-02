@@ -1,7 +1,7 @@
-## Inputs Reference Previous Outputs
+## Wallets, Keys, and Addresses
 
-Every input points to a specific output from a previous transaction. It does this with two pieces of information: the transaction ID (a hash) and the output index (which output in that transaction).
+A Bitcoin wallet is a collection of keys, not a container of coins. The wallet software manages private keys and uses them to sign transactions. The blockchain records which outputs are spendable by which keys.
 
-When you spend bitcoin, you prove that you control the key that can unlock a previous output. In legacy transactions, the proof (signature and public key) lives in the input script. In modern segwit transactions, the proof lives in a separate witness structure, and the input script is empty.
+To receive bitcoin, you share an address. An address is derived from your public key. Anyone can send bitcoin to your address, but only you can spend it, because spending requires a signature from the corresponding private key.
 
-Once an output is referenced by an input, it is spent. It cannot be spent again. This is how Bitcoin prevents double spending without a central authority.
+To send bitcoin, your wallet selects unspent outputs (UTXOs) that you control, constructs a transaction, signs it with your private key, and broadcasts it to the network.

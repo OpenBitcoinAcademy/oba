@@ -1,0 +1,89 @@
+[chapter]
+id = "ch03"
+title_key = "chapters.ch03_title"
+description_key = "chapters.ch03_description"
+
+# Lesson 1: The Reference Implementation
+[[lessons]]
+id = "ch03.lesson01"
+title_key = "lessons.ch03_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 2: Running a Full Node
+[[lessons]]
+id = "ch03.lesson02"
+title_key = "lessons.ch03_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0, 1, 3]
+
+# Lesson 3: The Bitcoin Core API
+[[lessons]]
+id = "ch03.lesson03"
+title_key = "lessons.ch03_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 4: Alternative Implementations
+[[lessons]]
+id = "ch03.lesson04"
+title_key = "lessons.ch03_lesson04_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]

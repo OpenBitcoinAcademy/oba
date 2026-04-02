@@ -1,0 +1,1 @@
+Segwit introduced a second Merkle tree for witness data. The witness Merkle root is committed in a coinbase output, not in the block header. This preserves backward compatibility: legacy nodes see the same block header format. Segwit nodes verify both the transaction Merkle tree and the witness Merkle tree.

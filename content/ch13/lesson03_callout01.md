@@ -1,0 +1,1 @@
+In 2013, a database change in Bitcoin Core (from BerkeleyDB to LevelDB) accidentally changed a consensus rule regarding the maximum number of inputs in a block. The result was an unintentional chain split. The fix required coordinated rollback. Consensus bugs are not theoretical risks. They have happened and caused real disruption.

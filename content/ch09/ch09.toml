@@ -1,0 +1,89 @@
+[chapter]
+id = "ch09"
+title_key = "chapters.ch09_title"
+description_key = "chapters.ch09_description"
+
+# Lesson 1: Fees and the Fee Market
+[[lessons]]
+id = "ch09.lesson01"
+title_key = "lessons.ch09_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 2: Fee Rates and Weight
+[[lessons]]
+id = "ch09.lesson02"
+title_key = "lessons.ch09_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 3: Fee Bumping
+[[lessons]]
+id = "ch09.lesson03"
+title_key = "lessons.ch09_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0, 1]
+
+# Lesson 4: Advanced Fee Topics
+[[lessons]]
+id = "ch09.lesson04"
+title_key = "lessons.ch09_lesson04_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]

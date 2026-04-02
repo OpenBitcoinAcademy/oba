@@ -1,0 +1,1 @@
+Proof of work converts electricity into security. An attacker must spend at least as much energy as honest miners to rewrite the chain. This physical cost is what makes Bitcoin's ledger tamper-resistant, unlike systems where security relies on trust or reputation alone.

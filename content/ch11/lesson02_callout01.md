@@ -1,0 +1,1 @@
+The genesis block (block 0) is hardcoded into every Bitcoin node. It cannot be changed. Its coinbase transaction contains the text: "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks." This serves as both a timestamp and a statement about the financial system Bitcoin was designed to address.

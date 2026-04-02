@@ -1,7 +1,7 @@
-## Unlocking Scripts
+## Propagation Across the Network
 
-To spend a locked output, the spender provides an unlocking script, called a scriptSig. For P2PKH, the unlocking script contains a digital signature and the spender's public key.
+Alice's wallet signs the transaction with her private key and broadcasts it to the Bitcoin network. Her wallet connects to several nodes, which verify the transaction independently: correct format, valid signature, unspent inputs, output values do not exceed input values.
 
-Bitcoin executes these scripts on a stack machine. First, the unlocking script runs and pushes data onto the stack. Then the stack is copied, and the locking script runs against that copied stack. The two scripts never combine into one. This separation was introduced in 2010 to fix a security vulnerability.
+Each node that accepts the transaction adds it to its mempool (a local list of unconfirmed transactions) and relays it to its peers. Within seconds, the transaction reaches thousands of nodes across the network. No central server coordinates this. Each node follows the same rules independently.
 
-If the locking script finishes with a truthy value on top of the stack, the spend is valid. If the stack is empty or the top value is zero, the spend fails.
+Bob's wallet monitors the network for transactions paying to his address. When it sees Alice's transaction, it shows as "unconfirmed" in Bob's wallet. The payment has been broadcast but not yet recorded in a block.

@@ -1,0 +1,1 @@
+La reutilización de nonces es catastrófica. Si dos firmas comparten el mismo nonce y clave privada, la clave privada puede extraerse algebraicamente. La generación determinística de nonces (RFC 6979, BIP340) previene esto al calcular el nonce a partir de la clave privada y el mensaje. No hay aleatoriedad que pueda fallar.

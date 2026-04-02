@@ -1,13 +1,7 @@
-## Constructing the Transaction
+## Why Mining Provides Security
 
-A legacy transaction has four fields: version, inputs, outputs, and locktime. Modern segwit transactions add three more: a marker, a flag, and a witness structure that holds the authorization data (signatures) separately from the inputs.
+Miners can only earn rewards by creating blocks that follow the consensus rules. A block with invalid transactions is rejected by every full node on the network. The miner's electricity is wasted and they earn nothing.
 
-**Version** is a number (currently 1 or 2) that tells nodes which validation rules apply.
+This creates an economic incentive to behave honestly. Honest mining is profitable. Dishonest mining wastes resources. The more computing power devoted to honest mining, the harder it becomes for any attacker to produce fraudulent blocks.
 
-**Inputs** list the UTXOs being spent. Each input specifies the previous transaction ID, the output index within that transaction, an input script, and a sequence number.
-
-**Outputs** list the new UTXOs being created. Each output specifies an amount in satoshis and a locking script.
-
-**Locktime** is usually zero. When set to a future block height or timestamp, the transaction cannot be included in a block until that point.
-
-The transaction is serialized into a byte sequence, hashed twice with SHA-256, and the result is the transaction ID.
+To reverse a confirmed transaction, an attacker would need to redo the proof of work for the block containing that transaction and every block built on top of it. Each additional confirmation makes reversal exponentially more expensive.

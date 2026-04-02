@@ -1,0 +1,1 @@
+P2SH traslado el costo de los scripts complejos del remitente al receptor. Antes de P2SH, la salida del remitente tenia que contener el script completo, haciendo que las condiciones complejas fueran costosas para el remitente. Con P2SH, la salida contiene solo un hash de 20 bytes. El receptor revela el script completo cuando gasta, pagando el costo en ese momento.

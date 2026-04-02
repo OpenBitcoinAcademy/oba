@@ -1,0 +1,92 @@
+[chapter]
+id = "ch05"
+title_key = "chapters.ch05_title"
+description_key = "chapters.ch05_description"
+
+# Lesson 1: What is a Wallet?
+[[lessons]]
+id = "ch05.lesson01"
+title_key = "lessons.ch05_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 2: Key Generation
+[[lessons]]
+id = "ch05.lesson02"
+title_key = "lessons.ch05_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 3: HD Wallets
+[[lessons]]
+id = "ch05.lesson03"
+title_key = "lessons.ch05_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0]
+
+# Lesson 4: Recovery and Backup
+[[lessons]]
+id = "ch05.lesson04"
+title_key = "lessons.ch05_lesson04_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]

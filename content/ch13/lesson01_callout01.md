@@ -1,0 +1,1 @@
+Bitcoin uses a push payment model. You authorize a specific payment by signing a specific transaction. No one can pull funds from your wallet without your signature. Compare this to a credit card, where sharing your card number lets anyone charge your account. The push model eliminates an entire category of fraud.

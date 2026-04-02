@@ -1,9 +1,7 @@
-## Change Outputs
+## Transactions, Mining, and the Blockchain
 
-Most transactions create two outputs. One goes to the recipient. The other goes back to the sender as change.
+A transaction is a data structure that transfers bitcoin from one owner to another. Inputs reference previous outputs being spent. Outputs create new spendable amounts locked to recipient keys.
 
-If you have a UTXO worth 1 BTC and want to send 0.3 BTC, you cannot split the UTXO. You must spend it entirely. Your transaction creates two outputs: 0.3 BTC to the recipient and 0.7 BTC minus fees back to yourself.
+Mining is the process that adds transactions to the blockchain. Miners compete to solve a computational puzzle (proof of work) by hashing candidate blocks until the result falls below a target value. The first miner to find a valid solution broadcasts the block. Other nodes verify it and accept it.
 
-This is similar to paying with a banknote. If something costs 3 and you hand over a 10, you get 7 back. The entire note is consumed and new amounts are created.
-
-The difference between total inputs and total outputs is the transaction fee. Miners collect it as payment for including your transaction in a block.
+The blockchain is the chain of all valid blocks, linked by hashes. Each block references the block before it. Changing any past block would require redoing the proof of work for that block and every block after it.

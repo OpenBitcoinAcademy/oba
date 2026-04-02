@@ -1,0 +1,1 @@
+Schnorr's linearity property makes signature aggregation possible. If signer A produces signature sA and signer B produces sB, the aggregate sA + sB is a valid signature for the combined public key A + B. ECDSA lacks this property, which is why multisig required separate signatures until Taproot.

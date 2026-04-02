@@ -1,0 +1,1 @@
+Proof of work convierte electricidad en seguridad. Un atacante debe gastar al menos tanta energia como los mineros honestos para reescribir la cadena. Este costo fisico es lo que hace que el registro de Bitcoin sea resistente a la manipulacion, a diferencia de sistemas donde la seguridad depende de la confianza o la reputacion.

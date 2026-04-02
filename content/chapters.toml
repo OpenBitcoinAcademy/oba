@@ -5,3 +5,47 @@ toml_file = "ch01/ch01.toml"
 [[chapters]]
 id = "ch02"
 toml_file = "ch02/ch02.toml"
+
+[[chapters]]
+id = "ch03"
+toml_file = "ch03/ch03.toml"
+
+[[chapters]]
+id = "ch04"
+toml_file = "ch04/ch04.toml"
+
+[[chapters]]
+id = "ch05"
+toml_file = "ch05/ch05.toml"
+
+[[chapters]]
+id = "ch06"
+toml_file = "ch06/ch06.toml"
+
+[[chapters]]
+id = "ch07"
+toml_file = "ch07/ch07.toml"
+
+[[chapters]]
+id = "ch08"
+toml_file = "ch08/ch08.toml"
+
+[[chapters]]
+id = "ch09"
+toml_file = "ch09/ch09.toml"
+
+[[chapters]]
+id = "ch10"
+toml_file = "ch10/ch10.toml"
+
+[[chapters]]
+id = "ch11"
+toml_file = "ch11/ch11.toml"
+
+[[chapters]]
+id = "ch12"
+toml_file = "ch12/ch12.toml"
+
+[[chapters]]
+id = "ch13"
+toml_file = "ch13/ch13.toml"

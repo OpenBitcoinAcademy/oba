@@ -1,0 +1,1 @@
+The fee is not a percentage of the amount sent. A transaction sending 0.001 BTC and a transaction sending 1,000 BTC can have the same fee if they have the same weight. Fees reflect the cost of block space, not the value being transferred.

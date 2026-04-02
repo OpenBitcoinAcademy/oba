@@ -1,0 +1,1 @@
+Transaction pinning es una preocupación real para protocolos construidos sobre Bitcoin, como Lightning Network. Los anchor outputs (definidos en las especificaciones BOLT) y package relay (en despliegue en Bitcoin Core) trabajan juntos para mitigar este ataque. El diseño del sistema de comisiones continúa evolucionando a medida que surgen nuevos casos de uso.

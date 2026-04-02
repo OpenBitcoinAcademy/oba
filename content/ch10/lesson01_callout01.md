@@ -1,0 +1,1 @@
+Running a full node on modest hardware is possible. A pruned node needs about 10 GB of disk space. A Raspberry Pi with a microSD card can validate the entire blockchain. The ability to run a node at home, on cheap hardware, is a property Bitcoin developers protect carefully.

@@ -1,0 +1,1 @@
+Ejecutar un nodo completo en hardware modesto es posible. Un nodo podado necesita unos 10 GB de espacio en disco. Una Raspberry Pi con una tarjeta microSD puede validar toda la blockchain. La capacidad de ejecutar un nodo en casa, con hardware barato, es una propiedad que los desarrolladores de Bitcoin protegen con cuidado.

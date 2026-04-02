@@ -1,0 +1,1 @@
+En 2013, un cambio de base de datos en Bitcoin Core (de BerkeleyDB a LevelDB) cambio accidentalmente una regla de consenso sobre el numero maximo de entradas en un bloque. El resultado fue una division de cadena no intencional. La solucion requirio un retroceso coordinado. Los errores de consenso no son riesgos teoricos. Han ocurrido y causado interrupciones reales.

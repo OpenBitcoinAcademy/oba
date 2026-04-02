@@ -1,0 +1,1 @@
+Each transaction input is signed independently. A transaction with three inputs requires three separate signatures, potentially from three different private keys. This independence enables collaborative transaction construction: multiple parties contribute inputs without sharing keys.

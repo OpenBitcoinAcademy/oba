@@ -1,9 +1,7 @@
-## Salidas de cambio
+## Transacciones, minería y la blockchain
 
-La mayoría de las transacciones crean dos salidas. Una va al destinatario. La otra regresa al remitente como cambio.
+Una transacción es una estructura de datos que transfiere bitcoin de un propietario a otro. Las entradas referencian salidas previas que se gastan. Las salidas crean nuevas cantidades gastables bloqueadas a las claves del destinatario.
 
-Si tienes un UTXO de 1 BTC y quieres enviar 0.3 BTC, no puedes dividir el UTXO. Debes gastarlo por completo. Tu transacción crea dos salidas: 0.3 BTC para el destinatario y 0.7 BTC menos comisiones de vuelta para ti.
+La minería es el proceso que agrega transacciones a la blockchain. Los mineros compiten para resolver un rompecabezas computacional (proof of work) hasheando bloques candidatos hasta que el resultado cae por debajo de un valor objetivo. El primer minero en encontrar una solución válida transmite el bloque. Los demás nodos lo verifican y lo aceptan.
 
-Es similar a pagar con un billete. Si algo cuesta 3 y entregas un billete de 10, recibes 7 de vuelta. El billete entero se consume y se crean nuevos montos.
-
-La diferencia entre el total de entradas y el total de salidas es la comisión de la transacción. Los mineros la recogen como pago por incluir tu transacción en un bloque.
+La blockchain es la cadena de todos los bloques válidos, enlazados por hashes. Cada bloque referencia al bloque anterior. Cambiar cualquier bloque pasado requeriría rehacer el proof of work de ese bloque y de todos los bloques posteriores.

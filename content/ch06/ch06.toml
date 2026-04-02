@@ -1,0 +1,86 @@
+[chapter]
+id = "ch06"
+title_key = "chapters.ch06_title"
+description_key = "chapters.ch06_description"
+
+# Lesson 1: Inputs and Outputs
+[[lessons]]
+id = "ch06.lesson01"
+title_key = "lessons.ch06_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "tx_anatomy"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 2: Building a Transaction
+[[lessons]]
+id = "ch06.lesson02"
+title_key = "lessons.ch06_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "utxo_model"
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex05_tx_inspector"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex06_tx_builder"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0, 2]
+
+# Lesson 3: Transaction Serialization
+[[lessons]]
+id = "ch06.lesson03"
+title_key = "lessons.ch06_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]

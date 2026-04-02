@@ -1,0 +1,89 @@
+[chapter]
+id = "ch10"
+title_key = "chapters.ch10_title"
+description_key = "chapters.ch10_description"
+
+# Lesson 1: P2P Architecture and Node Types
+[[lessons]]
+id = "ch10.lesson01"
+title_key = "lessons.ch10_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 2: Network Discovery and Sync
+[[lessons]]
+id = "ch10.lesson02"
+title_key = "lessons.ch10_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0]
+
+# Lesson 3: Block Propagation
+[[lessons]]
+id = "ch10.lesson03"
+title_key = "lessons.ch10_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "tip"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 4: Lightweight Clients and Privacy
+[[lessons]]
+id = "ch10.lesson04"
+title_key = "lessons.ch10_lesson04_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]

@@ -1,0 +1,1 @@
+La semilla es el punto único de fallo. Cualquier persona que obtenga tu semilla puede derivar cada clave privada de tu billetera y gastar todo tu bitcoin. Protege la semilla con el mismo rigor con que protegerías el valor total que controla. Almacénala fuera de línea. Nunca la escribas en un sitio web. Nunca la guardes en un servicio en la nube.

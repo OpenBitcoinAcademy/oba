@@ -1,7 +1,7 @@
-## Las entradas referencian salidas anteriores
+## Billeteras, claves y direcciones
 
-Cada entrada apunta a una salida específica de una transacción anterior. Lo hace con dos datos: el ID de la transacción (un hash) y el índice de la salida (cuál salida dentro de esa transacción).
+Una billetera Bitcoin es una colección de claves, no un contenedor de monedas. El software de la billetera gestiona claves privadas y las usa para firmar transacciones. La blockchain registra qué salidas son gastables por qué claves.
 
-Cuando gastas bitcoin, demuestras que controlas la clave capaz de desbloquear una salida anterior. En transacciones legacy, la prueba (firma y clave pública) vive en el script de entrada. En transacciones segwit modernas, la prueba vive en una estructura de testigo separada, y el script de entrada está vacío.
+Para recibir bitcoin, compartes una dirección. Una dirección se deriva de tu clave pública. Cualquiera puede enviar bitcoin a tu dirección, pero solo tú puedes gastarlo, porque gastar requiere una firma de la clave privada correspondiente.
 
-Una vez que una salida es referenciada por una entrada, queda gastada. No se puede gastar de nuevo. Así es como Bitcoin previene el doble gasto sin una autoridad central.
+Para enviar bitcoin, tu billetera selecciona salidas no gastadas (UTXOs) que controlas, construye una transacción, la firma con tu clave privada y la transmite a la red.

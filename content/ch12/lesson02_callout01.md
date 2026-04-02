@@ -1,0 +1,1 @@
+Bitcoin's issuance schedule was fixed at launch and has never changed. Every halving reduces the rate of new supply. By contrast, fiat currencies have no hard issuance limit, and central banks can increase the money supply at any time. The halving makes Bitcoin's monetary policy auditable by anyone running a node.

@@ -1,5 +1,5 @@
-How is the transaction fee calculated? (Select all that apply)
+Why is mining designed to be computationally expensive?
 
-- It is the difference between total inputs and total outputs
-- It is a fixed percentage of the amount sent
-- It depends on the transaction weight, not the amount sent
+- So that creating a valid block requires work, making fraud costly
+- To slow down transactions for safety
+- To limit the number of miners on the network

@@ -1,0 +1,1 @@
+The segwit witness discount was designed to reduce the cost of signature data relative to UTXO-creating data. Creating UTXOs has a long-term cost (every full node stores them), so the discount makes it cheaper to verify signatures (temporary data) than to create outputs (persistent data).

@@ -1,0 +1,1 @@
+If you control your keys, you control your bitcoin. If someone else holds your keys (a custodial exchange, for example), they control your bitcoin. You trust them to act honestly and to stay solvent. The phrase "not your keys, not your coins" captures this distinction.

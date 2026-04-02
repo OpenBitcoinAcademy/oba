@@ -1,0 +1,1 @@
+Los ataques fisicos contra personas sospechosas de poseer bitcoin estan documentados y en aumento. No divulgues publicamente cuanto bitcoin posees. Usa frases de contrasena en las frases semilla para crear billeteras de negacion plausible. Considera que la amenaza a tu bitcoin puede ser fisica, no digital.

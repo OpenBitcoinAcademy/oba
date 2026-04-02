@@ -1,0 +1,1 @@
+P2SH shifted the cost of complex scripts from the sender to the receiver. Before P2SH, the sender's output had to contain the full script, making complex conditions expensive for the sender. With P2SH, the output contains only a 20-byte hash. The receiver reveals the full script when they spend, paying the cost at that point.

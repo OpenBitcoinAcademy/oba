@@ -1,0 +1,1 @@
+Ningun poder de hashrate permite a un atacante crear bitcoin de la nada, gastar las monedas de otras personas, o cambiar las reglas sin consenso. Un atacante del 51% puede revertir sus propias transacciones recientes, pero el costo del ataque a menudo supera la ganancia potencial. Los incentivos economicos favorecen la mineria honesta.

@@ -1,9 +1,7 @@
-## What a Transaction Looks Like
+## The Bitcoin System
 
-A Bitcoin transaction is a data structure that transfers bitcoin from one owner to another. It contains inputs (which reference previous outputs to spend), outputs (which create new spendable amounts), and authorization data (signatures proving the spender controls the keys).
+Bitcoin consists of three components working together: users with wallets containing keys, transactions propagated across a peer-to-peer network, and miners who produce the consensus blockchain through competitive computation.
 
-Inputs say where the bitcoin comes from. Each input references a previous transaction's output that has not been spent yet. This unspent output is called a UTXO (unspent transaction output).
+The blockchain is the authoritative record of all transactions. Every full node on the network maintains a copy. No single entity controls it. Users verify the correct operation of the system by running software on their own computers.
 
-Outputs say where the bitcoin goes. Each output specifies an amount in satoshis and a locking condition (a script) that determines who can spend it.
-
-A transaction consumes old outputs and creates new ones. Nothing is "stored in an account." Bitcoin tracks ownership through a chain of outputs, each locked to a specific key.
+Unlike banking systems, Bitcoin does not require trust in third parties. The protocol's rules, enforced independently by every node, replace the role of a central authority.

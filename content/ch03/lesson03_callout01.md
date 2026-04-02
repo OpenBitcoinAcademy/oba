@@ -1,0 +1,1 @@
+The data your node stores is authoritative, not because some authority designated it, but because your node verified it independently. A `getblock` result from your node carries the weight of every consensus rule your software enforced during verification.

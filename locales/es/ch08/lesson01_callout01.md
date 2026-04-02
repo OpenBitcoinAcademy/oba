@@ -1,0 +1,1 @@
+Cada entrada de transacción se firma de forma independiente. Una transacción con tres entradas requiere tres firmas separadas, potencialmente de tres claves privadas diferentes. Esta independencia permite la construcción colaborativa de transacciones: múltiples partes aportan entradas sin compartir claves.

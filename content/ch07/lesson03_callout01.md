@@ -1,0 +1,1 @@
+Transaction malleability was a real problem before segwit. Anyone relaying a transaction could modify the signature encoding in a way that changed the txid without invalidating the transaction. This broke protocols that depended on txids remaining stable, including early versions of payment channels. Segwit fixed this by removing signatures from the txid computation.

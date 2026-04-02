@@ -1,0 +1,1 @@
+El descuento witness de segwit fue diseñado para reducir el costo de los datos de firma en relación con los datos que crean UTXO. Crear UTXOs tiene un costo a largo plazo (cada nodo completo los almacena), por lo que el descuento hace más barato verificar firmas (datos temporales) que crear salidas (datos persistentes).
