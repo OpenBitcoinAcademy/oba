@@ -1,0 +1,1 @@
+Las salidas por debajo de cierto valor se llaman polvo (dust). Cuestan más en comisiones para gastarlas de lo que valen. Si creas una salida de cambio de 100 satoshis pero gastarla requiere una comisión de 300 satoshis, esas monedas se pierden de forma efectiva. Las billeteras evitan crear salidas de polvo, agregando los residuos diminutos a la comisión.

@@ -17,10 +17,15 @@ type DiagramWidget interface {
 
 // Registry maps diagram IDs to their implementations.
 var Registry = map[string]DiagramWidget{
+	// Chapter 1.
 	"centralized_vs_p2p": &CentralizedVsP2P{},
 	"hash_flow":          &HashFlow{},
 	"key_derivation":     &KeyDerivation{},
 	"address_pipeline":   &AddressPipeline{},
+	// Chapter 2.
+	"tx_anatomy":       &TxAnatomy{},
+	"script_execution": &ScriptExecution{},
+	"utxo_model":       &UTXOModel{},
 }
 
 // Validate checks that a diagram ID exists in the registry.

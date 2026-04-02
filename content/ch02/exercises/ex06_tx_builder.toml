@@ -1,0 +1,17 @@
+[exercise]
+id = "ex06_tx_builder"
+type = "tx_builder"
+
+[exercise.config]
+network = "testnet"
+default_fee_rate = 1
+fake_utxo_value = 100000
+steps = [
+    "generate_keypair",
+    "create_fake_utxo",
+    "set_recipient",
+    "calculate_fee",
+    "build_tx",
+    "show_serialized",
+    "show_txid",
+]

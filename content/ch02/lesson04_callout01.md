@@ -1,0 +1,1 @@
+Bitcoin's difficulty adjusts every 2,016 blocks (roughly two weeks) to maintain an average of one block every 10 minutes. If miners add more computing power and blocks come faster, the difficulty increases. If miners leave, the difficulty decreases. This self-adjusting mechanism keeps block production stable regardless of how much mining power exists.

@@ -1,0 +1,9 @@
+[exercise]
+id = "ex04_script_debugger"
+type = "script_debugger"
+
+[exercise.config]
+script_type = "p2pkh"
+auto_generate_keys = true
+show_stack_hex = true
+show_opcode_description = true

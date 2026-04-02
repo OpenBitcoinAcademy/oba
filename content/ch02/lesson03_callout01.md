@@ -1,0 +1,1 @@
+Outputs below a certain value are called dust. They cost more in fees to spend than they are worth. If you create a change output of 100 satoshis but spending it requires a fee of 300 satoshis, those coins are effectively lost. Wallets avoid creating dust outputs by adding tiny remainders to the fee instead.

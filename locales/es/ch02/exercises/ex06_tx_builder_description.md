@@ -1,0 +1,1 @@
+Construye una transacción de Bitcoin desde cero, paso a paso. Genera un par de claves, selecciona un UTXO para gastar, establece un destinatario, calcula la comisión y ve la transacción serializada final con su ID.

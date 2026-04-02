@@ -182,6 +182,12 @@ func (l *Lesson) createExercise(id string) ExerciseWidget {
 		return components.NewKeyGenerator(th, cfg)
 	case "address_builder", "ex03_address":
 		return components.NewAddressBuilder(th, cfg)
+	case "script_debugger", "ex04_script_debugger":
+		return components.NewScriptDebugger(th, cfg)
+	case "tx_inspector", "ex05_tx_inspector":
+		return components.NewTxInspector(th, cfg)
+	case "tx_builder", "ex06_tx_builder":
+		return components.NewTxBuilder(th, cfg)
 	default:
 		return nil
 	}

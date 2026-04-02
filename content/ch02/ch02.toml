@@ -1,0 +1,116 @@
+[chapter]
+id = "ch02"
+title_key = "chapters.ch02_title"
+description_key = "chapters.ch02_description"
+
+# Lesson 1: Inputs and Outputs
+[[lessons]]
+id = "ch02.lesson01"
+title_key = "lessons.ch02_lesson01_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "tx_anatomy"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
+
+# Lesson 2: Locking and Unlocking
+[[lessons]]
+id = "ch02.lesson02"
+title_key = "lessons.ch02_lesson02_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "script_execution"
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex04_script_debugger"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [2]
+
+# Lesson 3: Building a Transaction
+[[lessons]]
+id = "ch02.lesson03"
+title_key = "lessons.ch02_lesson03_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "utxo_model"
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex05_tx_inspector"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "interactive"
+  exercise_id = "ex06_tx_builder"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "warning"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [0, 2]
+
+# Lesson 4: Blocks and Confirmation
+[[lessons]]
+id = "ch02.lesson04"
+title_key = "lessons.ch02_lesson04_title"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "callout"
+  style = "info"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "text"
+
+  [[lessons.sections]]
+  type = "quiz"
+  correct = [1]
