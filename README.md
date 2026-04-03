@@ -8,7 +8,15 @@ Public domain. Early stage.
 
 ## Source
 
-[Codeberg](https://codeberg.org/OpenBitcoinAcademy/oba) (primary) | [GitHub](https://github.com/OpenBitcoinAcademy/oba) (mirror)
+[Codeberg](https://codeberg.org/OpenBitcoinAcademy/oba) (primary) | [GitHub](https://github.com/OpenBitcoinAcademy/oba) (mirror) | [Nostr](https://gitworkshop.dev) (NIP-34)
+
+### Clone via Nostr
+
+With [ngit](https://gitworkshop.dev/ngit) installed:
+
+    git clone nostr://npub1qfcefq43er545mwvg69093almdkqs4wmcxaxjg9ad0rzq834qqfq9rhflh/oba
+
+Patches and issues can be submitted via nostr relays without a Codeberg or GitHub account.
 
 ## Build
 
