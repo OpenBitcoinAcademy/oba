@@ -25,3 +25,7 @@ Quiz format: first line is the question, lines starting with `- ` are options. C
 ## Reporting Issues
 
 Use [Codeberg Issues](https://codeberg.org/OpenBitcoinAcademy/oba/issues). Include: steps to reproduce, expected behavior, actual behavior, platform/OS.
+
+## Contributing via Nostr
+
+With [ngit](https://gitworkshop.dev/ngit) installed, you can submit patches and file issues via nostr relays. No account on any platform required. See the repo on [gitworkshop.dev](https://gitworkshop.dev).
