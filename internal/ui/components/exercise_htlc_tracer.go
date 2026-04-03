@@ -160,7 +160,7 @@ func (ht *HTLCTracer) buildSteps() {
 			to:      "Alice",
 			amount:  0,
 			timeout: 0,
-			detail:  fmt.Sprintf("Carol generates preimage, shares payment hash with Alice"),
+			detail:  "Carol generates preimage, shares payment hash with Alice",
 		},
 		{
 			label:   "2. Alice -> Bob: HTLC offer",

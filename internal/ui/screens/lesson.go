@@ -29,6 +29,7 @@ type Lesson struct {
 	state      *app.State
 	list       widget.List
 	backBtn    widget.Clickable
+	nextBtn    widget.Clickable
 	quizzes    map[int]*components.Quiz
 	exercises  map[int]ExerciseWidget
 	lastLesson int // tracks which lesson we last rendered
@@ -68,6 +69,12 @@ func (l *Lesson) Layout(gtx layout.Context) layout.Dimensions {
 	if l.backBtn.Clicked(gtx) {
 		l.state.NavigateChapterList()
 	}
+	if l.nextBtn.Clicked(gtx) && l.allQuizzesCorrect() {
+		l.state.NavigateNextLesson()
+	}
+
+	complete := l.state.Progress.IsLessonComplete(lesson.ID)
+	ready := l.allQuizzesCorrect()
 
 	return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
 		// Top bar.
@@ -111,7 +118,59 @@ func (l *Lesson) Layout(gtx layout.Context) layout.Dimensions {
 				},
 			)
 		}),
+		// Bottom action bar.
+		layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+			return layout.Inset{
+				Top: th.Space.Small, Bottom: th.Space.Medium,
+				Left: th.Space.Medium, Right: th.Space.Medium,
+			}.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
+				if complete {
+					// Already completed: show next or back.
+					label := i18n.T("lesson.next_lesson")
+					if !l.state.HasNextLesson() {
+						label = i18n.T("lesson.back_to_chapters")
+					}
+					btn := material.Button(th.Material, &l.nextBtn, label)
+					btn.Background = th.Color.Success
+					btn.Color = th.Color.OnPrimary
+					return btn.Layout(gtx)
+				}
+				if !ready {
+					// Quizzes not yet answered: disabled look.
+					lbl := material.Label(th.Material, th.Text.Caption, i18n.T("lesson.answer_quizzes"))
+					lbl.Color = th.Color.TextMuted
+					return lbl.Layout(gtx)
+				}
+				// Ready to complete: show next button.
+				label := i18n.T("lesson.next_lesson")
+				if !l.state.HasNextLesson() {
+					label = i18n.T("lesson.complete_chapter")
+				}
+				btn := material.Button(th.Material, &l.nextBtn, label)
+				btn.Background = th.Color.Primary
+				btn.Color = th.Color.OnPrimary
+				return btn.Layout(gtx)
+			})
+		}),
 	)
+}
+
+// allQuizzesCorrect reports whether every quiz in the lesson has been
+// answered correctly. Lessons without quizzes return true (ready immediately).
+func (l *Lesson) allQuizzesCorrect() bool {
+	lesson := l.state.Chapter.Lessons[l.state.CurrentLesson]
+	quizCount := 0
+	for i, sec := range lesson.Sections {
+		if _, ok := sec.(*content.QuizSection); ok {
+			quizCount++
+			q, exists := l.quizzes[i]
+			if !exists || !q.IsCorrect() {
+				return false
+			}
+		}
+	}
+	// Lessons without quizzes are always ready.
+	return true
 }
 
 func (l *Lesson) renderSection(gtx layout.Context, sec content.Section, idx int) layout.Dimensions {

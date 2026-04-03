@@ -298,3 +298,9 @@ mast_title = "Constructor de arbol MAST"
 mast_prompt = "Observa como dos scripts se combinan en una raiz Merkle de Taproot."
 htlc_title = "Rastreador de pagos HTLC"
 htlc_prompt = "Recorre paso a paso un pago Lightning de 3 saltos."
+
+[lesson]
+next_lesson = "Siguiente lección"
+complete_chapter = "Completar capítulo"
+back_to_chapters = "Volver a capítulos"
+answer_quizzes = "Responde todas las preguntas para continuar"

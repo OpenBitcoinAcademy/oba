@@ -5,12 +5,9 @@ import (
 	"image/color"
 
 	"gioui.org/layout"
-	"gioui.org/op"
-
 	"gioui.org/op/clip"
 	"gioui.org/op/paint"
 	"gioui.org/unit"
-	"gioui.org/widget/material"
 	"github.com/openbitcoinacademy/oba/internal/i18n"
 
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
@@ -125,15 +122,4 @@ func (d *CentralizedVsP2P) layoutP2P(gtx layout.Context, th *theme.Theme, w, pad
 func withAlpha(c color.NRGBA, a uint8) color.NRGBA {
 	c.A = a
 	return c
-}
-
-// drawRowLabel draws a colored label for a diagram row.
-func drawRowLabel(gtx layout.Context, th *theme.Theme, text string, pos image.Point, c color.NRGBA) {
-	m := op.Record(gtx.Ops)
-	lbl := material.Label(th.Material, th.Text.BodySmall, text)
-	lbl.Color = c
-	lbl.Layout(gtx)
-	call := m.Stop()
-	defer op.Offset(pos).Push(gtx.Ops).Pop()
-	call.Add(gtx.Ops)
 }

@@ -1,14 +1,10 @@
 # Open Bitcoin Academy
 
-Bitcoin education matters more than anything else in Bitcoin. This app teaches the protocol from zero, with no shortcuts.
+An offline-first app that teaches the Bitcoin protocol. Lessons, diagrams, quizzes, and cryptographic exercises running on your device. No internet required. No account required. Available in 6 languages.
 
-## What
+13 chapters cover the same topics as [Mastering Bitcoin 3rd Edition](https://github.com/bitcoinbook/bitcoinbook). 6 additional chapters go further into Taproot, Miniscript, PSBTs, threshold signatures (FROST/ChillDKG), Lightning, and the broader ecosystem (RGB, Fedimint, Cashu, Ark).
 
-An offline-first app covering Bitcoin from "What is money?" through Taproot, Miniscript, FROST threshold signatures, Lightning, and the ecosystem. 19 chapters aligned 1:1 with [Mastering Bitcoin 3rd Edition](https://github.com/bitcoinbook/bitcoinbook). Short lessons, diagrams, quizzes, and real cryptographic operations running on your device. No internet required. No account required.
-
-Built with [Go](https://go.dev) and [Gio](https://gioui.org). Available in English, German, Spanish, Portuguese, French, and Swahili.
-
-This is the initial release. We build from here.
+Public domain. Early stage.
 
 ## Source
 

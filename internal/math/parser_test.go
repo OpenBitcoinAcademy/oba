@@ -251,9 +251,7 @@ func TestParseDelimitedInvisible(t *testing.T) {
 	}
 }
 
-// --- POC formulas from ARCHITECTURE.md Section 7.3 ---
-
-func TestParsePOC_EllipticCurve(t *testing.T) {
+func TestParseEllipticCurve(t *testing.T) {
 	// y^2 = x^3 + 7
 	node, err := Parse("y^2 = x^3 + 7")
 	if err != nil {
@@ -264,7 +262,7 @@ func TestParsePOC_EllipticCurve(t *testing.T) {
 	}
 }
 
-func TestParsePOC_KeyDerivation(t *testing.T) {
+func TestParseKeyDerivation(t *testing.T) {
 	// k_{priv} \cdot G = K_{pub}
 	node, err := Parse(`k_{priv} \cdot G = K_{pub}`)
 	if err != nil {
@@ -275,7 +273,7 @@ func TestParsePOC_KeyDerivation(t *testing.T) {
 	}
 }
 
-func TestParsePOC_HalvingFormula(t *testing.T) {
+func TestParseHalvingFormula(t *testing.T) {
 	// \frac{reward}{2^n}
 	node, err := Parse(`\frac{reward}{2^n}`)
 	if err != nil {

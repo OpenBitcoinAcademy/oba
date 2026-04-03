@@ -27,6 +27,12 @@ theme_dark = "Dark"
 reset_progress = "Reset Progress"
 reset_confirm = "Are you sure? This cannot be undone."
 
+[lesson]
+next_lesson = "Next Lesson"
+complete_chapter = "Complete Chapter"
+back_to_chapters = "Back to Chapters"
+answer_quizzes = "Answer all questions to continue"
+
 [chapters]
 ch01_title = "Introduction"
 ch01_description = "What problem does Bitcoin solve, and why does it matter?"

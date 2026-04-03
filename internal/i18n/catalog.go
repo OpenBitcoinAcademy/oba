@@ -31,8 +31,7 @@ func loadCatalog(fsys fs.FS, path string) (catalog, error) {
 }
 
 // flatten recursively walks a nested map and produces dot-separated keys.
-// Non-string, non-map values are logged as warnings (fail-fast at startup
-// would be better, but changing the signature is deferred).
+// Non-string, non-map values are logged as warnings.
 func flatten(cat catalog, prefix string, m map[string]any) {
 	for k, v := range m {
 		key := k

@@ -163,9 +163,8 @@ func (r *Renderer) drawDelimChar(gtx layout.Context, delim string, pos image.Poi
 	if delim == "." {
 		return // invisible delimiter
 	}
-	// For now, draw the delimiter character at a larger size.
-	// A proper implementation would stretch the glyph, but this is
-	// sufficient for the POC.
+	// Draw the delimiter character at a larger size.
+	// A proper implementation would stretch the glyph.
 	macro := op.Record(gtx.Ops)
 	lbl := material.Label(r.Theme, unit.Sp(h*8/10), delim)
 	lbl.Color = r.Color

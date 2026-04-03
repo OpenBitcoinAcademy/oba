@@ -100,6 +100,23 @@ func (s *State) NavigateChapterList() {
 	s.Invalidate()
 }
 
+// HasNextLesson reports whether there is a lesson after the current one.
+func (s *State) HasNextLesson() bool {
+	return s.Chapter != nil && s.CurrentLesson+1 < len(s.Chapter.Lessons)
+}
+
+// NavigateNextLesson advances to the next lesson, marking the current one complete.
+func (s *State) NavigateNextLesson() {
+	s.CompleteLesson()
+	if s.HasNextLesson() {
+		s.NavigateToLesson(s.CurrentLesson + 1)
+	} else {
+		// Last lesson in chapter: mark complete and go to chapter list.
+		s.CurrentScreen = ScreenChapter
+		s.Invalidate()
+	}
+}
+
 // NavigateSettings opens the settings screen.
 func (s *State) NavigateSettings() {
 	s.CurrentScreen = ScreenSettings

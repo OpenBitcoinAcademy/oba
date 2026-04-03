@@ -159,9 +159,5 @@ func (hp *HDPathExplorer) describeLevel() string {
 		"Change: 0=receiving addresses, 1=change addresses",
 		"Index: address number within the chain",
 	}
-	var lines []string
-	for _, n := range names {
-		lines = append(lines, n)
-	}
-	return strings.Join(lines, "\n")
+	return strings.Join(names, "\n")
 }

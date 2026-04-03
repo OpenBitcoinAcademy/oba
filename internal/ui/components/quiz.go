@@ -180,6 +180,11 @@ func (q *Quiz) SelectOption(idx int) {
 	q.selected[idx] = !q.selected[idx]
 }
 
+// IsCorrect reports whether the quiz was answered correctly.
+func (q *Quiz) IsCorrect() bool {
+	return q.checked && q.correct
+}
+
 // ResultColor returns the result feedback color.
 func (q *Quiz) ResultColor() color.NRGBA {
 	if q.correct {

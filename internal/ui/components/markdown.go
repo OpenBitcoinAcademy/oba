@@ -96,7 +96,7 @@ func parseBlocks(content string) []block {
 			continue
 		}
 
-		// Warn on unsupported markdown syntax (Section 6).
+		// Warn on unsupported markdown syntax.
 		warnUnsupported(trimmed)
 
 		current = append(current, trimmed)

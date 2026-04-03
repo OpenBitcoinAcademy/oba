@@ -88,11 +88,6 @@ func circle(gtx layout.Context, center image.Point, radius int, c color.NRGBA) {
 	paint.FillShape(gtx.Ops, c, el.Op(gtx.Ops))
 }
 
-// smallCircle draws a small dot, useful for P2P node indicators.
-func smallCircle(gtx layout.Context, center image.Point, c color.NRGBA) {
-	circle(gtx, center, 4, c)
-}
-
 // line draws a line between two points.
 func line(gtx layout.Context, from, to image.Point, width float32, c color.NRGBA) {
 	dx := float64(to.X - from.X)

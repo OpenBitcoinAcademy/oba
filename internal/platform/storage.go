@@ -39,11 +39,24 @@ func dataDir() string {
 	case "darwin":
 		home, _ := os.UserHomeDir()
 		return filepath.Join(home, "Library", "Application Support", "OpenBitcoinAcademy")
+	case "android":
+		// Android app-private storage provided by Gio.
+		dir, _ := os.UserCacheDir()
+		return filepath.Join(filepath.Dir(dir), "files")
 	default:
 		// Linux/BSD: follow XDG Base Directory spec.
+		// Also handles Android (runtime.GOOS == "linux") where
+		// UserHomeDir may not exist. Fall back to cache dir parent.
 		base := os.Getenv("XDG_DATA_HOME")
 		if base == "" {
-			home, _ := os.UserHomeDir()
+			home, err := os.UserHomeDir()
+			if err != nil || home == "" {
+				// Android fallback: use cache dir's parent.
+				if cacheDir, err := os.UserCacheDir(); err == nil {
+					return filepath.Join(filepath.Dir(cacheDir), "files")
+				}
+				return filepath.Join(os.TempDir(), "open-bitcoin-academy")
+			}
 			base = filepath.Join(home, ".local", "share")
 		}
 		return filepath.Join(base, "open-bitcoin-academy")

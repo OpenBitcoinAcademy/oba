@@ -6,7 +6,7 @@ package bitcoin
 import (
 	"crypto/sha256"
 
-	"golang.org/x/crypto/ripemd160"
+	"golang.org/x/crypto/ripemd160" //lint:ignore SA1019 Bitcoin requires RIPEMD-160 for HASH160
 )
 
 // SHA256 returns the SHA-256 hash of data.

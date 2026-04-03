@@ -298,3 +298,9 @@ mast_title = "Mjenzi wa Mti wa MAST"
 mast_prompt = "Ona jinsi skripti mbili zinavyoungana kuunda mzizi wa Merkle wa Taproot."
 htlc_title = "Kifuatiliaji cha Malipo ya HTLC"
 htlc_prompt = "Fuatilia hatua kwa hatua malipo ya Lightning yenye kuruka 3."
+
+[lesson]
+next_lesson = "Somo linalofuata"
+complete_chapter = "Maliza sura"
+back_to_chapters = "Rudi kwa sura"
+answer_quizzes = "Jibu maswali yote ili kuendelea"

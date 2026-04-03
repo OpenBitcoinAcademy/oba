@@ -1,7 +1,6 @@
 # Binaries
 /oba
 /translate-check
-/poc-halving
 *.exe
 *.apk
 
@@ -23,3 +22,4 @@ Thumbs.db
 
 # Build
 /tmp/
+*.idsig

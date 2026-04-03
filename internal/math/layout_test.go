@@ -96,27 +96,27 @@ func TestLayoutRowWidthIsSum(t *testing.T) {
 	}
 }
 
-func TestLayoutPOC_EllipticCurve(t *testing.T) {
+func TestLayoutEllipticCurve(t *testing.T) {
 	node, _ := Parse("y^2 = x^3 + 7")
 	box := Layout(node, cfg())
 	if box.Width() <= 0 || box.Height() <= 0 {
-		t.Errorf("POC formula has zero dimensions: %dx%d", box.Width(), box.Height())
+		t.Errorf("formula has zero dimensions: %dx%d", box.Width(), box.Height())
 	}
 }
 
-func TestLayoutPOC_KeyDerivation(t *testing.T) {
+func TestLayoutKeyDerivation(t *testing.T) {
 	node, _ := Parse(`k_{priv} \cdot G = K_{pub}`)
 	box := Layout(node, cfg())
 	if box.Width() <= 0 || box.Height() <= 0 {
-		t.Errorf("POC formula has zero dimensions: %dx%d", box.Width(), box.Height())
+		t.Errorf("formula has zero dimensions: %dx%d", box.Width(), box.Height())
 	}
 }
 
-func TestLayoutPOC_Halving(t *testing.T) {
+func TestLayoutHalving(t *testing.T) {
 	node, _ := Parse(`\frac{reward}{2^n}`)
 	box := Layout(node, cfg())
 	if box.Width() <= 0 || box.Height() <= 0 {
-		t.Errorf("POC formula has zero dimensions: %dx%d", box.Width(), box.Height())
+		t.Errorf("formula has zero dimensions: %dx%d", box.Width(), box.Height())
 	}
 }
 
