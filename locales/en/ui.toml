@@ -10,6 +10,7 @@ progress = "{{completed}} of {{total}} complete"
 check = "Check Answer"
 correct = "Correct!"
 try_again = "Try again"
+retry = "Retry"
 remaining_one = "{{count}} question remaining"
 remaining_other = "{{count}} questions remaining"
 

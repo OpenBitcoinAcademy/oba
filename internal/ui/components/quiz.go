@@ -23,7 +23,10 @@ type Quiz struct {
 	selected   []bool
 	checked    bool
 	correct    bool
+	attempts   int
+	revealed   bool // correct answers shown after 3 wrong attempts
 	checkBtn   widget.Clickable
+	retryBtn   widget.Clickable
 	optionBtns []widget.Clickable
 }
 
@@ -43,6 +46,21 @@ func (q *Quiz) Layout(gtx layout.Context) layout.Dimensions {
 	if q.checkBtn.Clicked(gtx) && !q.checked {
 		q.checked = true
 		q.correct = q.isCorrect()
+		if !q.correct {
+			q.attempts++
+			if q.attempts >= 3 {
+				q.revealed = true
+			}
+		}
+	}
+
+	// Handle retry button click.
+	if q.retryBtn.Clicked(gtx) {
+		q.checked = false
+		q.correct = false
+		for i := range q.selected {
+			q.selected[i] = false
+		}
 	}
 
 	// Handle option clicks.
@@ -73,7 +91,7 @@ func (q *Quiz) Layout(gtx layout.Context) layout.Dimensions {
 
 	children = append(children, layout.Rigid(layout.Spacer{Height: q.Theme.Space.Medium}.Layout))
 
-	// Check button.
+	// Check button or result.
 	children = append(children, layout.Rigid(func(gtx layout.Context) layout.Dimensions {
 		if q.checked {
 			return q.renderResult(gtx)
@@ -93,13 +111,19 @@ func (q *Quiz) Layout(gtx layout.Context) layout.Dimensions {
 
 func (q *Quiz) renderOption(gtx layout.Context, idx int, multi bool) layout.Dimensions {
 	optColor := q.Theme.Color.Text
-	if q.checked {
-		isCorrect := q.inCorrect(idx)
-		if q.selected[idx] && isCorrect {
+
+	if q.checked && q.correct {
+		// Answered correctly: highlight correct selections green.
+		if q.selected[idx] && q.inCorrect(idx) {
 			optColor = q.Theme.Color.Success
-		} else if q.selected[idx] && !isCorrect {
+		}
+	} else if q.checked && !q.correct {
+		// Wrong answer.
+		if q.selected[idx] {
 			optColor = q.Theme.Color.Error
-		} else if isCorrect {
+		}
+		// Only reveal correct answers after 3 failed attempts.
+		if q.revealed && q.inCorrect(idx) {
 			optColor = q.Theme.Color.Success
 		}
 	}
@@ -132,15 +156,27 @@ func (q *Quiz) renderOption(gtx layout.Context, idx int, multi bool) layout.Dime
 }
 
 func (q *Quiz) renderResult(gtx layout.Context) layout.Dimensions {
-	msg := i18n.T("quiz.try_again")
-	c := q.Theme.Color.Error
 	if q.correct {
-		msg = i18n.T("quiz.correct")
-		c = q.Theme.Color.Success
+		lbl := material.Label(q.Theme.Material, q.Theme.Text.H3, i18n.T("quiz.correct"))
+		lbl.Color = q.Theme.Color.Success
+		return lbl.Layout(gtx)
 	}
-	lbl := material.Label(q.Theme.Material, q.Theme.Text.H3, msg)
-	lbl.Color = c
-	return lbl.Layout(gtx)
+
+	// Wrong answer: show message + retry button.
+	return layout.Flex{Axis: layout.Vertical}.Layout(gtx,
+		layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+			lbl := material.Label(q.Theme.Material, q.Theme.Text.H3, i18n.T("quiz.try_again"))
+			lbl.Color = q.Theme.Color.Error
+			return lbl.Layout(gtx)
+		}),
+		layout.Rigid(layout.Spacer{Height: q.Theme.Space.Small}.Layout),
+		layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+			btn := material.Button(q.Theme.Material, &q.retryBtn, i18n.T("quiz.retry"))
+			btn.Background = q.Theme.Color.Surface
+			btn.Color = q.Theme.Color.Text
+			return btn.Layout(gtx)
+		}),
+	)
 }
 
 func (q *Quiz) isCorrect() bool {
@@ -166,7 +202,7 @@ func (q *Quiz) inCorrect(idx int) bool {
 	return false
 }
 
-// SelectOption toggles selection of an option (for external input handling).
+// SelectOption toggles selection of an option.
 func (q *Quiz) SelectOption(idx int) {
 	if q.checked || idx < 0 || idx >= len(q.selected) {
 		return

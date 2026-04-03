@@ -131,8 +131,8 @@ func (l *Lesson) Layout(gtx layout.Context) layout.Dimensions {
 						label = i18n.T("lesson.back_to_chapters")
 					}
 					btn := material.Button(th.Material, &l.nextBtn, label)
-					btn.Background = th.Color.Success
-					btn.Color = th.Color.OnPrimary
+					btn.Background = th.Color.Surface
+					btn.Color = th.Color.Text
 					return btn.Layout(gtx)
 				}
 				if !ready {

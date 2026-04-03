@@ -44,42 +44,44 @@ type Colors struct {
 }
 
 // LightPalette returns the default high-contrast light theme.
+// Clean white base, navy text (matching logo), muted academic accents.
 func LightPalette() Colors {
 	return Colors{
-		Background: rgb(0xFAFAFA),
-		Surface:    rgb(0xFFFFFF),
+		Background: rgb(0xFFFFFF),
+		Surface:    rgb(0xF5F5F8),
 		Primary:    rgb(0xF7931A), // Bitcoin orange
 		OnPrimary:  rgb(0xFFFFFF),
-		Text:       rgb(0x1A1A1A),
-		TextMuted:  rgb(0x666666),
-		Accent:     rgb(0x4A90D9),
-		Error:      rgb(0xD32F2F),
-		Success:    rgb(0x388E3C),
-		Warning:    rgb(0xF57C00),
-		InfoBg:     rgb(0xE3F2FD),
-		WarningBg:  rgb(0xFFF3E0),
-		TipBg:      rgb(0xE8F5E9),
-		Divider:    rgb(0xE0E0E0),
+		Text:       rgb(0x181C46), // Navy (logo)
+		TextMuted:  rgb(0x6B6E82),
+		Accent:     rgb(0x4A5BA0),
+		Error:      rgb(0xC83232),
+		Success:    rgb(0x3A7D42),
+		Warning:    rgb(0xD97515),
+		InfoBg:     rgba(0x181C46, 0x0F), // Subtle navy tint
+		WarningBg:  rgba(0x181C46, 0x0F),
+		TipBg:      rgba(0x181C46, 0x0F),
+		Divider:    rgb(0xD8D9E0),
 	}
 }
 
 // DarkPalette returns a high-contrast dark theme.
+// Navy base (logo background), cool grays, Bitcoin orange accents.
 func DarkPalette() Colors {
 	return Colors{
-		Background: rgb(0x121212),
-		Surface:    rgb(0x1E1E1E),
+		Background: rgb(0x181C46), // Logo navy
+		Surface:    rgb(0x1F2350),
 		Primary:    rgb(0xF7931A), // Bitcoin orange stays
-		OnPrimary:  rgb(0x000000),
-		Text:       rgb(0xE0E0E0),
-		TextMuted:  rgb(0x9E9E9E),
-		Accent:     rgb(0x64B5F6),
-		Error:      rgb(0xEF5350),
-		Success:    rgb(0x66BB6A),
-		Warning:    rgb(0xFFA726),
-		InfoBg:     rgb(0x1A237E),
-		WarningBg:  rgb(0x3E2723),
-		TipBg:      rgb(0x1B5E20),
-		Divider:    rgb(0x333333),
+		OnPrimary:  rgb(0x181C46), // Navy on orange
+		Text:       rgb(0xE8E8EC),
+		TextMuted:  rgb(0x8A8DA0),
+		Accent:     rgb(0x7B8CDE),
+		Error:      rgb(0xE05555),
+		Success:    rgb(0x5CA065),
+		Warning:    rgb(0xE09040),
+		InfoBg:     rgba(0xFFFFFF, 0x14), // Transparent overlay
+		WarningBg:  rgba(0xFFFFFF, 0x14),
+		TipBg:      rgba(0xFFFFFF, 0x14),
+		Divider:    rgb(0x2A2E58),
 	}
 }
 
@@ -255,5 +257,14 @@ func rgb(c uint32) color.NRGBA {
 		G: uint8(c >> 8),
 		B: uint8(c),
 		A: 0xFF,
+	}
+}
+
+func rgba(c uint32, a uint8) color.NRGBA {
+	return color.NRGBA{
+		R: uint8(c >> 16),
+		G: uint8(c >> 8),
+		B: uint8(c),
+		A: a,
 	}
 }

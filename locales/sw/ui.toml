@@ -10,6 +10,7 @@ progress = "{{completed}} kati ya {{total}} zimekamilika"
 check = "Angalia Jibu"
 correct = "Sahihi!"
 try_again = "Jaribu tena"
+retry = "Jaribu tena"
 remaining_one = "Swali {{count}} limebaki"
 remaining_other = "Maswali {{count}} yamebaki"
 

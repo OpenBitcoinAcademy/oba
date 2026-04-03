@@ -3,6 +3,7 @@ package main
 
 import (
 	"image"
+	"image/color"
 	"io/fs"
 	"log"
 	"os"
@@ -79,6 +80,8 @@ func main() {
 		w := &gio_app.Window{}
 		w.Option(gio_app.Title("Open Bitcoin Academy"))
 		w.Option(gio_app.Size(unit.Dp(420), unit.Dp(740)))
+		w.Option(gio_app.StatusColor(state.Theme.Color.Background))
+		w.Option(gio_app.NavigationColor(state.Theme.Color.Background))
 
 		state.Invalidate = w.Invalidate
 
@@ -88,6 +91,7 @@ func main() {
 		settings := screens.NewSettings(state)
 
 		var ops op.Ops
+		var lastBarColor color.NRGBA
 		for {
 			switch e := w.Event().(type) {
 			case gio_app.DestroyEvent:
@@ -97,6 +101,13 @@ func main() {
 				return
 			case gio_app.FrameEvent:
 				gtx := gio_app.NewContext(&ops, e)
+
+				// Keep system bars in sync with theme background.
+				if bg := state.Theme.Color.Background; bg != lastBarColor {
+					w.Option(gio_app.StatusColor(bg))
+					w.Option(gio_app.NavigationColor(bg))
+					lastBarColor = bg
+				}
 
 				paint.FillShape(gtx.Ops, state.Theme.Color.Background,
 					clip.Rect{Max: image.Pt(gtx.Constraints.Max.X, gtx.Constraints.Max.Y)}.Op())

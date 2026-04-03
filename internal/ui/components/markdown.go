@@ -148,15 +148,25 @@ type span struct {
 }
 
 // renderParagraph renders a paragraph with inline bold, italic, and code.
-// Splits into styled spans and renders each as a separate label. Gio
-// handles text wrapping within each label but not across labels, so
-// spans are concatenated into styled runs for best wrapping behavior.
+// Simple math expressions are converted to Unicode text and merged with
+// adjacent plain spans so Gio wraps the paragraph naturally. Complex math
+// that cannot be converted falls back to the custom renderer as a block.
 func (m *Markdown) renderParagraph(gtx layout.Context, text string) layout.Dimensions {
 	spans := parseInlineSpans(text)
 
-	// For practical wrapping, group consecutive same-style spans.
-	// Gio wraps within a single label, so we merge plain text spans
-	// and only break at style boundaries.
+	// Convert simple math to Unicode so it merges into surrounding text.
+	for i := range spans {
+		if spans[i].math {
+			if u, ok := obamath.ToUnicode(spans[i].text); ok {
+				spans[i].math = false
+				spans[i].text = u
+			}
+		}
+	}
+
+	// Merge adjacent plain spans (no bold/italic/code/math) into one label.
+	spans = mergePlainSpans(spans)
+
 	var children []layout.FlexChild
 	for _, sp := range spans {
 		sp := sp
@@ -183,11 +193,27 @@ func (m *Markdown) renderParagraph(gtx layout.Context, text string) layout.Dimen
 		}))
 	}
 
-	// Render spans in a vertical flex. Each span wraps independently.
-	// True inline flow would need a custom layout, but in practice most
-	// paragraphs have few style changes and this works well.
 	gtx.Constraints.Min = image.Point{}
 	return layout.Flex{Axis: layout.Vertical}.Layout(gtx, children...)
+}
+
+// mergePlainSpans concatenates adjacent spans that have no styling
+// (not bold, italic, code, or unconverted math) into single spans.
+// This lets Gio wrap "That is 2²⁵⁶ possible values" as one label.
+func mergePlainSpans(spans []span) []span {
+	var merged []span
+	for _, sp := range spans {
+		if isPlain(sp) && len(merged) > 0 && isPlain(merged[len(merged)-1]) {
+			merged[len(merged)-1].text += sp.text
+		} else {
+			merged = append(merged, sp)
+		}
+	}
+	return merged
+}
+
+func isPlain(sp span) bool {
+	return !sp.bold && !sp.italic && !sp.code && !sp.math
 }
 
 // parseInlineSpans splits text into styled spans.
