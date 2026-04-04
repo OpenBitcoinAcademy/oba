@@ -35,6 +35,10 @@ title_key = "lessons.ch19_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "rgb_seals"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -57,6 +61,10 @@ title_key = "lessons.ch19_lesson03_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "fedimint_arch"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -77,6 +85,10 @@ title_key = "lessons.ch19_lesson04_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "ark_vtxo"
 
   [[lessons.sections]]
   type = "text"

@@ -38,6 +38,10 @@ title_key = "lessons.ch02_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "tx_walkthrough"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -58,6 +62,10 @@ title_key = "lessons.ch02_lesson03_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "confirmation_depth"
 
   [[lessons.sections]]
   type = "text"

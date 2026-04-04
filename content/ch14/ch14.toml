@@ -12,6 +12,10 @@ title_key = "lessons.ch14_lesson01_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "tweaked_key"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -85,6 +89,10 @@ title_key = "lessons.ch14_lesson04_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "tapscript_verify"
 
   [[lessons.sections]]
   type = "text"

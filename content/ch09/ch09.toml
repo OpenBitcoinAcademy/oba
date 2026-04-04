@@ -38,6 +38,10 @@ title_key = "lessons.ch09_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "fee_rate_mempool"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -64,6 +68,10 @@ title_key = "lessons.ch09_lesson03_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "rbf_bumping"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -81,6 +89,10 @@ title_key = "lessons.ch09_lesson04_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "package_relay"
 
   [[lessons.sections]]
   type = "text"

@@ -42,6 +42,10 @@ title_key = "lessons.ch12_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "halving_schedule"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -62,6 +66,10 @@ title_key = "lessons.ch12_lesson03_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "fork_resolution"
 
   [[lessons.sections]]
   type = "text"

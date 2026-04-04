@@ -72,6 +72,10 @@ title_key = "lessons.ch06_lesson03_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "wire_format"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]

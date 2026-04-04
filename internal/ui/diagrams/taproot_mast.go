@@ -16,77 +16,65 @@ import (
 type TaprootMAST struct{}
 
 func (d *TaprootMAST) Layout(gtx layout.Context, th *theme.Theme) layout.Dimensions {
-	h := gtx.Dp(unit.Dp(180))
+	h := gtx.Dp(unit.Dp(200))
 	w := gtx.Constraints.Max.X
 	pad := pct(w, 3)
 
-	bh := gtx.Dp(unit.Dp(26))
-	lineColor := withAlpha(th.Color.TextMuted, 120)
-	dimColor := withAlpha(th.Color.TextMuted, 60)
-	lw := float32(1.5)
+	bh := gtx.Dp(unit.Dp(28))
+	activeColor := withAlpha(th.Color.Primary, 180)
+	dimColor := withAlpha(th.Color.TextMuted, 50)
+	activeLine := float32(2.0)
+	dimLine := float32(1.2)
 
 	usable := w - 2*pad
 
 	// Four rows: root, branches, leaves, caption.
-	rowGap := (h - 3*bh - gtx.Dp(unit.Dp(14))) / 4
+	rowGap := (h - 3*bh - gtx.Dp(unit.Dp(18))) / 4
 	rootY := rowGap
 	branchY := rootY + bh + rowGap
 	leafY := branchY + bh + rowGap
 
-	// --- Root (Merkle Root, Primary color) ---
-	rootW := pct(w, 24)
+	// Root (Merkle Root).
+	rootW := pct(w, 26)
 	rootX := pad + (usable-rootW)/2
-	rootPos := image.Pt(rootX, rootY)
-	box(gtx, th, i18n.T("diagram.merkle_root"), rootPos, rootW, bh, th.Color.Primary)
+	shadowBox(gtx, th, i18n.T("diagram.merkle_root"), image.Pt(rootX, rootY), rootW, bh, th.Color.Primary)
 
-	// --- Level 1: two TapBranch nodes ---
-	// Left TapBranch sits over leaves A and B. Right TapBranch sits over leaf C.
-	// Layout: left branch at ~30% center, right branch at ~70% center.
-	leftBranchX := pad + pct(usable, 15)
-	rightBranchX := pad + pct(usable, 65)
-	branchW := pct(w, 20)
+	// Two TapBranch nodes.
+	branchW := pct(w, 22)
+	leftBranchX := pad + pct(usable, 13)
+	rightBranchX := pad + pct(usable, 63)
 
-	leftBranchPos := image.Pt(leftBranchX, branchY)
-	rightBranchPos := image.Pt(rightBranchX, branchY)
+	shadowBox(gtx, th, i18n.T("diagram.tap_branch"), image.Pt(leftBranchX, branchY), branchW, bh, th.Color.WarningBg)
+	shadowBox(gtx, th, i18n.T("diagram.tap_branch"), image.Pt(rightBranchX, branchY), branchW, bh, th.Color.WarningBg)
 
-	box(gtx, th, i18n.T("diagram.tap_branch"), leftBranchPos, branchW, bh, th.Color.WarningBg)
-	box(gtx, th, i18n.T("diagram.tap_branch"), rightBranchPos, branchW, bh, th.Color.WarningBg)
+	// Three script leaves.
+	leafW := pct(w, 19)
+	leafAX := pad + pct(usable, 3)
+	leafBX := pad + pct(usable, 26)
+	leafCX := pad + pct(usable, 63) + (branchW-leafW)/2
 
-	// --- Leaves ---
-	// Script A and Script B are children of left TapBranch.
-	// Script C is sibling of left TapBranch (child of right TapBranch).
-	leafW := pct(w, 18)
-
-	// Position leaves: A under left side of left branch, B under right side.
-	leafAX := pad + pct(usable, 5)
-	leafBX := pad + pct(usable, 28)
-	leafCX := pad + pct(usable, 65) + (branchW-leafW)/2
-
-	// Script A: highlighted as spending path (TipBg).
-	box(gtx, th, i18n.T("diagram.script_leaf")+" A", image.Pt(leafAX, leafY), leafW, bh, th.Color.TipBg)
-	// Script B: dimmed sibling hash (InfoBg).
+	// Script A: highlighted as spending path.
+	shadowBox(gtx, th, i18n.T("diagram.script_leaf")+" A", image.Pt(leafAX, leafY), leafW, bh, th.Color.TipBg)
+	// Scripts B and C: dimmed.
 	box(gtx, th, i18n.T("diagram.script_leaf")+" B", image.Pt(leafBX, leafY), leafW, bh, th.Color.InfoBg)
-	// Script C: dimmed sibling hash (InfoBg).
 	box(gtx, th, i18n.T("diagram.script_leaf")+" C", image.Pt(leafCX, leafY), leafW, bh, th.Color.InfoBg)
 
-	// --- Lines: root to branches ---
+	// Curved lines: root to branches.
 	rootBottom := image.Pt(rootX+rootW/2, rootY+bh)
-	line(gtx, rootBottom, image.Pt(leftBranchX+branchW/2, branchY), lw, lineColor)
-	line(gtx, rootBottom, image.Pt(rightBranchX+branchW/2, branchY), lw, lineColor)
+	curvedLine(gtx, rootBottom, image.Pt(leftBranchX+branchW/2, branchY), activeLine, activeColor)
+	curvedLine(gtx, rootBottom, image.Pt(rightBranchX+branchW/2, branchY), dimLine, dimColor)
 
-	// --- Lines: left branch to leaves A and B ---
-	leftBranchBottom := image.Pt(leftBranchX+branchW/2, branchY+bh)
-	// Spending path (A): full opacity line.
-	line(gtx, leftBranchBottom, image.Pt(leafAX+leafW/2, leafY), lw, lineColor)
-	// Sibling hash (B): dimmed line.
-	line(gtx, leftBranchBottom, image.Pt(leafBX+leafW/2, leafY), lw, dimColor)
+	// Curved lines: left branch to leaves A and B.
+	leftBottom := image.Pt(leftBranchX+branchW/2, branchY+bh)
+	curvedLine(gtx, leftBottom, image.Pt(leafAX+leafW/2, leafY), activeLine, activeColor)
+	dashedLine(gtx, leftBottom, image.Pt(leafBX+leafW/2, leafY), dimLine, dimColor)
 
-	// --- Lines: right branch to leaf C ---
-	rightBranchBottom := image.Pt(rightBranchX+branchW/2, branchY+bh)
-	line(gtx, rightBranchBottom, image.Pt(leafCX+leafW/2, leafY), lw, dimColor)
+	// Dashed line: right branch to leaf C.
+	rightBottom := image.Pt(rightBranchX+branchW/2, branchY+bh)
+	dashedLine(gtx, rightBottom, image.Pt(leafCX+leafW/2, leafY), dimLine, dimColor)
 
-	// --- Caption: spending path indicator ---
-	captionY := leafY + bh + gtx.Dp(unit.Dp(4))
+	// Spending path indicator.
+	captionY := leafY + bh + gtx.Dp(unit.Dp(6))
 	colorCaption(gtx, th, i18n.T("diagram.spending_path"), image.Pt(leafAX, captionY), th.Color.Primary)
 
 	return layout.Dimensions{Size: image.Pt(w, h)}

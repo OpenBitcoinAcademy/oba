@@ -39,11 +39,12 @@ func (d *KeyDerivation) Layout(gtx layout.Context, th *theme.Theme) layout.Dimen
 	x2 := x1 + endW + gap
 	x3 := x2 + procW + gap
 
-	box(gtx, th, i18n.T("diagram.private_key"), image.Pt(x1, y), endW, bh, th.Color.WarningBg)
-	arrow(gtx, th, image.Pt(x1+endW, y+bh/2), image.Pt(x2, y+bh/2))
-	processBox(gtx, th, i18n.T("diagram.elliptic_curve"), image.Pt(x2, y), procW, bh)
-	arrow(gtx, th, image.Pt(x2+procW, y+bh/2), image.Pt(x3, y+bh/2))
-	box(gtx, th, i18n.T("diagram.public_key"), image.Pt(x3, y), endW, bh, th.Color.TipBg)
+	lc := withAlpha(th.Color.TextMuted, 160)
+	shadowBox(gtx, th, i18n.T("diagram.private_key"), image.Pt(x1, y), endW, bh, th.Color.WarningBg)
+	dirArrow(gtx, image.Pt(x1+endW, y+bh/2), image.Pt(x2, y+bh/2), 1.8, lc)
+	shadowBox(gtx, th, i18n.T("diagram.elliptic_curve"), image.Pt(x2, y), procW, bh, th.Color.Primary)
+	dirArrow(gtx, image.Pt(x2+procW, y+bh/2), image.Pt(x3, y+bh/2), 1.8, lc)
+	shadowBox(gtx, th, i18n.T("diagram.public_key"), image.Pt(x3, y), endW, bh, th.Color.TipBg)
 
 	captionX := x1 + endW + (x3-x1-endW)/2 - pct(w, 6)
 	captionY := y - gtx.Dp(unit.Dp(16))

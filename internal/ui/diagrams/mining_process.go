@@ -15,66 +15,67 @@ import (
 type MiningProcess struct{}
 
 func (d *MiningProcess) Layout(gtx layout.Context, th *theme.Theme) layout.Dimensions {
-	h := gtx.Dp(unit.Dp(100))
+	h := gtx.Dp(unit.Dp(120))
 	w := gtx.Constraints.Max.X
 	pad := pct(w, 3)
 
 	bh := gtx.Dp(unit.Dp(30))
 	usable := w - 2*pad
 
-	// Four boxes in a row: Candidate, SHA-256, Hash<Target?, Valid Block.
-	// Widths as percentages of usable space.
+	// Four elements in a row.
 	candW := pct(usable, 22)
 	shaW := pct(usable, 16)
-	checkW := pct(usable, 24)
+	diamondW := pct(usable, 22)
+	diamondH := bh + 6
 	validW := pct(usable, 22)
 
-	gapTotal := usable - candW - shaW - checkW - validW
+	gapTotal := usable - candW - shaW - diamondW - validW
 	gap := gapTotal / 3
 	if gap < 6 {
 		gap = 6
 	}
 
-	y := (h - bh) / 2
+	y := gtx.Dp(unit.Dp(10))
 
 	x1 := pad
 	x2 := x1 + candW + gap
 	x3 := x2 + shaW + gap
-	x4 := x3 + checkW + gap
+	x4 := x3 + diamondW + gap
+
+	lc := withAlpha(th.Color.TextMuted, 160)
+	lw := float32(1.8)
 
 	// Candidate Block.
-	box(gtx, th, i18n.T("diagram.candidate_block"), image.Pt(x1, y), candW, bh, th.Color.InfoBg)
+	shadowBox(gtx, th, i18n.T("diagram.candidate_block"), image.Pt(x1, y), candW, bh, th.Color.InfoBg)
 
 	// SHA-256 process.
-	processBox(gtx, th, "SHA-256", image.Pt(x2, y), shaW, bh)
+	shadowBox(gtx, th, "SHA-256", image.Pt(x2, y), shaW, bh, th.Color.Primary)
 
-	// Hash < Target? (decision, using Warning color to distinguish).
-	box(gtx, th, i18n.T("diagram.hash_below_target"), image.Pt(x3, y), checkW, bh, th.Color.WarningBg)
+	// Decision diamond: Hash < Target?
+	diamondCenter := image.Pt(x3+diamondW/2, y+diamondH/2)
+	diamond(gtx, th, i18n.T("diagram.hash_below_target"), diamondCenter, diamondW, diamondH, th.Color.WarningBg)
 
 	// Valid Block.
-	box(gtx, th, i18n.T("diagram.valid_block"), image.Pt(x4, y), validW, bh, th.Color.TipBg)
+	shadowBox(gtx, th, i18n.T("diagram.valid_block"), image.Pt(x4, y), validW, bh, th.Color.TipBg)
 
 	// Arrows between stages.
-	arrow(gtx, th, image.Pt(x1+candW, y+bh/2), image.Pt(x2, y+bh/2))
-	arrow(gtx, th, image.Pt(x2+shaW, y+bh/2), image.Pt(x3, y+bh/2))
-	arrow(gtx, th, image.Pt(x3+checkW, y+bh/2), image.Pt(x4, y+bh/2))
+	dirArrow(gtx, image.Pt(x1+candW, y+bh/2), image.Pt(x2, y+bh/2), lw, lc)
+	dirArrow(gtx, image.Pt(x2+shaW, y+bh/2), image.Pt(x3, y+diamondH/2), lw, lc)
+	dirArrow(gtx, image.Pt(x3+diamondW, y+diamondH/2), image.Pt(x4, y+bh/2), lw, lc)
 
-	// "No" loop: line from bottom of decision box, curving back to candidate block.
-	// Draw as two line segments: down from check, then left back to start.
-	loopY := y + bh + gtx.Dp(unit.Dp(10))
-	checkMidX := x3 + checkW/2
-	lineColor := withAlpha(th.Color.Warning, 160)
-	loopLw := float32(1.5)
+	// "No" loop: rounded path from bottom of diamond, back to candidate.
+	loopY := y + bh + gtx.Dp(unit.Dp(16))
+	loopColor := withAlpha(th.Color.Warning, 160)
 
-	// Down from decision.
-	line(gtx, image.Pt(checkMidX, y+bh), image.Pt(checkMidX, loopY), loopLw, lineColor)
-	// Left along the bottom.
-	line(gtx, image.Pt(checkMidX, loopY), image.Pt(x1+candW/2, loopY), loopLw, lineColor)
-	// Up into candidate box.
-	line(gtx, image.Pt(x1+candW/2, loopY), image.Pt(x1+candW/2, y+bh), loopLw, lineColor)
+	roundedPath(gtx, []image.Point{
+		{x3 + diamondW/2, y + diamondH},
+		{x3 + diamondW/2, loopY},
+		{x1 + candW/2, loopY},
+		{x1 + candW/2, y + bh},
+	}, 10, 1.8, loopColor)
 
-	// "No" / retry label on loop.
-	caption(gtx, th, i18n.T("diagram.retry"), image.Pt(x2, loopY-gtx.Dp(unit.Dp(10))))
+	// Retry label on loop.
+	caption(gtx, th, i18n.T("diagram.retry"), image.Pt(x2, loopY-gtx.Dp(unit.Dp(12))))
 
 	return layout.Dimensions{Size: image.Pt(w, h)}
 }

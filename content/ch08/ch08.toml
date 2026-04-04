@@ -42,6 +42,10 @@ title_key = "lessons.ch08_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "ecdsa_flow"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -59,6 +63,10 @@ title_key = "lessons.ch08_lesson03_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "schnorr_vs_ecdsa"
 
   [[lessons.sections]]
   type = "text"
@@ -81,6 +89,10 @@ title_key = "lessons.ch08_lesson04_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "sighash_types"
 
   [[lessons.sections]]
   type = "text"

@@ -2,7 +2,6 @@ package diagrams
 
 import (
 	"image"
-	"image/color"
 
 	"gioui.org/layout"
 	"gioui.org/op/clip"
@@ -51,13 +50,14 @@ func (d *CentralizedVsP2P) layoutCentralized(gtx layout.Context, th *theme.Theme
 	x2 := x1 + bw + gap
 	x3 := x2 + bw + gap
 
-	colorCaption(gtx, th, i18n.T("diagram.centralized"), image.Pt(pad, y-gtx.Dp(unit.Dp(20))), th.Color.Warning)
+	colorCaption(gtx, th, i18n.T("diagram.centralized"), image.Pt(pad, y-gtx.Dp(unit.Dp(26))), th.Color.Warning)
 
-	box(gtx, th, i18n.T("diagram.alice"), image.Pt(x1, y), bw, bh, th.Color.InfoBg)
-	arrow(gtx, th, image.Pt(x1+bw, y+bh/2), image.Pt(x2, y+bh/2))
-	box(gtx, th, i18n.T("diagram.bank"), image.Pt(x2, y), bw, bh, th.Color.WarningBg)
-	arrow(gtx, th, image.Pt(x2+bw, y+bh/2), image.Pt(x3, y+bh/2))
-	box(gtx, th, i18n.T("diagram.bob"), image.Pt(x3, y), bw, bh, th.Color.InfoBg)
+	lc := withAlpha(th.Color.TextMuted, 160)
+	shadowBox(gtx, th, i18n.T("diagram.alice"), image.Pt(x1, y), bw, bh, th.Color.InfoBg)
+	dirArrow(gtx, image.Pt(x1+bw, y+bh/2), image.Pt(x2, y+bh/2), 1.8, lc)
+	shadowBox(gtx, th, i18n.T("diagram.bank"), image.Pt(x2, y), bw, bh, th.Color.WarningBg)
+	dirArrow(gtx, image.Pt(x2+bw, y+bh/2), image.Pt(x3, y+bh/2), 1.8, lc)
+	shadowBox(gtx, th, i18n.T("diagram.bob"), image.Pt(x3, y), bw, bh, th.Color.InfoBg)
 }
 
 func (d *CentralizedVsP2P) layoutP2P(gtx layout.Context, th *theme.Theme, w, pad, rowH, totalH int) {
@@ -76,8 +76,8 @@ func (d *CentralizedVsP2P) layoutP2P(gtx layout.Context, th *theme.Theme, w, pad
 	bobX := w - pad - pct(w, 3) - bw
 	boxY := centerY - bh/2 + captionH/2
 
-	box(gtx, th, i18n.T("diagram.alice"), image.Pt(aliceX, boxY), bw, bh, th.Color.InfoBg)
-	box(gtx, th, i18n.T("diagram.bob"), image.Pt(bobX, boxY), bw, bh, th.Color.InfoBg)
+	shadowBox(gtx, th, i18n.T("diagram.alice"), image.Pt(aliceX, boxY), bw, bh, th.Color.InfoBg)
+	shadowBox(gtx, th, i18n.T("diagram.bob"), image.Pt(bobX, boxY), bw, bh, th.Color.InfoBg)
 
 	// Box midpoints for connection lines.
 	boxMidY := boxY + bh/2
@@ -117,9 +117,4 @@ func (d *CentralizedVsP2P) layoutP2P(gtx layout.Context, th *theme.Theme, w, pad
 	line(gtx, bobEdge, n1, lw, lc)
 	line(gtx, bobEdge, n3, lw, lc)
 	line(gtx, bobEdge, n4, lw, lc)
-}
-
-func withAlpha(c color.NRGBA, a uint8) color.NRGBA {
-	c.A = a
-	return c
 }

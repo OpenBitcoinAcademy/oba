@@ -38,6 +38,10 @@ title_key = "lessons.ch17_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "frost_rounds"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -60,6 +64,10 @@ title_key = "lessons.ch17_lesson03_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "chilldkg"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -80,6 +88,10 @@ title_key = "lessons.ch17_lesson04_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "nonce_reuse"
 
   [[lessons.sections]]
   type = "text"

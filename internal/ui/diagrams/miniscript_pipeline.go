@@ -43,24 +43,18 @@ func (d *MiniscriptPipeline) Layout(gtx layout.Context, th *theme.Theme) layout.
 	x4 := x3 + dataW + gap
 	x5 := x4 + procW + gap
 
-	// Stage 1: Policy.
-	box(gtx, th, i18n.T("diagram.policy"), image.Pt(x1, y), dataW, bh, th.Color.InfoBg)
-	arrow(gtx, th, image.Pt(x1+dataW, y+bh/2), image.Pt(x2, y+bh/2))
+	lc := withAlpha(th.Color.TextMuted, 160)
+	lw := float32(1.8)
 
-	// Stage 2: Compile (process).
-	processBox(gtx, th, i18n.T("diagram.compile"), image.Pt(x2, y), procW, bh)
-	arrow(gtx, th, image.Pt(x2+procW, y+bh/2), image.Pt(x3, y+bh/2))
-
-	// Stage 3: Miniscript.
-	box(gtx, th, i18n.T("diagram.miniscript"), image.Pt(x3, y), dataW, bh, th.Color.WarningBg)
-	arrow(gtx, th, image.Pt(x3+dataW, y+bh/2), image.Pt(x4, y+bh/2))
-
-	// Stage 4: Map to Script (process).
-	processBox(gtx, th, i18n.T("diagram.map_to_script"), image.Pt(x4, y), procW, bh)
-	arrow(gtx, th, image.Pt(x4+procW, y+bh/2), image.Pt(x5, y+bh/2))
-
-	// Stage 5: Bitcoin Script.
-	box(gtx, th, i18n.T("diagram.bitcoin_script"), image.Pt(x5, y), dataW, bh, th.Color.TipBg)
+	shadowBox(gtx, th, i18n.T("diagram.policy"), image.Pt(x1, y), dataW, bh, th.Color.InfoBg)
+	dirArrow(gtx, image.Pt(x1+dataW, y+bh/2), image.Pt(x2, y+bh/2), lw, lc)
+	shadowBox(gtx, th, i18n.T("diagram.compile"), image.Pt(x2, y), procW, bh, th.Color.Primary)
+	dirArrow(gtx, image.Pt(x2+procW, y+bh/2), image.Pt(x3, y+bh/2), lw, lc)
+	shadowBox(gtx, th, i18n.T("diagram.miniscript"), image.Pt(x3, y), dataW, bh, th.Color.WarningBg)
+	dirArrow(gtx, image.Pt(x3+dataW, y+bh/2), image.Pt(x4, y+bh/2), lw, lc)
+	shadowBox(gtx, th, i18n.T("diagram.map_to_script"), image.Pt(x4, y), procW, bh, th.Color.Primary)
+	dirArrow(gtx, image.Pt(x4+procW, y+bh/2), image.Pt(x5, y+bh/2), lw, lc)
+	shadowBox(gtx, th, i18n.T("diagram.bitcoin_script"), image.Pt(x5, y), dataW, bh, th.Color.TipBg)
 
 	// Example line below, in caption text.
 	exY := y + bh + gtx.Dp(unit.Dp(14))

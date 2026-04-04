@@ -38,6 +38,10 @@ title_key = "lessons.ch16_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "psbt_roles"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -60,6 +64,10 @@ title_key = "lessons.ch16_lesson03_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "psbt_maps"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -80,6 +88,10 @@ title_key = "lessons.ch16_lesson04_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "hardware_wallet"
 
   [[lessons.sections]]
   type = "text"

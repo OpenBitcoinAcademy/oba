@@ -38,6 +38,10 @@ title_key = "lessons.ch18_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "htlc_flow"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -64,6 +68,10 @@ title_key = "lessons.ch18_lesson03_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "lightning_routing"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -81,6 +89,10 @@ title_key = "lessons.ch18_lesson04_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "channel_lifecycle"
 
   [[lessons.sections]]
   type = "text"

@@ -17,7 +17,7 @@ import (
 type FrostSigning struct{}
 
 func (d *FrostSigning) Layout(gtx layout.Context, th *theme.Theme) layout.Dimensions {
-	h := gtx.Dp(unit.Dp(180))
+	h := gtx.Dp(unit.Dp(200))
 	w := gtx.Constraints.Max.X
 	pad := pct(w, 3)
 
@@ -26,23 +26,23 @@ func (d *FrostSigning) Layout(gtx layout.Context, th *theme.Theme) layout.Dimens
 	signerW := pct(usable, 16)
 	coordW := pct(usable, 20)
 	sigW := pct(usable, 18)
-	lineColor := withAlpha(th.Color.TextMuted, 120)
-	lw := float32(1.5)
 
-	// Signer positions (left side, stacked vertically in each row).
+	lineColor := withAlpha(th.Color.TextMuted, 140)
+	dashColor := withAlpha(th.Color.Warning, 120)
+	lw := float32(1.8)
+
+	// Signer block dimensions.
 	signerGap := gtx.Dp(unit.Dp(4))
 	signerBlockH := 3*bh + 2*signerGap
 
-	// Row 1 vertical space.
-	row1Top := gtx.Dp(unit.Dp(16))
-	row1CaptionY := row1Top - gtx.Dp(unit.Dp(2))
-	row1SignerY := row1Top + gtx.Dp(unit.Dp(2))
+	// Row 1 layout.
+	row1Top := gtx.Dp(unit.Dp(18))
+	row1SignerY := row1Top + gtx.Dp(unit.Dp(4))
 	row1CoordY := row1SignerY + (signerBlockH-bh)/2
 
-	// Row 2 vertical space.
-	row2Top := row1SignerY + signerBlockH + gtx.Dp(unit.Dp(16))
-	row2CaptionY := row2Top - gtx.Dp(unit.Dp(2))
-	row2SignerY := row2Top + gtx.Dp(unit.Dp(2))
+	// Row 2 layout.
+	row2Top := row1SignerY + signerBlockH + gtx.Dp(unit.Dp(18))
+	row2SignerY := row2Top + gtx.Dp(unit.Dp(4))
 	row2CoordY := row2SignerY + (signerBlockH-bh)/2
 
 	signerX := pad
@@ -52,56 +52,53 @@ func (d *FrostSigning) Layout(gtx layout.Context, th *theme.Theme) layout.Dimens
 	signers := []string{"A", "B", "C"}
 
 	// --- Row 1: Commitments to Coordinator ---
-	caption(gtx, th, i18n.T("diagram.round_1"), image.Pt(pad, row1CaptionY))
+	// Group box around round 1.
+	groupBox(gtx, th, image.Pt(pad-4, row1Top-gtx.Dp(unit.Dp(4))), usable+8, signerBlockH+gtx.Dp(unit.Dp(12)))
+	colorCaption(gtx, th, i18n.T("diagram.round_1"), image.Pt(pad, row1Top-gtx.Dp(unit.Dp(2))), th.Color.Primary)
 
 	for idx, s := range signers {
 		sy := row1SignerY + idx*(bh+signerGap)
-		box(gtx, th, s, image.Pt(signerX, sy), signerW, bh, th.Color.InfoBg)
-		// Arrow from signer to coordinator.
-		line(gtx,
+		shadowBox(gtx, th, s, image.Pt(signerX, sy), signerW, bh, th.Color.InfoBg)
+		// Directional arrow from signer to coordinator.
+		dirArrow(gtx,
 			image.Pt(signerX+signerW, sy+bh/2),
 			image.Pt(coordX, row1CoordY+bh/2),
 			lw, lineColor)
 	}
 
-	// Coordinator box.
-	box(gtx, th, i18n.T("diagram.coordinator"), image.Pt(coordX, row1CoordY), coordW, bh, th.Color.WarningBg)
+	shadowBox(gtx, th, i18n.T("diagram.coordinator"), image.Pt(coordX, row1CoordY), coordW, bh, th.Color.WarningBg)
 
-	// Commitment label on the arrows.
+	// Commitment label.
 	commitLabelY := row1CoordY - gtx.Dp(unit.Dp(12))
 	caption(gtx, th, i18n.T("diagram.commitment"), image.Pt(signerX+signerW+pct(usable, 4), commitLabelY))
 
 	// --- Row 2: Challenge -> Shares -> Signature ---
-	caption(gtx, th, i18n.T("diagram.round_2"), image.Pt(pad, row2CaptionY))
+	groupBox(gtx, th, image.Pt(pad-4, row2Top-gtx.Dp(unit.Dp(4))), usable+8, signerBlockH+gtx.Dp(unit.Dp(12)))
+	colorCaption(gtx, th, i18n.T("diagram.round_2"), image.Pt(pad, row2Top-gtx.Dp(unit.Dp(2))), th.Color.Primary)
 
-	// Coordinator sends challenge.
-	box(gtx, th, i18n.T("diagram.coordinator"), image.Pt(coordX, row2CoordY), coordW, bh, th.Color.WarningBg)
+	shadowBox(gtx, th, i18n.T("diagram.coordinator"), image.Pt(coordX, row2CoordY), coordW, bh, th.Color.WarningBg)
+
+	for idx, s := range signers {
+		sy := row2SignerY + idx*(bh+signerGap)
+		shadowBox(gtx, th, s, image.Pt(signerX, sy), signerW, bh, th.Color.InfoBg)
+		// Dashed line from coordinator back to signer (challenge).
+		dashedLine(gtx,
+			image.Pt(coordX, row2CoordY+bh/2),
+			image.Pt(signerX+signerW, sy+bh/2),
+			lw, dashColor)
+	}
 
 	// Challenge label.
 	challengeLabelY := row2CoordY - gtx.Dp(unit.Dp(12))
 	caption(gtx, th, i18n.T("diagram.challenge"), image.Pt(coordX+pct(usable, 2), challengeLabelY))
 
-	for idx, s := range signers {
-		sy := row2SignerY + idx*(bh+signerGap)
-		box(gtx, th, s, image.Pt(signerX, sy), signerW, bh, th.Color.InfoBg)
-		// Line from coordinator back to signer (challenge).
-		line(gtx,
-			image.Pt(coordX, row2CoordY+bh/2),
-			image.Pt(signerX+signerW, sy+bh/2),
-			lw, lineColor)
-	}
-
-	// Share label.
-	shareLabelY := row2SignerY + signerBlockH + gtx.Dp(unit.Dp(2))
-	caption(gtx, th, i18n.T("diagram.share"), image.Pt(signerX+signerW+pct(usable, 4), shareLabelY))
-
 	// Arrow from coordinator to final signature.
-	arrow(gtx, th,
+	dirArrow(gtx,
 		image.Pt(coordX+coordW, row2CoordY+bh/2),
-		image.Pt(sigX, row2CoordY+bh/2))
+		image.Pt(sigX, row2CoordY+bh/2),
+		lw, lineColor)
 
-	// Final Signature box.
-	box(gtx, th, "Signature", image.Pt(sigX, row2CoordY), sigW, bh, th.Color.TipBg)
+	shadowBox(gtx, th, "Signature", image.Pt(sigX, row2CoordY), sigW, bh, th.Color.TipBg)
 
 	return layout.Dimensions{Size: image.Pt(w, h)}
 }

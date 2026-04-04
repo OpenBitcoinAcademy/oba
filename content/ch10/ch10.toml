@@ -38,6 +38,10 @@ title_key = "lessons.ch10_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "peer_discovery"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -60,6 +64,10 @@ title_key = "lessons.ch10_lesson03_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "compact_blocks"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -77,6 +85,10 @@ title_key = "lessons.ch10_lesson04_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "spv_proof"
 
   [[lessons.sections]]
   type = "text"

@@ -15,7 +15,7 @@ import (
 type UTXOModel struct{}
 
 func (d *UTXOModel) Layout(gtx layout.Context, th *theme.Theme) layout.Dimensions {
-	h := gtx.Dp(unit.Dp(200))
+	h := gtx.Dp(unit.Dp(215))
 	w := gtx.Constraints.Max.X
 	pad := pct(w, 3)
 
@@ -27,18 +27,18 @@ func (d *UTXOModel) Layout(gtx layout.Context, th *theme.Theme) layout.Dimension
 	// Row 1: TX A with outputs.
 	y1 := gtx.Dp(unit.Dp(10))
 	colorCaption(gtx, th, i18n.T("diagram.utxo_tx_a"), image.Pt(pad, y1), th.Color.TextMuted)
-	y1 += gtx.Dp(unit.Dp(18))
+	y1 += gtx.Dp(unit.Dp(24))
 
 	txAx := pad
-	processBox(gtx, th, "TX A", image.Pt(txAx, y1), bw, bh)
+	shadowBox(gtx, th, "TX A", image.Pt(txAx, y1), bw, bh, th.Color.Primary)
 
 	outAx := txAx + bw + gap/2
 	// Output 0: spent (dimmed).
-	box(gtx, th, "0.5 BTC", image.Pt(outAx, y1), outW, bh, th.Color.Divider)
+	shadowBox(gtx, th, "0.5 BTC", image.Pt(outAx, y1), outW, bh, th.Color.Divider)
 	// Output 1: unspent (green).
-	box(gtx, th, "0.3 BTC", image.Pt(outAx+outW+4, y1), outW, bh, th.Color.TipBg)
+	shadowBox(gtx, th, "0.3 BTC", image.Pt(outAx+outW+4, y1), outW, bh, th.Color.TipBg)
 
-	arrow(gtx, th, image.Pt(txAx+bw, y1+bh/2), image.Pt(outAx, y1+bh/2))
+	dirArrow(gtx, image.Pt(txAx+bw, y1+bh/2), image.Pt(outAx, y1+bh/2), 1.8, withAlpha(th.Color.TextMuted, 160))
 
 	// Labels.
 	labelY := y1 + bh + 2
@@ -47,24 +47,24 @@ func (d *UTXOModel) Layout(gtx layout.Context, th *theme.Theme) layout.Dimension
 
 	// Connecting line from TX A output 0 to TX B input.
 	midY := y1 + bh + gtx.Dp(unit.Dp(25))
-	line(gtx, image.Pt(outAx+outW/2, y1+bh), image.Pt(outAx+outW/2, midY), 1.5, th.Color.TextMuted)
+	dashedLine(gtx, image.Pt(outAx+outW/2, y1+bh), image.Pt(outAx+outW/2, midY), 1.8, withAlpha(th.Color.TextMuted, 120))
 
 	// Row 2: TX B with outputs.
 	y2 := midY + gtx.Dp(unit.Dp(10))
 	colorCaption(gtx, th, i18n.T("diagram.utxo_tx_b"), image.Pt(pad, y2), th.Color.TextMuted)
-	y2 += gtx.Dp(unit.Dp(18))
+	y2 += gtx.Dp(unit.Dp(24))
 
 	txBx := pad
-	processBox(gtx, th, "TX B", image.Pt(txBx, y2), bw, bh)
+	shadowBox(gtx, th, "TX B", image.Pt(txBx, y2), bw, bh, th.Color.Primary)
 
 	outBx := txBx + bw + gap/2
-	box(gtx, th, "0.3 BTC", image.Pt(outBx, y2), outW, bh, th.Color.TipBg)
-	box(gtx, th, "0.19 BTC", image.Pt(outBx+outW+4, y2), outW, bh, th.Color.TipBg)
+	shadowBox(gtx, th, "0.3 BTC", image.Pt(outBx, y2), outW, bh, th.Color.TipBg)
+	shadowBox(gtx, th, "0.19 BTC", image.Pt(outBx+outW+4, y2), outW, bh, th.Color.TipBg)
 
-	arrow(gtx, th, image.Pt(txBx+bw, y2+bh/2), image.Pt(outBx, y2+bh/2))
+	dirArrow(gtx, image.Pt(txBx+bw, y2+bh/2), image.Pt(outBx, y2+bh/2), 1.8, withAlpha(th.Color.TextMuted, 160))
 
 	// Connecting line into TX B.
-	line(gtx, image.Pt(outAx+outW/2, midY), image.Pt(txBx+bw/2, y2), 1.5, th.Color.TextMuted)
+	curvedLine(gtx, image.Pt(outAx+outW/2, midY), image.Pt(txBx+bw/2, y2), 1.8, withAlpha(th.Color.TextMuted, 160))
 
 	return layout.Dimensions{Size: image.Pt(w, h)}
 }

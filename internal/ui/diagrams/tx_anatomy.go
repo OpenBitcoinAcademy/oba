@@ -11,48 +11,62 @@ import (
 )
 
 // TxAnatomy shows the structure of a transaction: inputs on the left,
-// outputs on the right, connected by a central TX box.
+// outputs on the right, connected by a central TX box. Ch06 diagram.
 type TxAnatomy struct{}
 
 func (d *TxAnatomy) Layout(gtx layout.Context, th *theme.Theme) layout.Dimensions {
-	h := gtx.Dp(unit.Dp(180))
+	h := gtx.Dp(unit.Dp(210))
 	w := gtx.Constraints.Max.X
 	pad := pct(w, 3)
 
-	colW := pct(w, 35)
-	centerW := pct(w, 20)
-	bh := gtx.Dp(unit.Dp(30))
-	gap := (w - 2*pad - 2*colW - centerW) / 2
+	colW := pct(w, 30)
+	centerW := pct(w, 18)
+	bh := gtx.Dp(unit.Dp(28))
+	usable := w - 2*pad
+	gap := (usable - 2*colW - centerW) / 2
+	if gap < 8 {
+		gap = 8
+	}
 
 	leftX := pad
 	centerX := leftX + colW + gap
 	rightX := centerX + centerW + gap
 
-	// Input column.
-	y1 := gtx.Dp(unit.Dp(20))
-	colorCaption(gtx, th, i18n.T("diagram.tx_input")+"s", image.Pt(leftX, y1), th.Color.TextMuted)
+	lc := withAlpha(th.Color.TextMuted, 160)
+	lw := float32(1.8)
 
-	inputY := y1 + gtx.Dp(unit.Dp(20))
-	box(gtx, th, i18n.T("diagram.tx_prev_tx")+": abcd...", image.Pt(leftX, inputY), colW, bh, th.Color.WarningBg)
-	box(gtx, th, i18n.T("diagram.tx_scriptsig"), image.Pt(leftX, inputY+bh+4), colW, bh, th.Color.InfoBg)
+	// Column headers.
+	headerY := gtx.Dp(unit.Dp(6))
+	colorCaption(gtx, th, i18n.T("diagram.tx_input")+"s", image.Pt(leftX, headerY), th.Color.TextMuted)
+	colorCaption(gtx, th, i18n.T("diagram.tx_output")+"s", image.Pt(rightX, headerY), th.Color.TextMuted)
 
-	// Center TX box.
-	txY := inputY + bh/2
-	processBox(gtx, th, "TX", image.Pt(centerX, txY), centerW, bh+gtx.Dp(unit.Dp(10)))
+	// Input boxes (left column).
+	inputY := headerY + gtx.Dp(unit.Dp(26))
+	inputSpacing := bh + 6
+	shadowBox(gtx, th, i18n.T("diagram.tx_prev_tx")+": abcd...", image.Pt(leftX, inputY), colW, bh, th.Color.WarningBg)
+	shadowBox(gtx, th, i18n.T("diagram.tx_scriptsig"), image.Pt(leftX, inputY+inputSpacing), colW, bh, th.Color.InfoBg)
 
-	// Arrows: input -> TX -> output.
-	arrow(gtx, th, image.Pt(leftX+colW, inputY+bh/2), image.Pt(centerX, inputY+bh/2))
-	arrow(gtx, th, image.Pt(centerX+centerW, txY+bh/2), image.Pt(rightX, txY-gtx.Dp(unit.Dp(5))+bh/2))
+	// Center TX box (vertically centered between inputs).
+	txH := bh + gtx.Dp(unit.Dp(12))
+	txY := inputY + inputSpacing/2 - txH/4
+	shadowBox(gtx, th, "TX", image.Pt(centerX, txY), centerW, txH, th.Color.Primary)
 
-	// Output column.
-	colorCaption(gtx, th, i18n.T("diagram.tx_output")+"s", image.Pt(rightX, y1), th.Color.TextMuted)
+	// Output boxes (right column).
+	outY := inputY
+	shadowBox(gtx, th, "0.3 BTC", image.Pt(rightX, outY), colW, bh, th.Color.TipBg)
+	shadowBox(gtx, th, "0.7 BTC", image.Pt(rightX, outY+inputSpacing), colW, bh, th.Color.TipBg)
 
-	outY1 := y1 + gtx.Dp(unit.Dp(20))
-	box(gtx, th, "0.3 BTC", image.Pt(rightX, outY1), colW, bh, th.Color.TipBg)
-	box(gtx, th, "0.7 BTC", image.Pt(rightX, outY1+bh+4), colW, bh, th.Color.TipBg)
+	// Arrows: inputs -> TX.
+	txMidY := txY + txH/2
+	dirArrow(gtx, image.Pt(leftX+colW, inputY+bh/2), image.Pt(centerX, txMidY-4), lw, lc)
+	dirArrow(gtx, image.Pt(leftX+colW, inputY+inputSpacing+bh/2), image.Pt(centerX, txMidY+4), lw, lc)
+
+	// Arrows: TX -> outputs.
+	dirArrow(gtx, image.Pt(centerX+centerW, txMidY-4), image.Pt(rightX, outY+bh/2), lw, lc)
+	dirArrow(gtx, image.Pt(centerX+centerW, txMidY+4), image.Pt(rightX, outY+inputSpacing+bh/2), lw, lc)
 
 	// Metadata at bottom.
-	metaY := outY1 + 2*bh + gtx.Dp(unit.Dp(20))
+	metaY := outY + 2*inputSpacing + gtx.Dp(unit.Dp(14))
 	caption(gtx, th, i18n.T("diagram.tx_version")+": 1    "+i18n.T("diagram.tx_locktime")+": 0", image.Pt(pad, metaY))
 
 	return layout.Dimensions{Size: image.Pt(w, h)}

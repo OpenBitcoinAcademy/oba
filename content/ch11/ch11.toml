@@ -12,6 +12,10 @@ title_key = "lessons.ch11_lesson01_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "block_chain"
+
+  [[lessons.sections]]
   type = "callout"
   style = "info"
 
@@ -32,6 +36,10 @@ title_key = "lessons.ch11_lesson02_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "block_structure"
 
   [[lessons.sections]]
   type = "text"

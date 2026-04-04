@@ -38,6 +38,10 @@ title_key = "lessons.ch15_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "miniscript_compiler"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -60,6 +64,10 @@ title_key = "lessons.ch15_lesson03_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "output_descriptors"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -77,6 +85,10 @@ title_key = "lessons.ch15_lesson04_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "timelocked_recovery"
 
   [[lessons.sections]]
   type = "text"

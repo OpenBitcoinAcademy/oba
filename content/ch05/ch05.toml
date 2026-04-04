@@ -38,6 +38,10 @@ title_key = "lessons.ch05_lesson02_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "key_generation"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -64,6 +68,10 @@ title_key = "lessons.ch05_lesson03_title"
   type = "text"
 
   [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "bip32_derivation"
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -84,6 +92,10 @@ title_key = "lessons.ch05_lesson04_title"
 
   [[lessons.sections]]
   type = "text"
+
+  [[lessons.sections]]
+  type = "diagram"
+  diagram_id = "seed_recovery"
 
   [[lessons.sections]]
   type = "text"

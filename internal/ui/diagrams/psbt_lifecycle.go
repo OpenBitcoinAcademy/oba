@@ -30,6 +30,8 @@ func (d *PSBTLifecycle) Layout(gtx layout.Context, th *theme.Theme) layout.Dimen
 		gap = 4
 	}
 
+	lc := withAlpha(th.Color.TextMuted, 160)
+	lw := float32(1.8)
 	y := (h - bh) / 2
 
 	x1 := pad
@@ -38,24 +40,15 @@ func (d *PSBTLifecycle) Layout(gtx layout.Context, th *theme.Theme) layout.Dimen
 	x4 := x3 + bw + gap
 	x5 := x4 + bw + gap
 
-	// Creator.
-	processBox(gtx, th, i18n.T("diagram.creator"), image.Pt(x1, y), bw, bh)
-	arrow(gtx, th, image.Pt(x1+bw, y+bh/2), image.Pt(x2, y+bh/2))
-
-	// Updater.
-	processBox(gtx, th, i18n.T("diagram.updater"), image.Pt(x2, y), bw, bh)
-	arrow(gtx, th, image.Pt(x2+bw, y+bh/2), image.Pt(x3, y+bh/2))
-
-	// Signer.
-	processBox(gtx, th, i18n.T("diagram.signer"), image.Pt(x3, y), bw, bh)
-	arrow(gtx, th, image.Pt(x3+bw, y+bh/2), image.Pt(x4, y+bh/2))
-
-	// Finalizer.
-	processBox(gtx, th, i18n.T("diagram.finalizer"), image.Pt(x4, y), bw, bh)
-	arrow(gtx, th, image.Pt(x4+bw, y+bh/2), image.Pt(x5, y+bh/2))
-
-	// Broadcast.
-	processBox(gtx, th, i18n.T("diagram.broadcast"), image.Pt(x5, y), bw, bh)
+	shadowBox(gtx, th, i18n.T("diagram.creator"), image.Pt(x1, y), bw, bh, th.Color.Primary)
+	dirArrow(gtx, image.Pt(x1+bw, y+bh/2), image.Pt(x2, y+bh/2), lw, lc)
+	shadowBox(gtx, th, i18n.T("diagram.updater"), image.Pt(x2, y), bw, bh, th.Color.InfoBg)
+	dirArrow(gtx, image.Pt(x2+bw, y+bh/2), image.Pt(x3, y+bh/2), lw, lc)
+	shadowBox(gtx, th, i18n.T("diagram.signer"), image.Pt(x3, y), bw, bh, th.Color.WarningBg)
+	dirArrow(gtx, image.Pt(x3+bw, y+bh/2), image.Pt(x4, y+bh/2), lw, lc)
+	shadowBox(gtx, th, i18n.T("diagram.finalizer"), image.Pt(x4, y), bw, bh, th.Color.InfoBg)
+	dirArrow(gtx, image.Pt(x4+bw, y+bh/2), image.Pt(x5, y+bh/2), lw, lc)
+	shadowBox(gtx, th, i18n.T("diagram.broadcast"), image.Pt(x5, y), bw, bh, th.Color.TipBg)
 
 	return layout.Dimensions{Size: image.Pt(w, h)}
 }
