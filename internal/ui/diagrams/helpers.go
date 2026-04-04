@@ -49,37 +49,6 @@ func box(gtx layout.Context, th *theme.Theme, label string, pos image.Point, w, 
 	call.Add(gtx.Ops)
 }
 
-// arrow draws a horizontal line with a proper triangular arrowhead.
-func arrow(gtx layout.Context, th *theme.Theme, from, to image.Point) {
-	c := th.Color.TextMuted
-	headSize := 6
-
-	// Line body (stop short of arrowhead).
-	lineEnd := to.X - headSize
-	if lineEnd < from.X {
-		lineEnd = from.X
-	}
-
-	// Draw line.
-	lineH := 2
-	defer op.Offset(image.Pt(from.X, from.Y-lineH/2)).Push(gtx.Ops).Pop()
-	paint.FillShape(gtx.Ops, c, clip.Rect{Max: image.Pt(lineEnd-from.X, lineH)}.Op())
-
-	// Arrowhead triangle via clip.Path.
-	tipX := float32(to.X - from.X)
-	baseX := tipX - float32(headSize)
-	midY := float32(lineH) / 2
-	hs := float32(headSize)
-
-	var p clip.Path
-	p.Begin(gtx.Ops)
-	p.MoveTo(f32.Pt(tipX, midY))
-	p.LineTo(f32.Pt(baseX, midY-hs/2))
-	p.LineTo(f32.Pt(baseX, midY+hs/2))
-	p.Close()
-	paint.FillShape(gtx.Ops, c, clip.Outline{Path: p.End()}.Op())
-}
-
 // circle draws a filled circle at a center point with given radius.
 func circle(gtx layout.Context, center image.Point, radius int, c color.NRGBA) {
 	defer op.Offset(image.Pt(center.X-radius, center.Y-radius)).Push(gtx.Ops).Pop()
@@ -129,11 +98,6 @@ func colorCaption(gtx layout.Context, th *theme.Theme, text string, pos image.Po
 	call := m.Stop()
 	defer op.Offset(pos).Push(gtx.Ops).Pop()
 	call.Add(gtx.Ops)
-}
-
-// processBox draws a box with a distinct "process" appearance (primary color, smaller).
-func processBox(gtx layout.Context, th *theme.Theme, label string, pos image.Point, w, h int) {
-	box(gtx, th, label, pos, w, h, th.Color.Primary)
 }
 
 // pct calculates a percentage of a total.

@@ -12,7 +12,7 @@ import (
 
 // TxLifecycle draws a horizontal transaction lifecycle flow for Ch02:
 // Wallet -> Network -> Mempool -> Miner -> Block.
-// Data states use box(), the network relay uses processBox().
+// Each stage is drawn with box().
 type TxLifecycle struct{}
 
 func (d *TxLifecycle) Layout(gtx layout.Context, th *theme.Theme) layout.Dimensions {
