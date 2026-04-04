@@ -7,6 +7,7 @@ import (
 	"io/fs"
 	"log"
 	"os"
+	"time"
 
 	gio_app "gioui.org/app"
 	"gioui.org/op"
@@ -85,6 +86,7 @@ func main() {
 
 		state.Invalidate = w.Invalidate
 
+		splash := screens.NewSplash(state, oba.IconPNG)
 		home := screens.NewHome(state)
 		chapter := screens.NewChapter(state)
 		lesson := screens.NewLesson(state)
@@ -92,6 +94,8 @@ func main() {
 
 		var ops op.Ops
 		var lastBarColor color.NRGBA
+		var appFadeStart time.Time
+		const appFadeDuration = 500 * time.Millisecond
 		for {
 			switch e := w.Event().(type) {
 			case gio_app.DestroyEvent:
@@ -112,6 +116,17 @@ func main() {
 				paint.FillShape(gtx.Ops, state.Theme.Color.Background,
 					clip.Rect{Max: image.Pt(gtx.Constraints.Max.X, gtx.Constraints.Max.Y)}.Op())
 
+				if !splash.Done() {
+					splash.Layout(gtx)
+					e.Frame(gtx.Ops)
+					continue
+				}
+
+				// Track when the app content first appears.
+				if appFadeStart.IsZero() {
+					appFadeStart = time.Now()
+				}
+
 				switch state.CurrentScreen {
 				case app.ScreenChapter:
 					chapter.Layout(gtx)
@@ -121,6 +136,16 @@ func main() {
 					settings.Layout(gtx)
 				default:
 					home.Layout(gtx)
+				}
+
+				// Fade-in overlay: navy fades from opaque to transparent.
+				if elapsed := time.Since(appFadeStart); elapsed < appFadeDuration {
+					fade := float64(elapsed) / float64(appFadeDuration)
+					overlay := state.Theme.Color.Background
+					overlay.A = uint8((1 - fade) * 255)
+					paint.FillShape(gtx.Ops, overlay,
+						clip.Rect{Max: image.Pt(gtx.Constraints.Max.X, gtx.Constraints.Max.Y)}.Op())
+					gtx.Execute(op.InvalidateCmd{})
 				}
 
 				e.Frame(gtx.Ops)

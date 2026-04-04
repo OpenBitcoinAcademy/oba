@@ -6,7 +6,7 @@
 2. Copy `locales/en/ui.toml` and translate all values (button labels, chapter titles, UI text)
 3. Mirror all `.md` files from `content/` into `locales/{lang}/` and translate them
 4. Run `go run ./tools/translate-check` to verify completeness
-5. You translate one `.toml` file and ~350 `.md` files. No Go code, no structure changes
+5. You translate one `.toml` file and all `.md` files. No Go code, no structure changes
 
 ## Writing Lesson Content
 
@@ -29,3 +29,4 @@ Use [Codeberg Issues](https://codeberg.org/OpenBitcoinAcademy/oba/issues). Inclu
 ## Contributing via Nostr
 
 With [ngit](https://gitworkshop.dev/ngit) installed, you can submit patches and file issues via nostr relays. No account on any platform required. See the repo on [gitworkshop.dev](https://gitworkshop.dev).
+

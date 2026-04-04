@@ -245,7 +245,10 @@ func DetectSystemMode() Mode {
 		// but that requires cgo or a dbus library. For now, env vars suffice.
 	}
 
-	return ModeLight
+	// Default to dark mode. On Android and WASM, no env vars detect
+	// system preference. Navy dark mode is the brand identity; light
+	// mode is opt-in via settings.
+	return ModeDark
 }
 
 // MinTouchTarget is the minimum touch target size (48dp per Material guidelines).

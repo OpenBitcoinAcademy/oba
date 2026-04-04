@@ -1,0 +1,58 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Install gogio
+        run: go install gioui.org/cmd/gogio@latest
+
+      - name: Build WASM
+        run: |
+          gogio -target js -o _wasm_build ./cmd/oba
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site/app _site/.well-known
+          cp docs/index.html _site/
+          cp docs/CNAME _site/
+          cp docs/app/index.html _site/app/
+          cp docs/app/wasm.js _site/app/
+          cp docs/app/appicon.png _site/app/
+          cp _wasm_build/main.wasm _site/app/
+          cp docs/.well-known/nostr.json _site/.well-known/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -23,3 +23,8 @@ var FontNotoSans []byte
 //
 //go:embed assets/fonts/JetBrainsMono-Regular.ttf
 var FontJetBrainsMono []byte
+
+// IconPNG holds the app icon for the splash screen.
+//
+//go:embed assets/icon.png
+var IconPNG []byte

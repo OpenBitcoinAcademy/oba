@@ -1,0 +1,23 @@
+{
+  "names": {
+    "_": "02719482b1c8e95a6dcc468af2c7bfdb6c0855dbc1ba6920bd6bc6201e350012",
+    "oba": "02719482b1c8e95a6dcc468af2c7bfdb6c0855dbc1ba6920bd6bc6201e350012"
+  },
+  "relays": {
+    "02719482b1c8e95a6dcc468af2c7bfdb6c0855dbc1ba6920bd6bc6201e350012": [
+      "wss://relay.damus.io",
+      "wss://nos.lol",
+      "wss://relay.nostr.band",
+      "wss://purplepag.es",
+      "wss://relay.snort.social",
+      "wss://relay.current.fyi",
+      "wss://relay.nostr.dev.br",
+      "wss://nostr.wine",
+      "wss://relay.bitcoiner.social",
+      "wss://relay.wellorder.net",
+      "wss://relay.nostrich.de",
+      "wss://nostr.oxtr.dev",
+      "wss://relay.nostr.info"
+    ]
+  }
+}

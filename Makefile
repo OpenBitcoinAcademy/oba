@@ -24,7 +24,7 @@ run: build
 build-android:
 	@echo "Requires: ANDROID_SDK_ROOT, ANDROID_NDK_HOME, gogio"
 	@echo "Install gogio: go install gioui.org/cmd/gogio@latest"
-	gogio -target android -appid org.openbitcoinacademy.oba -o oba.apk ./cmd/oba
+	gogio -target android -name ObA -appid org.openbitcoinacademy.oba -o oba.apk ./cmd/oba
 
 clean:
 	rm -f oba oba.apk coverage.out coverage.html
