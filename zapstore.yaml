@@ -1,0 +1,12 @@
+repository: https://codeberg.org/OpenBitcoinAcademy/oba
+pubkey: npub1qfcefq43er545mwvg69093almdkqs4wmcxaxjg9ad0rzq834qqfq9rhflh
+name: Open Bitcoin Academy
+summary: Offline-first app that teaches the Bitcoin protocol
+description: >
+  Covers Bitcoin from A to Z, including Taproot, Miniscript, PSBTs,
+  threshold signatures, Lightning, and the broader ecosystem. Lessons, diagrams, quizzes, and cryptographic
+  exercises running on your device. Multi-language.
+  Public domain.
+website: https://openbitcoinacademy.org
+tags: [bitcoin, education, nostr, offline, privacy, learning]
+license: Unlicense

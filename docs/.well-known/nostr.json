@@ -17,7 +17,8 @@
       "wss://relay.wellorder.net",
       "wss://relay.nostrich.de",
       "wss://nostr.oxtr.dev",
-      "wss://relay.nostr.info"
+      "wss://relay.nostr.info",
+      "wss://relay.zapstore.dev"
     ]
   }
 }
