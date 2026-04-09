@@ -56,6 +56,33 @@ title_key = "lessons.ch06_lesson02_title"
   exercise_id = "ex06_tx_builder"
 
   [[lessons.sections]]
+  type = "code"
+  language = "bitcoin"
+  content = """
+# Transaction structure
+
+version       = 02000000
+
+# Inputs: which coins to spend
+input_count   = 01
+  prev_txid   = <32 bytes, reversed>
+  prev_index  = 00000000
+  script_sig  = <signature> <public_key>
+  sequence    = ffffffff
+
+# Outputs: where coins go
+output_count  = 02
+  value       = 905f010000000000    (90000 sats, little-endian)
+  script_pk   = OP_DUP OP_HASH160 <pub_key_hash> OP_EQUALVERIFY OP_CHECKSIG
+  value       = 204e000000000000    (change output)
+  script_pk   = <change script>
+
+locktime      = 00000000
+
+txid          = SHA256(SHA256(serialized_tx)), reversed
+"""
+
+  [[lessons.sections]]
   type = "callout"
   style = "warning"
 
@@ -74,6 +101,25 @@ title_key = "lessons.ch06_lesson03_title"
   [[lessons.sections]]
   type = "diagram"
   diagram_id = "wire_format"
+
+  [[lessons.sections]]
+  type = "code"
+  language = "bitcoin"
+  content = """
+# Field sizes
+version       4 bytes   little-endian
+input count   varint    1-9 bytes
+  prev_txid   32 bytes  reversed byte order
+  prev_index  4 bytes   little-endian
+  script_len  varint
+  script_sig  variable
+  sequence    4 bytes
+output count  varint
+  value       8 bytes   little-endian (satoshis)
+  script_len  varint
+  script_pk   variable
+locktime      4 bytes   little-endian
+"""
 
   [[lessons.sections]]
   type = "text"

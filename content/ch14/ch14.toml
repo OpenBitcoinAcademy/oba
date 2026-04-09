@@ -75,6 +75,25 @@ title_key = "lessons.ch14_lesson03_title"
   exercise_id = "ex12_mast_builder"
 
   [[lessons.sections]]
+  type = "code"
+  language = "bitcoin"
+  content = """
+# Tagged hash (BIP 340)
+tagged_hash(tag, data) = SHA256(SHA256(tag) || SHA256(tag) || data)
+
+# Tapscript leaf hash
+leaf_hash     = tagged_hash("TapLeaf", leaf_version || script)
+
+# Internal branch: sort leaves lexicographically
+if left > right: swap(left, right)
+branch_hash   = tagged_hash("TapBranch", left || right)
+
+# Tweak the internal key
+tweak         = tagged_hash("TapTweak", internal_key || merkle_root)
+output_key    = internal_key + tweak * G
+"""
+
+  [[lessons.sections]]
   type = "callout"
   style = "info"
 

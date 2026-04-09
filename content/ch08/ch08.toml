@@ -46,6 +46,25 @@ title_key = "lessons.ch08_lesson02_title"
   diagram_id = "ecdsa_flow"
 
   [[lessons.sections]]
+  type = "code"
+  language = "bitcoin"
+  content = """
+# ECDSA signing
+
+message_hash  = SHA256(SHA256(transaction_data))
+k             = random nonce (unique per signature)
+R             = k * G           (curve point)
+r             = R.x mod n
+s             = k^-1 * (message_hash + r * private_key) mod n
+signature     = (r, s)          DER-encoded
+
+# ECDSA verification
+
+R'            = s^-1 * message_hash * G  +  s^-1 * r * public_key
+valid         = (R'.x mod n) == r
+"""
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]

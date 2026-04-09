@@ -210,6 +210,10 @@ func (l *Lesson) renderSection(gtx layout.Context, sec content.Section, idx int)
 		}
 		return placeholderSection(gtx, th, "Exercise: "+s.ExerciseID)
 
+	case *content.CodeSection:
+		cb := &components.CodeBlock{Content: s.Content, Theme: th}
+		return cb.Layout(gtx)
+
 	case *content.FormulaSection:
 		renderer := obamath.NewRenderer(th.Material, th.Text.Body)
 		renderer.Color = th.Color.Text

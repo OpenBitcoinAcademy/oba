@@ -53,6 +53,23 @@ title_key = "lessons.ch11_lesson02_title"
   exercise_id = "ex07_block_inspector"
 
   [[lessons.sections]]
+  type = "code"
+  language = "bitcoin"
+  content = """
+# Block header (80 bytes)
+
+version        4 bytes   block version rules
+prev_block    32 bytes   hash of previous block header
+merkle_root   32 bytes   root of transaction merkle tree
+timestamp      4 bytes   unix time (seconds)
+bits           4 bytes   compact difficulty target
+nonce          4 bytes   miner-adjusted value
+
+block_hash    = SHA256(SHA256(header)), reversed
+              = 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
+"""
+
+  [[lessons.sections]]
   type = "quiz"
   correct = [1]
 

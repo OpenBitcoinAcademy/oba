@@ -23,6 +23,25 @@ title_key = "lessons.ch04_lesson01_title"
   exercise_id = "ex01_hash"
 
   [[lessons.sections]]
+  type = "code"
+  language = "bitcoin"
+  content = """
+# Hash functions
+
+SHA256("bitcoin")
+  = 6b88c087247aa2f07ee1c5956b8e1a9f4c7f892a70e324f1bb3d161e05ca107b
+
+SHA256("Bitcoin")
+  = b4056df6691f8dc72e56302ddad345d65fead3ead9299609a826e2344eb63aa4
+
+# Double SHA-256 (transactions, blocks)
+HASH256(data) = SHA256(SHA256(data))
+
+# HASH160 (addresses)
+HASH160(data) = RIPEMD160(SHA256(data))
+"""
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]
@@ -56,6 +75,29 @@ title_key = "lessons.ch04_lesson02_title"
   exercise_id = "ex02_keys"
 
   [[lessons.sections]]
+  type = "code"
+  language = "bitcoin"
+  content = """
+# Key generation (secp256k1)
+
+private_key   = random 256-bit integer k, where 1 < k < n
+                n = FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141
+
+public_key    = k * G    (point multiplication on the curve)
+
+# Compressed public key: 33 bytes
+prefix        = 02 if y is even, 03 if y is odd
+compressed    = prefix || x
+
+# Uncompressed public key: 65 bytes
+uncompressed  = 04 || x || y
+
+# Wallet Import Format (WIF)
+wif           = Base58Check(0x80 || private_key || 0x01)
+                0x80 = mainnet, 0x01 = compressed flag
+"""
+
+  [[lessons.sections]]
   type = "callout"
   style = "warning"
 
@@ -84,6 +126,28 @@ title_key = "lessons.ch04_lesson03_title"
   [[lessons.sections]]
   type = "interactive"
   exercise_id = "ex03_address"
+
+  [[lessons.sections]]
+  type = "code"
+  language = "bitcoin"
+  content = """
+# P2PKH address (starts with 1)
+pub_key_hash  = RIPEMD160(SHA256(compressed_pubkey))
+versioned     = 0x00 || pub_key_hash
+checksum      = SHA256(SHA256(versioned))[:4]
+address       = Base58(versioned || checksum)
+
+# P2SH-P2WPKH address (starts with 3)
+witness_prog  = 0x00 0x14 || pub_key_hash
+script_hash   = RIPEMD160(SHA256(witness_prog))
+address       = Base58Check(0x05 || script_hash)
+
+# P2WPKH address (starts with bc1q)
+address       = Bech32("bc", 0x00, pub_key_hash)
+
+# P2TR address (starts with bc1p)
+address       = Bech32m("bc", 0x01, tweaked_pubkey_x)
+"""
 
   [[lessons.sections]]
   type = "callout"

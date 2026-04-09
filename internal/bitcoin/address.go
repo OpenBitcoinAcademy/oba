@@ -50,8 +50,7 @@ func P2TR(tweakedPubkey []byte, mainnet bool) (string, error) {
 	return SegwitEncode(hrp, 1, tweakedPubkey)
 }
 
-// DeriveAddresses returns all address types for a public key.
-// Useful for the address builder exercise.
+// AddressSet holds all address types derived from a single public key.
 type AddressSet struct {
 	P2PKH      string
 	P2SHP2WPKH string

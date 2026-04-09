@@ -1,9 +1,10 @@
 package components
 
 import (
+	"bytes"
 	"encoding/hex"
 	"fmt"
-	"strings"
+	"time"
 
 	"gioui.org/font"
 	"gioui.org/layout"
@@ -19,12 +20,13 @@ import (
 	"github.com/openbitcoinacademy/oba/internal/ui/theme"
 )
 
-// MiningSimulator lets users find a nonce that produces a hash with leading zeros.
+// MiningSimulator lets users find a nonce that produces a hash below a target.
 type MiningSimulator struct {
 	Theme      *theme.Theme
 	mineBtn    widget.Clickable
 	resetBtn   widget.Clickable
-	difficulty int
+	targetBits int
+	target     [32]byte
 	nonce      uint32
 	blockData  string
 	lastHash   string
@@ -36,14 +38,39 @@ type MiningSimulator struct {
 func NewMiningSimulator(th *theme.Theme, cfg *content.ExerciseConfig) *MiningSimulator {
 	ms := &MiningSimulator{
 		Theme:      th,
-		difficulty: 1,
-		blockData:  "OBA Block Data 2024",
+		targetBits: 8,
 	}
 	if cfg != nil {
-		d := cfg.ConfigInt("initial_difficulty", 1)
-		ms.difficulty = int(d)
+		ms.targetBits = int(cfg.ConfigInt("target_bits", 8))
 	}
+	ms.buildTarget()
+	ms.refreshBlockData()
 	return ms
+}
+
+// buildTarget sets the target from targetBits leading zero bits.
+// targetBits=8: target[0]=0, target[1]=0xff, rest 0xff. ~256 avg attempts.
+func (ms *MiningSimulator) buildTarget() {
+	// Fill with 0xff, then zero out the leading bytes/bits.
+	for i := range ms.target {
+		ms.target[i] = 0xff
+	}
+	fullBytes := ms.targetBits / 8
+	for i := 0; i < fullBytes && i < 32; i++ {
+		ms.target[i] = 0x00
+	}
+	remainder := ms.targetBits % 8
+	if remainder > 0 && fullBytes < 32 {
+		ms.target[fullBytes] = 0xff >> remainder
+	}
+}
+
+func (ms *MiningSimulator) refreshBlockData() {
+	ms.blockData = fmt.Sprintf("ver:02000000 prev:000000000019d6...e26f merkle:4a5e1e...3bce ts:%d bits:1d00ffff", time.Now().UnixNano())
+}
+
+func (ms *MiningSimulator) targetHex() string {
+	return hex.EncodeToString(ms.target[:])
 }
 
 // Layout renders the mining simulator.
@@ -58,6 +85,7 @@ func (ms *MiningSimulator) Layout(gtx layout.Context) layout.Dimensions {
 		ms.lastHash = ""
 		ms.found = false
 		ms.attempts = 0
+		ms.refreshBlockData()
 	}
 
 	return layout.Inset{Top: th.Space.Medium, Bottom: th.Space.Medium}.Layout(gtx,
@@ -78,9 +106,14 @@ func (ms *MiningSimulator) Layout(gtx layout.Context) layout.Dimensions {
 				layout.Rigid(layout.Spacer{Height: th.Space.Medium}.Layout),
 				// Target display.
 				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
-					target := fmt.Sprintf("%s %s", i18n.T("exercise_ui.mining_target"), strings.Repeat("0", ms.difficulty)+"...")
-					lbl := material.Label(th.Material, th.Text.BodySmall, target)
+					lbl := material.Label(th.Material, th.Text.Caption, i18n.T("exercise_ui.mining_target"))
+					lbl.Color = th.Color.TextMuted
+					return lbl.Layout(gtx)
+				}),
+				layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+					lbl := material.Label(th.Material, th.Text.Code, ms.targetHex())
 					lbl.Color = th.Color.Primary
+					lbl.MaxLines = 2
 					return lbl.Layout(gtx)
 				}),
 				layout.Rigid(layout.Spacer{Height: th.Space.Small}.Layout),
@@ -159,9 +192,7 @@ func (ms *MiningSimulator) tryNonce() {
 	hash := bitcoin.SHA256([]byte(data))
 	ms.lastHash = hex.EncodeToString(hash[:])
 
-	// Check if hash starts with enough zeros.
-	prefix := strings.Repeat("0", ms.difficulty)
-	if strings.HasPrefix(ms.lastHash, prefix) {
+	if bytes.Compare(hash[:], ms.target[:]) < 0 {
 		ms.found = true
 	}
 }

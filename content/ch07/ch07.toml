@@ -23,6 +23,24 @@ title_key = "lessons.ch07_lesson01_title"
   exercise_id = "ex04_script_debugger"
 
   [[lessons.sections]]
+  type = "code"
+  language = "bitcoin"
+  content = """
+# P2PKH script execution
+
+scriptSig:    <sig> <pubkey>
+scriptPubKey: OP_DUP OP_HASH160 <pub_key_hash> OP_EQUALVERIFY OP_CHECKSIG
+
+# Stack trace:
+  <sig> <pubkey>                        | push sig, push pubkey
+  <sig> <pubkey> <pubkey>               | OP_DUP
+  <sig> <pubkey> <pub_key_hash>         | OP_HASH160
+  <sig> <pubkey> <pub_key_hash> <hash>  | push expected hash
+  <sig> <pubkey>                        | OP_EQUALVERIFY (hashes match)
+  true                                  | OP_CHECKSIG (signature valid)
+"""
+
+  [[lessons.sections]]
   type = "text"
 
   [[lessons.sections]]

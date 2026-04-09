@@ -30,6 +30,24 @@ title_key = "lessons.ch12_lesson01_title"
   exercise_id = "ex08_mining_simulator"
 
   [[lessons.sections]]
+  type = "code"
+  language = "bitcoin"
+  content = """
+# Mining: find a nonce that produces a hash below the target
+
+target        = 00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+loop:
+  header.nonce += 1
+  hash = SHA256(SHA256(header))
+  if hash < target:
+    block found
+
+# Lower target = harder. Current blocks (~#939,000) have targets
+# so low that valid hashes start with 20-21 hex zeros.
+"""
+
+  [[lessons.sections]]
   type = "quiz"
   correct = [1]
 

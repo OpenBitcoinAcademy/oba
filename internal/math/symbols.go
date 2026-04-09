@@ -76,8 +76,8 @@ func LookupSymbol(cmd string) (rune, bool) {
 	return 0, false
 }
 
-// IsStructuralCommand returns true for commands that affect layout
-// rather than producing a single symbol (frac, sqrt, text, left, right).
+// StructuralCommands maps LaTeX commands that affect layout rather than
+// producing a single symbol (frac, sqrt, text, left, right).
 var StructuralCommands = map[string]bool{
 	`\frac`:  true,
 	`\sqrt`:  true,

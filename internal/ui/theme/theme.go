@@ -240,10 +240,9 @@ func DetectSystemMode() Mode {
 	}
 
 	// Freedesktop color-scheme preference.
-	if v := os.Getenv("XDG_CURRENT_DESKTOP"); v != "" {
-		// Could query dbus org.freedesktop.appearance color-scheme,
-		// but that requires cgo or a dbus library. For now, env vars suffice.
-	}
+	// Could query dbus org.freedesktop.appearance color-scheme,
+	// but that requires cgo or a dbus library. For now, env vars suffice.
+	_ = os.Getenv("XDG_CURRENT_DESKTOP")
 
 	// Default to dark mode. On Android and WASM, no env vars detect
 	// system preference. Navy dark mode is the brand identity; light

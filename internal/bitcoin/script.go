@@ -9,13 +9,14 @@ import (
 // Opcode constants for the Bitcoin Script subset we support.
 // Enough for P2PKH verification, which is the foundation for
 // understanding how Bitcoin transactions work.
+// Bitcoin protocol naming convention: OP_DUP, not OpDup.
 const (
-	OP_0           byte = 0x00
-	OP_DUP         byte = 0x76
-	OP_EQUAL       byte = 0x87
-	OP_EQUALVERIFY byte = 0x88
-	OP_HASH160     byte = 0xa9
-	OP_CHECKSIG    byte = 0xac
+	OP_0           byte = 0x00 //lint:ignore ST1003 Bitcoin convention
+	OP_DUP         byte = 0x76 //lint:ignore ST1003 Bitcoin convention
+	OP_EQUAL       byte = 0x87 //lint:ignore ST1003 Bitcoin convention
+	OP_EQUALVERIFY byte = 0x88 //lint:ignore ST1003 Bitcoin convention
+	OP_HASH160     byte = 0xa9 //lint:ignore ST1003 Bitcoin convention
+	OP_CHECKSIG    byte = 0xac //lint:ignore ST1003 Bitcoin convention
 )
 
 // OpcodeName returns a human-readable name for an opcode.
