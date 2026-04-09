@@ -1,0 +1,18 @@
+{
+  "name": "Open Bitcoin Academy",
+  "short_name": "OBA",
+  "description": "Offline-first app that teaches the Bitcoin protocol",
+  "start_url": "/pwa/",
+  "display": "standalone",
+  "background_color": "#181C46",
+  "theme_color": "#181C46",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "appicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

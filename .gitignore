@@ -19,8 +19,9 @@ coverage.html
 # OS
 .DS_Store
 Thumbs.db
+.env
 
 # Build
 /tmp/
 *.idsig
-docs/app/main.wasm
+docs/pwa/main.wasm

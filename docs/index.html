@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Open Bitcoin Academy</title>
-    <link rel="icon" href="app/appicon.png" type="image/png">
+    <link rel="icon" href="pwa/appicon.png" type="image/png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -314,17 +314,18 @@
 
 <nav>
     <a href="#" class="nav-brand">
-        <img src="app/appicon.png" alt="OBA">
+        <img src="pwa/appicon.png" alt="OBA">
         <span>Open Bitcoin Academy</span>
     </a>
     <ul class="nav-links">
         <li><a href="#demo">Try It</a></li>
+        <li><a href="/pwa/">PWA</a></li>
         <li><a href="https://gitworkshop.dev/r/naddr1qqpk7cnpqgsqyuv5s2cu3626dhxydzhjc7lakmqg2hdurwnfyz7kh33qrc6sqysrqsqqqauednhay6">Source</a></li>
     </ul>
 </nav>
 
 <div class="hero">
-    <img src="app/appicon.png" alt="Open Bitcoin Academy" class="hero-icon">
+    <img src="pwa/appicon.png" alt="Open Bitcoin Academy" class="hero-icon">
     <h1>Learn Bitcoin.<br><span class="accent">Build understanding.</span></h1>
     <p class="tagline">Work in progress.</p>
     <div class="hero-cta">
@@ -339,7 +340,7 @@
             <div class="phone-notch"></div>
             <div class="phone-screen">
                 <div class="demo-splash" id="demoSplash">
-                    <img src="app/appicon.png" alt="OBA">
+                    <img src="pwa/appicon.png" alt="OBA">
                     <h3>Open Bitcoin Academy</h3>
                     <button class="btn-start" onclick="startDemo()">Start</button>
                 </div>
@@ -351,6 +352,9 @@
             </div>
         </div>
     </div>
+    <p style="margin-top: 2rem; font-size: 1.1rem; color: var(--text-muted);">
+        <a href="/pwa/" style="color: var(--orange); text-decoration: none;">Get the PWA</a>
+    </p>
 </div>
 
 <footer>
@@ -371,7 +375,7 @@ function startDemo() {
     splash.style.display = 'none';
     loading.style.display = 'flex';
 
-    frame.src = 'app/index.html';
+    frame.src = 'pwa/index.html';
     frame.onload = function() {
         loading.style.display = 'none';
         frame.classList.add('active');

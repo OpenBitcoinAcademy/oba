@@ -32,13 +32,15 @@ jobs:
 
       - name: Assemble site
         run: |
-          mkdir -p _site/app _site/.well-known
+          mkdir -p _site/pwa _site/.well-known
           cp docs/index.html _site/
           cp docs/CNAME _site/
-          cp docs/app/index.html _site/app/
-          cp docs/app/wasm.js _site/app/
-          cp docs/app/appicon.png _site/app/
-          cp _wasm_build/main.wasm _site/app/
+          cp docs/pwa/index.html _site/pwa/
+          cp docs/pwa/wasm.js _site/pwa/
+          cp docs/pwa/appicon.png _site/pwa/
+          cp docs/pwa/manifest.json _site/pwa/
+          cp docs/pwa/sw.js _site/pwa/
+          cp _wasm_build/main.wasm _site/pwa/
           cp docs/.well-known/nostr.json _site/.well-known/
 
       - name: Upload artifact

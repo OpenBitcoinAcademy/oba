@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="icon" href="appicon.png" type="image/png" />
+		<link rel="manifest" href="manifest.json" />
+		<link rel="apple-touch-icon" href="appicon.png" />
+		<meta name="theme-color" content="#181C46" />
+		<title>Open Bitcoin Academy</title>
+		<script src="wasm.js"></script>
+		<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('sw.js');
+		}
+		var lastW = 0, lastH = 0;
+		var observer = new ResizeObserver(function(entries) {
+			var c = entries[0].target;
+			var dpr = window.devicePixelRatio || 1;
+			var w = Math.round(c.clientWidth * dpr);
+			var h = Math.round(c.clientHeight * dpr);
+			if (w !== lastW || h !== lastH) {
+				lastW = w;
+				lastH = h;
+				c.width = w;
+				c.height = h;
+				(window.visualViewport || window).dispatchEvent(new Event('resize'));
+			}
+		});
+		var check = setInterval(function() {
+			var c = document.querySelector('canvas');
+			if (c) { observer.observe(c); clearInterval(check); }
+		}, 50);
+		</script>
+		<style>
+			html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; background:#181C46; padding-top: env(safe-area-inset-top); }
+			pre { margin:0; padding:0; }
+			canvas { display:block; width:100% !important; height:100% !important; }
+		</style>
+	</head>
+	<body>
+	</body>
+</html>
